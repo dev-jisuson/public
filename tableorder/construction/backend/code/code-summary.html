@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Code Summary — backend · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../../index.html">홈</a></li><li><a href="../../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../../inception/application-design/services.html">서비스</a></li><li><a href="../../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="code-summary.html" class="active" aria-current="page">백엔드 코드 요약</a></li><li><a href="../../plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../build-and-test/build-instructions.html">빌드</a></li><li><a href="../../build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 코드 생성 · <code>docs/tableorder/construction/backend/code/code-summary.md</code></div>
+<article class="markdown"><h1 id="code-summary--backend">Code Summary — backend</h1>
+<p>코드 위치: <code>tableorder/backend/</code> (실행 방법은 <code>backend/README.md</code>)</p>
+<h2 id="범위-변경-인증-제외-2026-10-14-사용자-지시-인증-관련된건-다-빼도-돼-mvp니까">범위 변경: 인증 제외 (2026-10-14, 사용자 지시 &quot;인증 관련된건 다 빼도 돼. MVP니까&quot;)</h2>
+<ul>
+<li>구현하지 않음: 로그인/로그아웃, JWT, 비밀번호/bcrypt, 로그인 잠금, AdminUser·LoginAttempt, 테이블 비밀번호, SSE 토큰 검증</li>
+<li>대체: <code>X-Store-Code</code>(생략 시 <code>demo</code>), <code>X-Table-Number</code> 헤더로 식별. SSE는 쿼리 <code>store_code</code>, <code>table_number</code></li>
+<li>유지: 매장/테이블 범위 격리, 클라이언트가 매장·테이블·가격을 지정할 수 없음(<code>extra=forbid</code>, 서버 계산)</li>
+<li><strong>설계 문서와 어긋나는 부분(갱신 필요)</strong>: requirements.md FR 인증 항목, 스토리 US-C01~C03·US-A01~A03, business-rules.md BR-AUTH/BR-LOCK, component-methods.md 1·2절(security/AuthService) 및 4절 로그인 엔드포인트, 도메인 엔티티 AdminUser/LoginAttempt/Table.password_hash, ACCOUNT_LOCKED/INVALID_CREDENTIALS/INVALID_TOKEN 오류 코드. 프론트엔드는 로그인 화면 없이 구현해야 하며, 인증이 필요해지면 <code>core/deps.py</code> 한 곳을 토큰 검증으로 바꾸면 됩니다.</li>
+<li><strong>보안 주의</strong>: 모든 엔드포인트가 인증 없이 열려 있습니다. 로컬/내부망 전용이며 공개 배포 금지.</li>
+</ul>
+<h2 id="구조">구조</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>경로</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app/main.py</code></td>
+<td>앱 조립, 시작 시 테이블 생성 + seed, CORS, <code>/static</code>, <code>/api/health</code></td>
+</tr>
+<tr>
+<td><code>app/container.py</code></td>
+<td>설정·DB·시계·브로커·서비스 묶음</td>
+</tr>
+<tr>
+<td><code>app/core/</code></td>
+<td><code>config</code>, <code>database</code>(UTCDateTime, BEGIN IMMEDIATE, FK), <code>clock</code>(KST 계산, FixedClock), <code>errors</code>, <code>context</code>, <code>deps</code></td>
+</tr>
+<tr>
+<td><code>app/models/</code></td>
+<td>8개 엔티티 (Store, DiningTable, TableSession, Category, Menu, DailyOrderCounter, Order, OrderItem)</td>
+</tr>
+<tr>
+<td><code>app/repositories/repos.py</code></td>
+<td>store_id 범위 조회, 주문 번호 카운터, 보관 처리</td>
+</tr>
+<tr>
+<td><code>app/services/domain.py</code></td>
+<td>Menu/TableSession/Order/OrderItem/Table/Dashboard/OrderHistory/TableState 서비스, <code>derive_order_status</code></td>
+</tr>
+<tr>
+<td><code>app/services/events.py</code></td>
+<td><code>InMemoryEventBroker</code>, <code>EventPublisher</code> (커밋 후 매장 채널 + 영향받는 테이블 채널)</td>
+</tr>
+<tr>
+<td><code>app/api/routers.py</code></td>
+<td>태블릿·관리자 REST, SSE</td>
+</tr>
+<tr>
+<td><code>app/seed/seed.py</code>, <code>app/static/images/</code></td>
+<td>데모 seed(멱등), 메뉴 SVG 12개 + placeholder</td>
+</tr>
+<tr>
+<td><code>Dockerfile</code>, <code>../docker-compose.yml</code></td>
+<td>단일 워커 컨테이너 + DB 볼륨</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="구현-결정-설계에-없던-세부">구현 결정 (설계에 없던 세부)</h2>
+<ul>
+<li>SQLite: 연결마다 <code>foreign_keys=ON</code>, WAL, 트랜잭션을 <code>BEGIN IMMEDIATE</code>로 시작해 주문 번호·세션 시작 경쟁을 직렬화</li>
+<li>활성 세션 1개 제약: 부분 유니크 인덱스 <code>uq_one_active_session_per_table</code></li>
+<li>서비스에 시계 주입(<code>Clock</code>), 이벤트는 커밋 후에만 발행</li>
+<li>이벤트 브로커: 구독자 큐 256개 초과(느린 구독자) 시 구독 종료 → 클라이언트가 재연결 후 <code>/api/table/state</code> 또는 대시보드로 재동기화. SSE 스트림은 <code>aclosing</code>으로 연결 종료 시 구독 즉시 해제</li>
+<li>과거 내역·태블릿 주문 목록은 <code>{items, next_cursor}</code> 형식의 커서 페이지네이션</li>
+<li>시간 입력은 <code>StrictInt</code>: 문자열 <code>&quot;7&quot;</code>은 422</li>
+</ul>
+<h2 id="테스트-73개-모두-통과">테스트 (73개, 모두 통과)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>파일</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tests/test_repositories.py</code></td>
+<td>매장 범위 격리, 주문 번호 카운터(날짜·매장별, 9999 초과), 활성 세션 제약, 보관/집계, KST 날짜 필터</td>
+</tr>
+<tr>
+<td><code>tests/test_services.py</code></td>
+<td>상태 전이 표 전체(허용/거부 + 상태 불변), 주문 상태 자동 결정, 예상 시간 계산/수정, 전체 준비 시작, 수량 줄 단위 상태, 주문 검증, 스냅샷, 번호 KST 자정 초기화·삭제 후 미재사용, 삭제 후 세션 유지, 이용 완료(보관·총액 0·no-op·미완료 허용·새 세션), 보관 주문 변경 거부, 롤백 시 이벤트 미발행</td>
+</tr>
+<tr>
+<td><code>tests/test_api.py</code></td>
+<td>전체 흐름, 오류 형식·코드, 매장/테이블 격리(US-I06), 클라이언트 주입 거부, 페이지네이션, 이벤트 채널 격리(다른 테이블 미수신), start-all 단일 이벤트, SSE 형식·ping·구독 해제·느린 구독자</td>
+</tr>
+<tr>
+<td><code>tests/test_seed.py</code></td>
+<td>seed 내용, 멱등성, 이미지 파일 존재</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="동작-확인-step-17">동작 확인 (Step 17)</h2>
+<ul>
+<li><code>pytest</code>: 73 passed (3회 연속 실행으로 순서 의존성 없음 확인)</li>
+<li>실제 uvicorn 서버(워커 1개)에서 확인: <code>GET /api/health</code> 200, 주문 생성 201, 항목 시작 200, 테이블 번호 없는 SSE 요청 422</li>
+<li>실제 SSE 연결 3개(관리자 / 1번 테이블 / 2번 테이블): 관리자와 1번 테이블은 <code>order.created</code>, <code>order_item.updated</code>를 수신, 2번 테이블은 <code>: connected</code> 외 이벤트 없음. (정정: 이때의 &quot;정상 shutdown&quot;은 curl 스트림이 먼저 끝난 경우였음. 열린 SSE가 있으면 종료되지 않는 문제를 Build and Test에서 발견해 <code>--timeout-graceful-shutdown</code>으로 해결)</li>
+<li>확인하지 못한 것: Docker 이미지 빌드/실행(Docker 미실행 환경에서 시도하지 않음), 다중 워커 동작(지원하지 않음)</li>
+</ul>
+<h2 id="테스트-중-발견해-고친-버그">테스트 중 발견해 고친 버그</h2>
+<ol>
+<li>상태 변경 직후 미완료 항목 수가 이전 값으로 계산됨 (<code>autoflush=False</code>) → 집계 전 <code>flush()</code></li>
+<li>이용 완료의 대량 UPDATE가 같은 세션의 캐시된 주문에 반영되지 않음 → <code>expire_all()</code></li>
+<li>SSE 연결이 끊겨도 구독이 GC 전까지 남을 수 있음 → <code>aclosing</code>으로 즉시 해제</li>
+</ol>
+</article>
+<nav class="pager"><a class="pager-prev" href="../../plans/backend-code-generation-plan.html"><span>← 이전</span>백엔드 코드 생성 계획</a><a class="pager-next" href="../../plans/frontend-code-generation-plan.html"><span>다음 →</span>프론트엔드 코드 생성 계획</a></nav>
+</main>
+</div>
+<script src="../../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../../assets/app.js"></script>
+</body>
+</html>

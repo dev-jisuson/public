@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Application Design Plan · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="application-design-plan.html" class="active" aria-current="page">설계 계획 (질문 8)</a></li><li><a href="../application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../application-design/components.html">컴포넌트</a></li><li><a href="../application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../application-design/services.html">서비스</a></li><li><a href="../application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 설계 · <code>docs/tableorder/inception/plans/application-design-plan.md</code></div>
+<article class="markdown"><h1 id="application-design-plan">Application Design Plan</h1>
+<h2 id="목적">목적</h2>
+<p><code>requirements.md</code>와 <code>stories.md</code>(37개 스토리)를 바탕으로 아래 세 가지를 정의합니다.</p>
+<ul>
+<li>컴포넌트 경계와 책임</li>
+<li>메서드 시그니처</li>
+<li>서비스 간 오케스트레이션과 통신 방식</li>
+</ul>
+<p>상세 비즈니스 규칙(상태 전이 규칙, 스키마 상세)은 이후 Functional Design에서 다룹니다.</p>
+<h2 id="설계-범위-분석-결과">설계 범위 (분석 결과)</h2>
+<ul>
+<li><strong>백엔드 기능 영역</strong>
+<ul>
+<li>인증: 관리자, 태블릿, 로그인 잠금</li>
+<li>메뉴 조회</li>
+<li>주문 생성/조회/삭제</li>
+<li>메뉴 항목 상태와 예상 시간</li>
+<li>테이블/세션 관리: 이용 완료, 과거 이력</li>
+<li>실시간 이벤트(SSE)</li>
+</ul>
+</li>
+<li><strong>프론트엔드 기능 영역</strong>
+<ul>
+<li>고객 화면: 설정, 메뉴, 장바구니, 주문, 주문 내역, 완료 배너</li>
+<li>관리자 화면: 로그인, 대시보드, 주문 상세, 테이블 관리, 과거 내역</li>
+</ul>
+</li>
+<li><strong>SSE 채널</strong> 2종
+<ul>
+<li>매장 채널: 관리자가 구독</li>
+<li>테이블 채널: 태블릿이 구독</li>
+</ul>
+</li>
+</ul>
+<h2 id="실행-체크리스트-승인-후-생성">실행 체크리스트 (승인 후 생성)</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> 1. <code>components.md</code> — 컴포넌트 정의 및 책임 (백엔드 / 프론트엔드)</li>
+<li class="task"><input type="checkbox" disabled checked> 2. <code>component-methods.md</code> — 메서드 시그니처, 입출력 타입
+<ul>
+<li class="task"><input type="checkbox" disabled checked> 2.1 백엔드 서비스/리포지토리 메서드</li>
+<li class="task"><input type="checkbox" disabled checked> 2.2 REST API 엔드포인트 목록</li>
+<li class="task"><input type="checkbox" disabled checked> 2.3 SSE 이벤트 타입 및 페이로드 개요</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled checked> 3. <code>services.md</code> — 서비스 정의 및 오케스트레이션 (주문 생성, 상태 변경, 이용 완료 흐름)</li>
+<li class="task"><input type="checkbox" disabled checked> 4. <code>component-dependency.md</code> — 의존 관계 매트릭스, 통신 패턴, 데이터 흐름도</li>
+<li class="task"><input type="checkbox" disabled checked> 5. <code>application-design.md</code> — 위 문서 통합본</li>
+<li class="task"><input type="checkbox" disabled checked> 6. 설계 완결성 점검 (37개 스토리가 컴포넌트에 모두 매핑되는지)</li>
+</ul>
+<hr>
+<h1 id="질문">질문</h1>
+<p>각 <code>[Answer]:</code> 뒤에 선택지 letter를 적어주세요. 질문마다 제 추천을 <strong>(추천)</strong>으로 표시했습니다. 전부 추천대로 하시려면 채팅으로 &quot;추천대로&quot;라고만 하셔도 됩니다.</p>
+<h2 id="question-1">Question 1</h2>
+<p>고객용 화면과 관리자용 화면을 프론트엔드 앱 몇 개로 만들까요?</p>
+<p>A) 앱 1개 — 하나의 React+Vite 앱에서 경로로 구분 (<code>/table/...</code> 고객용, <code>/admin/...</code> 관리자용). 공통 컴포넌트를 공유하고 빌드와 실행이 한 번에 끝남 <strong>(추천)</strong></p>
+<p>B) 앱 2개 — <code>customer-web</code>, <code>admin-web</code>을 별도 Vite 프로젝트로 분리. 서로 독립적이지만 설정과 빌드가 두 번 필요함</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+<h2 id="question-2">Question 2</h2>
+<p>백엔드 코드 구조는 어떻게 나눌까요?</p>
+<p>A) 계층형 — <code>router</code>(API) → <code>service</code>(비즈니스 로직) → <code>repository</code>(DB 접근). 비즈니스 로직을 테스트하기 쉬움 <strong>(추천)</strong></p>
+<p>B) 단순형 — router에서 ORM을 직접 호출. 코드량은 적지만 로직이 API 코드와 섞임</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+<h2 id="question-3">Question 3</h2>
+<p>DB 접근 라이브러리는 무엇을 쓸까요?</p>
+<p>A) SQLAlchemy 2.0 — 가장 널리 쓰이고 트랜잭션 제어가 명확함. 이용 완료 처리의 원자성에 유리 <strong>(추천)</strong></p>
+<p>B) SQLModel — SQLAlchemy + Pydantic 통합. 코드는 짧지만 고급 기능은 결국 SQLAlchemy 문법 필요</p>
+<p>C) ORM 없이 표준 라이브러리 <code>sqlite3</code> + 직접 SQL</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+<h2 id="question-4">Question 4</h2>
+<p>SSE 이벤트를 연결된 화면들에 전달하는 방식은 어떻게 할까요?</p>
+<p>A) 서버 프로세스 내부의 메모리 이벤트 브로커 (asyncio 큐). 서버는 프로세스 1개로 실행. 추가 인프라가 없어 MVP에 적합하고, 이후 Redis로 바꿀 수 있게 인터페이스로 분리 <strong>(추천)</strong></p>
+<p>B) Redis Pub/Sub — 서버를 여러 프로세스로 늘릴 수 있지만 Redis 컨테이너가 추가로 필요</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+<h2 id="question-5">Question 5</h2>
+<p>SSE 이벤트에 어떤 데이터를 담을까요?</p>
+<p>A) 변경된 데이터를 이벤트에 직접 포함 — 예: <code>order_item.updated</code> 이벤트에 항목 상태와 예상 완료 시각을 담음. 화면이 바로 갱신되고, 재연결 시에만 전체를 다시 조회 <strong>(추천)</strong></p>
+<p>B) 알림만 보내고 화면이 API로 다시 조회 — 예: <code>table.changed</code> 이벤트를 받으면 주문 목록 재요청. 구현은 단순하지만 요청 수가 늘어남</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+<h2 id="question-6">Question 6</h2>
+<p>SSE 연결의 인증은 어떻게 할까요? (참고: 브라우저 기본 <code>EventSource</code>는 Authorization 헤더를 보낼 수 없습니다)</p>
+<p>A) 토큰을 URL 쿼리 파라미터로 전달 — 예: <code>/api/sse/table?token=...</code>. 추가 라이브러리가 필요 없음. 대신 토큰이 서버 접근 로그에 남을 수 있는데, 로컬 MVP에서는 수용 가능 <strong>(추천)</strong></p>
+<p>B) fetch 기반 SSE 라이브러리(<code>@microsoft/fetch-event-source</code>)로 Authorization 헤더 전달 — 토큰이 URL에 노출되지 않지만 프론트엔드 의존성이 1개 늘어남</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+<h2 id="question-7">Question 7</h2>
+<p>프론트엔드 상태 관리(장바구니, 로그인 정보, 실시간 주문 상태)는 어떻게 할까요?</p>
+<p>A) Zustand — 작고 단순함. <code>persist</code> 기능으로 장바구니/로그인 정보의 localStorage 저장이 쉬움 <strong>(추천)</strong></p>
+<p>B) React 기본 기능만 사용 (Context + useReducer) — 의존성은 없지만 localStorage 저장 코드를 직접 작성해야 함</p>
+<p>C) Redux Toolkit — 기능은 많지만 이 규모에는 무거움</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+<h2 id="question-8">Question 8</h2>
+<p>저장소 폴더 구조는 어떻게 할까요?</p>
+<p>A) 한 저장소에 <code>backend/</code>, <code>frontend/</code> 폴더 + 루트에 <code>docker-compose.yml</code> <strong>(추천)</strong></p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천안으로 가자.&quot;)</p>
+</article>
+<nav class="pager"><a class="pager-prev" href="execution-plan.html"><span>← 이전</span>실행 계획</a><a class="pager-next" href="../application-design/application-design.html"><span>다음 →</span>애플리케이션 설계 통합본</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

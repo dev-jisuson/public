@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>테이블오더 — AI-DLC 산출물 · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../index.html">홈</a></li><li><a href="../seminar.html">세미나 진행 순서</a></li><li><a href="../aidlc.html">AI-DLC 소개</a></li><li><a href="index.html" class="active" aria-current="page">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="inception/user-stories/personas.html">페르소나</a></li><li><a href="inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="inception/application-design/components.html">컴포넌트</a></li><li><a href="inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="inception/application-design/services.html">서비스</a></li><li><a href="inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">세미나 · <code>docs/tableorder/README.md</code></div>
+<article class="markdown"><h1 id="테이블오더--ai-dlc-산출물">테이블오더 — AI-DLC 산출물</h1>
+<p>AI-DLC로 태블릿 주문(고객) + 관리자 화면 MVP를 만들면서 생긴 문서 전체입니다. 코드는 이 저장소에 포함하지 않았습니다.
+AI-DLC 소개와 설치 방법은 <a href="../aidlc.html">저장소 README</a>를 참고하세요.</p>
+<h2 id="구성">구성</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>경로</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="input/table-order-requirements.html"><code>input/</code></a></td>
+<td>처음 주어진 원본 요구사항 (<a href="input/table-order-requirements.html"><code>table-order-requirements.md</code></a>, <a href="input/constraints.html"><code>constraints.md</code></a>)</td>
+</tr>
+<tr>
+<td><a href="inception/requirements/requirement-verification-questions.html"><code>inception/requirements/</code></a></td>
+<td>요구사항 분석: AI의 질문 3세트(총 27문항)와 답변, 정리된 <a href="inception/requirements/requirements.html"><code>requirements.md</code></a></td>
+</tr>
+<tr>
+<td><a href="inception/user-stories/stories.html"><code>inception/user-stories/</code></a></td>
+<td>페르소나, 스토리 37개 (Given/When/Then)</td>
+</tr>
+<tr>
+<td><a href="inception/application-design/application-design.html"><code>inception/application-design/</code></a></td>
+<td>컴포넌트, 서비스, 메서드, 유닛(backend, frontend) 정의와 의존성</td>
+</tr>
+<tr>
+<td><a href="inception/plans/execution-plan.html"><code>inception/plans/</code></a></td>
+<td>워크플로우 실행 계획, 단계별 계획서와 질문</td>
+</tr>
+<tr>
+<td><a href="construction/backend/functional-design/domain-entities.html"><code>construction/backend/functional-design/</code></a></td>
+<td>도메인 엔티티, 비즈니스 규칙, 비즈니스 로직 모델</td>
+</tr>
+<tr>
+<td><a href="construction/plans/backend-code-generation-plan.html"><code>construction/plans/</code></a></td>
+<td>기능 설계 계획, 유닛별 코드 생성 계획 (체크박스 진행 기록)</td>
+</tr>
+<tr>
+<td><a href="construction/backend/code/code-summary.html"><code>construction/backend/code/</code></a>, <a href="construction/frontend/code/code-summary.html"><code>construction/frontend/code/</code></a></td>
+<td>코드 요약 (구조, 결정, 테스트, 검증 결과)</td>
+</tr>
+<tr>
+<td><a href="construction/build-and-test/build-and-test-summary.html"><code>construction/build-and-test/</code></a></td>
+<td>빌드·단위·연동·성능·E2E 테스트 안내와 결과 요약</td>
+</tr>
+<tr>
+<td><a href="aidlc-state.html"><code>aidlc-state.md</code></a></td>
+<td>단계별 진행 상태</td>
+</tr>
+<tr>
+<td><a href="audit.html"><code>audit.md</code></a></td>
+<td>전체 진행 기록 (사용자 입력 원문, 승인 시각, AI 응답)</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="한눈에-보기">한눈에 보기</h2>
+<ul>
+<li><strong>소요 시간</strong>: 2026-10-14 11:36 ~ 14:38 (약 3시간, 11:54–13:07 기록 공백 약 1시간 10분 포함). Build and Test 승인까지 기준이며, 이후 UI 개선(같은 날 15:25까지)과 실행 환경 준비(10-16) 기록은 <code>audit.md</code> 끝부분에 있음</li>
+<li><strong>실행 단계</strong>: Workspace Detection → Requirements Analysis → User Stories → Workflow Planning → Application Design → Units Generation → Functional Design(backend) → Code Generation → Build and Test</li>
+<li><strong>건너뛴 단계</strong>: Reverse Engineering(greenfield), NFR Requirements, NFR Design, Infrastructure Design, Operations(placeholder)</li>
+<li><strong>Unit 2개</strong>: <code>backend</code>(FastAPI + SQLite + SSE), <code>frontend</code>(React + Vite, 고객 <code>/table</code> + 관리자 <code>/admin</code>)</li>
+<li><strong>테스트</strong>: backend pytest 73, frontend Vitest 115 (이후 UI 개선 후 131), integration 9, 실제 Chrome E2E 7 통과</li>
+<li><strong>성능</strong>: 관리자 구독 50·주문 200건에서 PASS (최대 658ms). 구독 200·주문 500건·동시 20에서는 최대 지연 2,218ms로 2초 기준 FAIL (SQLite 쓰기 직렬화, 튜닝하지 않음)</li>
+<li><strong>범위 변경<strong>: Code Generation 중 사용자 지시로 </strong>인증 제외</strong> (설계 문서의 인증 관련 내용은 코드와 다름. <a href="construction/backend/code/code-summary.html"><code>construction/backend/code/code-summary.md</code></a> 참고)</li>
+</ul>
+<h2 id="건너뛴-단계는-어떤-경우에-필요한가">건너뛴 단계는 어떤 경우에 필요한가</h2>
+<p>AI-DLC는 모든 단계가 강제가 아니라 <strong>상황에 따라 조건부</strong>로 실행된다. 이번 프로젝트가 건너뛴 단계들은 아래와 같은 상황이면 넣어야 한다.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>이번 생략 사유</th>
+<th>넣어야 하는 경우 (예시)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reverse Engineering</strong></td>
+<td>그린필드 — 기존 코드 없음</td>
+<td>레거시 시스템에 신규 기능 추가, 유지보수 중인 모놀리스 리팩토링</td>
+</tr>
+<tr>
+<td><strong>NFR Requirements</strong></td>
+<td>기술 스택과 성능 목표가 이미 결정</td>
+<td>운영 트래픽을 받는 프로덕션 서비스, 성능/가용성 SLA가 중요한 B2B</td>
+</tr>
+<tr>
+<td><strong>NFR Design</strong></td>
+<td>NFR Requirements를 생략해서 자동 생략</td>
+<td>보안이 중요한 금융·의료, 캐싱·큐 등 비기능 아키텍처가 필요한 서비스</td>
+</tr>
+<tr>
+<td><strong>Infrastructure Design</strong></td>
+<td>로컬 전용 MVP</td>
+<td>AWS·GCP 등에 실제 배포, 멀티 리전·CDN·오토스케일링 필요</td>
+</tr>
+<tr>
+<td><strong>Operations (v1)</strong></td>
+<td>v1에서는 아직 placeholder</td>
+<td>— (v2에서 본격화 예정)</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>상세 사유는 <a href="inception/plans/execution-plan.html"><code>inception/plans/execution-plan.md</code></a>에 적혀 있다.</p>
+</blockquote>
+<h2 id="산출물-읽을-때-참고">산출물 읽을 때 참고</h2>
+<p>산출물은 AI-DLC 진행 중 생성된 그대로 두었다. 그래서 아래 사항은 문서 안에서 고치지 않고 여기에만 적는다.</p>
+<ul>
+<li><strong>경로 이름</strong>: 원래 프로젝트의 <code>aidlc-docs/</code>가 이 저장소의 <code>docs/tableorder/</code>이고, <code>requirements/</code>가 <a href="input/table-order-requirements.html"><code>input/</code></a>이다. 산출물 본문에는 원래 경로가 그대로 적혀 있다.</li>
+<li><strong>시간 표기</strong>: <code>audit.md</code>·<code>aidlc-state.md</code> 앞부분의 <code>...Z</code> 시각은 실제로는 한국 시간(KST)이다. Code Generation 계획 승인(14:01) 이후 항목은 <code>+09:00</code>으로 표기되어 있다.</li>
+<li><strong>인증 제외의 영향</strong>: 아래 문서는 인증(로그인·JWT·잠금) 설계를 그대로 담고 있다. 실제 코드는 매장 코드·테이블 번호 헤더로 식별하고 로그인이 없다.
+<ul>
+<li><a href="inception/requirements/requirements.html"><code>requirements.md</code></a></li>
+<li><a href="inception/user-stories/stories.html"><code>stories.md</code></a>의 US-C01–C03, US-A01–A03, US-A12(테이블 비밀번호), US-I06(관리자 토큰)</li>
+<li><a href="inception/application-design/application-design.html"><code>inception/application-design/</code></a></li>
+<li><a href="construction/backend/functional-design/domain-entities.html"><code>construction/backend/functional-design/</code></a></li>
+</ul>
+</li>
+<li><strong>작성 시점 기록</strong>: 다음 문서에는 작성 당시 상태가 남아 있다.
+<ul>
+<li><a href="inception/plans/execution-plan.html"><code>execution-plan.md</code></a>의 다이어그램·체크박스는 Workflow Planning 진행 시점 기준이다(이후 단계가 미완료로 보임).</li>
+<li><a href="aidlc-state.html"><code>aidlc-state.md</code></a> 상단의 <code>Current Stage</code> 등 일부 필드는 마지막 단계에서 갱신되지 않았다.</li>
+</ul>
+</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="../aidlc.html"><span>← 이전</span>AI-DLC 소개</a><a class="pager-next" href="input/table-order-requirements.html"><span>다음 →</span>요구사항 정의서</a></nav>
+</main>
+</div>
+<script src="../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

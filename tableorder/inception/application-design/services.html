@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Services · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="application-design.html">애플리케이션 설계 통합본</a></li><li><a href="components.html">컴포넌트</a></li><li><a href="component-methods.html">컴포넌트 메서드</a></li><li><a href="services.html" class="active" aria-current="page">서비스</a></li><li><a href="component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="unit-of-work.html">유닛 정의</a></li><li><a href="unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 설계 · <code>docs/tableorder/inception/application-design/services.md</code></div>
+<article class="markdown"><h1 id="services">Services</h1>
+<h2 id="서비스-공통-원칙">서비스 공통 원칙</h2>
+<ul>
+<li><strong>트랜잭션 경계</strong>
+<ul>
+<li>쓰기를 하는 서비스 메서드 1회 호출이 DB 트랜잭션 1개입니다.</li>
+<li>라우터가 <code>get_db</code> 세션을 넘기고, 서비스가 커밋/롤백을 결정합니다.</li>
+</ul>
+</li>
+<li><strong>커밋 후 발행</strong>
+<ul>
+<li>SSE 이벤트는 커밋이 성공한 뒤에만 <code>EventPublisher</code>로 발행합니다.</li>
+<li>롤백되면 이벤트도 발행하지 않습니다. US-A13 AC3, US-A14 AC4를 이 원칙으로 충족합니다.</li>
+</ul>
+</li>
+<li><strong>범위 강제</strong>
+<ul>
+<li>모든 조회와 변경은 <code>ctx.store_id</code>로 제한합니다.</li>
+<li>태블릿 요청은 추가로 <code>ctx.table_id</code>로 제한합니다 (US-I06).</li>
+</ul>
+</li>
+<li><strong>서버 기준 계산</strong>: 주문 금액, 주문 번호, 예상 완료 시각, 주문 상태는 서버만 계산합니다. 클라이언트가 보낸 값은 신뢰하지 않습니다.</li>
+<li><strong>도메인 예외</strong>: 서비스는 도메인 예외만 던지고, <code>core.errors</code>가 HTTP 상태로 변환합니다.</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>예외</th>
+<th>HTTP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InvalidCredentials</td>
+<td>401</td>
+</tr>
+<tr>
+<td>InvalidToken</td>
+<td>401</td>
+</tr>
+<tr>
+<td>AccountLocked</td>
+<td>423</td>
+</tr>
+<tr>
+<td>NotFound (다른 매장 데이터 포함)</td>
+<td>404</td>
+</tr>
+<tr>
+<td>InvalidStateTransition</td>
+<td>409</td>
+</tr>
+<tr>
+<td>DuplicateTableNumber</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ValidationError</td>
+<td>422</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="주요-오케스트레이션-흐름">주요 오케스트레이션 흐름</h2>
+<h3 id="s1-태블릿-로그인--자동-재로그인-us-c01c03">S1. 태블릿 로그인 / 자동 재로그인 (US-C01~C03)</h3>
+<ol>
+<li><code>table_auth_router</code>가 <code>AuthService.login_table</code>을 호출합니다.</li>
+<li><code>LoginAttemptService.ensure_not_locked</code>로 잠금 여부를 확인합니다.</li>
+<li><code>StoreRepository.get_by_code</code>, <code>TableRepository.get_by_number</code>로 매장과 테이블을 찾습니다.</li>
+<li><code>security.verify_password</code>로 비밀번호를 확인합니다.
+<ul>
+<li>실패: <code>record_failure</code> 후 <code>InvalidCredentials</code></li>
+<li>성공: <code>reset</code> 후 16시간 table 토큰 발급</li>
+</ul>
+</li>
+<li>프론트엔드 <code>apiClient</code>는 table 요청이 401을 받으면 <code>tableAuthStore.relogin()</code>을 1회 시도합니다.
+<ul>
+<li>재로그인 성공: 원래 요청을 재시도합니다.</li>
+<li>재로그인 실패: <code>/table/setup</code>으로 이동합니다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="s2-주문-생성-us-c10c12-us-i01">S2. 주문 생성 (US-C10~C12, US-I01)</h3>
+<ol>
+<li><code>table_router</code>가 <code>OrderService.create_order(ctx, items)</code>를 호출합니다.</li>
+<li><code>MenuRepository.get_menus</code>로 메뉴를 가져옵니다. 매장 메뉴가 아닌 항목이 있으면 거부합니다.</li>
+<li><code>TableSessionService.get_or_start</code>로 활성 세션을 가져오고, 없으면 새로 만듭니다.</li>
+<li><code>OrderRepository.next_order_no</code>로 주문 번호를 채번합니다.</li>
+<li>Order와 OrderItem을 생성합니다. 메뉴명/단가 스냅샷을 저장하고 모든 항목을 <code>대기중</code>으로 둡니다.</li>
+<li>커밋합니다.</li>
+<li><code>EventPublisher.order_created</code>가 <code>store:{id}</code>와 <code>table:{id}</code> 채널에 발행합니다.</li>
+<li>응답으로 <code>OrderDTO</code>(주문 번호 포함)를 돌려줍니다.
+<ul>
+<li>프론트엔드는 장바구니를 비우고 성공 화면을 보여준 뒤 5초 후 메뉴 화면으로 이동합니다.</li>
+<li>실패 응답이면 장바구니를 유지합니다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="s3-메뉴-항목-상태-변경-us-a08a11-us-i02">S3. 메뉴 항목 상태 변경 (US-A08~A11, US-I02)</h3>
+<ol>
+<li><code>admin_order_router</code>가 <code>OrderItemService</code>의 메서드 중 하나를 호출합니다.
+<ul>
+<li><code>start_item</code>, <code>start_all</code>, <code>update_estimate</code>, <code>complete_item</code></li>
+</ul>
+</li>
+<li><code>OrderRepository.get_item</code>으로 항목을 가져오고 매장 범위를 확인합니다.</li>
+<li>상태 전이가 유효한지 검사합니다. 유효하지 않으면 <code>InvalidStateTransition</code>입니다.</li>
+<li>상태, 예상 완료 시각, 완료 시각을 갱신합니다.</li>
+<li><code>derive_order_status</code>로 주문 상태를 다시 계산해 저장합니다.</li>
+<li>커밋합니다.</li>
+<li><code>EventPublisher.order_items_updated</code>가 매장 채널과 테이블 채널에 발행합니다.
+<ul>
+<li>태블릿 <code>TableEventBridge</code>는 항목이 <code>완료</code>로 바뀌면 완료 토스트를 띄웁니다 (US-C16).</li>
+</ul>
+</li>
+</ol>
+<h3 id="s4-주문-삭제-us-a13-us-i04">S4. 주문 삭제 (US-A13, US-I04)</h3>
+<ol>
+<li><code>OrderService.delete_order</code>가 주문을 조회하고 매장 범위를 확인합니다.</li>
+<li>주문과 그 항목들을 삭제합니다.</li>
+<li>세션 총액을 다시 계산합니다.</li>
+<li>커밋합니다.</li>
+<li><code>order.deleted</code> 이벤트를 발행합니다. 페이로드에는 <code>table_total</code>이 들어갑니다.</li>
+</ol>
+<h3 id="s5-이용-완료-us-a14-us-i03">S5. 이용 완료 (US-A14, US-I03)</h3>
+<ol>
+<li><code>TableSessionService.complete_session(ctx, table_id)</code>를 호출합니다.</li>
+<li>활성 세션을 조회합니다. 세션이 없으면 아무것도 처리하지 않고 성공을 돌려줍니다. 리셋할 대상이 없기 때문입니다.</li>
+<li>아래 작업을 단일 트랜잭션으로 처리합니다.
+<ol>
+<li>세션의 모든 주문에 <code>archived_at = 이용 완료 시각</code>을 설정합니다(보관 표시). 주문 데이터는 삭제하거나 복사하지 않습니다.</li>
+<li>세션에 종료 시각을 기록하고 비활성화합니다.</li>
+<li>이후 현재 주문 조회와 대시보드 총액은 <code>archived_at IS NULL</code>인 활성 세션 주문만 대상으로 합니다.</li>
+</ol>
+</li>
+<li>커밋합니다. 실패하면 전체 롤백하고 이벤트도 발행하지 않습니다.</li>
+<li><code>table.session_completed</code> 이벤트를 발행합니다.
+<ul>
+<li>대시보드는 해당 카드를 0원으로 리셋합니다.</li>
+<li>태블릿은 장바구니와 주문 내역을 초기화하고 메뉴 화면으로 이동합니다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="s6-실시간-구독과-재연결-동기화-us-i05">S6. 실시간 구독과 재연결 동기화 (US-I05)</h3>
+<ol>
+<li><code>sse_router</code>가 쿼리 토큰을 <code>deps</code>로 검증하고 채널을 결정합니다.
+<ul>
+<li>admin 토큰: <code>store:{store_id}</code></li>
+<li>table 토큰: <code>table:{table_id}</code></li>
+</ul>
+</li>
+<li><code>EventBroker.subscribe(channel)</code>의 결과를 <code>text/event-stream</code>으로 스트리밍합니다. 15초마다 ping을 보냅니다.</li>
+<li>클라이언트가 연결을 끊으면 구독 큐를 정리합니다.</li>
+<li>프론트엔드 <code>useEventStream</code>이 재연결을 맡습니다.
+<ul>
+<li>연결 오류가 나면 지수 백오프로 재연결합니다 (최대 10초).</li>
+<li>재연결되면 <code>onResync</code>를 호출합니다.</li>
+</ul>
+</li>
+<li><code>onResync</code>에서 화면별로 전체 상태를 다시 조회합니다.
+<ul>
+<li>관리자: <code>GET /api/admin/dashboard</code></li>
+<li>태블릿: <code>GET /api/table/state</code></li>
+<li>태블릿은 서버 응답의 <code>session_id</code>가 로컬에 저장한 값과 다르거나 <code>null</code>이면 장바구니도 비웁니다 (US-I03 AC3).</li>
+</ul>
+</li>
+</ol>
+<h3 id="s7-관리자-로그인--만료-us-a01a03">S7. 관리자 로그인 / 만료 (US-A01~A03)</h3>
+<ul>
+<li>흐름은 S1과 같습니다. <code>LoginKey</code>는 <code>(&quot;admin&quot;, store_code, username)</code>입니다.</li>
+<li>프론트엔드 <code>adminAuthStore</code>는 <code>expiresAt</code>이 되면 타이머로 자동 로그아웃합니다.</li>
+<li>그 전이라도 API가 401을 받으면 즉시 로그아웃합니다.</li>
+</ul>
+<hr>
+<h2 id="서비스--스토리-매핑-점검">서비스 ↔ 스토리 매핑 점검</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>서비스</th>
+<th>커버 스토리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AuthService / LoginAttemptService</td>
+<td>C01, C02, C03, A01, A02, A03</td>
+</tr>
+<tr>
+<td>MenuService</td>
+<td>C04, C05</td>
+</tr>
+<tr>
+<td>OrderService</td>
+<td>C10, C11, C12, C13, A13, I01, I04</td>
+</tr>
+<tr>
+<td>OrderItemService</td>
+<td>C14, A08, A09, A10, A11, I02</td>
+</tr>
+<tr>
+<td>TableService</td>
+<td>A12</td>
+</tr>
+<tr>
+<td>TableSessionService</td>
+<td>C10(AC3), A14, I03</td>
+</tr>
+<tr>
+<td>DashboardService</td>
+<td>A04, A05, A06, A07</td>
+</tr>
+<tr>
+<td>OrderHistoryService</td>
+<td>A15</td>
+</tr>
+<tr>
+<td>TableStateService</td>
+<td>I03(AC3), I05</td>
+</tr>
+<tr>
+<td>EventBroker / EventPublisher</td>
+<td>C15, C16, A05, I01~I05</td>
+</tr>
+<tr>
+<td>범위 강제 (deps + repositories)</td>
+<td>I06</td>
+</tr>
+<tr>
+<td>프론트엔드 전용</td>
+<td>C06, C07, C08, C09 (cartStore)</td>
+</tr>
+</tbody>
+</table></div>
+<p>37개 스토리가 모두 하나 이상의 컴포넌트에 매핑됩니다.</p>
+</article>
+<nav class="pager"><a class="pager-prev" href="component-methods.html"><span>← 이전</span>컴포넌트 메서드</a><a class="pager-next" href="component-dependency.html"><span>다음 →</span>컴포넌트 의존성</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

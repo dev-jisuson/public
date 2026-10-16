@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>요구사항 재검토 확인 질문 (Requirements Review Questions) · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="requirement-review-questions.html" class="active" aria-current="page">질문 3차 · 재검토 (7문항)</a></li><li><a href="requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../application-design/components.html">컴포넌트</a></li><li><a href="../application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../application-design/services.html">서비스</a></li><li><a href="../application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 요구사항 · <code>docs/tableorder/inception/requirements/requirement-review-questions.md</code></div>
+<article class="markdown"><h1 id="요구사항-재검토-확인-질문-requirements-review-questions">요구사항 재검토 확인 질문 (Requirements Review Questions)</h1>
+<p>원본 요구사항 문서, 예외사항 문서, 지금까지의 답변, 그리고 <code>requirements.md</code>를 다시 대조했습니다. 그 결과 <strong>원본 문서끼리 서로 맞지 않는 부분</strong>과 <strong>아직 정해지지 않은 부분</strong>을 찾았습니다. <code>[Answer]:</code> 태그 <strong>바로 뒤에</strong> 선택지 letter를 입력해 주세요.</p>
+<hr>
+<h2 id="issue-1-메뉴-관리가-mvp-범위에-들어가는지-원본-문서-내-불일치">Issue 1: 메뉴 관리가 MVP 범위에 들어가는지 (원본 문서 내 불일치)</h2>
+<p>원본 3.2.4절에는 메뉴 관리(등록/수정/삭제/순서 조정)가 기능 요구사항으로 정의되어 있습니다. 그런데 4절 &quot;MVP 개발 범위&quot;의 관리자용 목록에는 빠져 있습니다(매장 인증, 실시간 모니터링, 테이블 관리만 있음). 현재 <code>requirements.md</code>에는 메뉴 관리를 포함해 두었습니다.</p>
+<h3 id="question-1">Question 1</h3>
+<p>메뉴 관리 기능을 이번 구현 범위에 넣을까요?</p>
+<p>A) 포함 — 3.2.4절 전체 구현 (등록/수정/삭제/노출 순서 조정)</p>
+<p>B) 제외 — 메뉴는 seed 데이터로만 제공하고, 관리 화면은 만들지 않음</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B (채팅으로 변경: &quot;마음이 바꼇어. 메뉴관리 넣지말고, 디폴트로 주어진 메뉴기반으로 하자. 이건 mvp 니까.&quot; — 이전 답변 A 취소)</p>
+<h3 id="question-2">Question 2</h3>
+<p>(Q1이 A인 경우) 메뉴의 &quot;카테고리&quot;는 어떻게 관리할까요? 원본 문서에는 카테고리를 생성/수정하는 기능에 대한 정의가 없습니다.</p>
+<p>A) 카테고리도 관리자가 추가/수정/삭제/순서 조정 가능</p>
+<p>B) 카테고리는 seed 데이터로 고정, 메뉴 등록 시 기존 카테고리 중에서 선택만 가능</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> N/A (Q1이 B로 바뀌어서 해당 없음 — 카테고리와 메뉴 모두 seed 데이터로 고정)</p>
+<h2 id="issue-2-태블릿-16시간-세션과-테이블-세션은-서로-다른-개념">Issue 2: 태블릿 &quot;16시간 세션&quot;과 &quot;테이블 세션&quot;은 서로 다른 개념</h2>
+<p>원본 3.2.3-1절에는 태블릿 초기 설정 시 <strong>&quot;16시간 세션 생성&quot;</strong>이라고 되어 있습니다. 반면 부록의 <strong>&quot;테이블 세션&quot;</strong>은 &quot;첫 주문부터 이용 완료까지&quot;를 뜻합니다. 저는 두 가지를 별개로 해석했습니다.</p>
+<ul>
+<li>태블릿 인증 세션: 16시간짜리 로그인 토큰</li>
+<li>테이블 이용 세션: 식사 1회 단위</li>
+</ul>
+<h3 id="question-3-재작성--사용자-요청-로그인-기능이-필요한건지-다시-확인">Question 3 (재작성 — 사용자 요청: &quot;로그인 기능이 필요한건지 다시 확인&quot;)</h3>
+<p>태블릿 로그인을 어떻게 할까요?</p>
+<p>원본 문서 확인 결과:</p>
+<ul>
+<li>3.1.1절과 4절 MVP 범위 모두 &quot;테이블 태블릿 자동 로그인 및 세션 관리&quot;를 <strong>필수</strong>로 적고 있습니다.</li>
+<li>constraints.md에서 제외한 것은 &quot;복잡한 인증(OAuth, SNS, 2FA)&quot;뿐이고, 비밀번호 로그인 자체는 제외 대상이 아닙니다.</li>
+<li>이 로그인의 실제 역할은 &quot;이 태블릿이 어느 매장의 몇 번 테이블인지&quot;를 서버가 믿을 수 있게 하는 것입니다. 로그인이 없으면 URL이나 API를 아는 사람이 아무 테이블 이름으로 주문을 넣을 수 있습니다.</li>
+</ul>
+<p>A) 원본대로 비밀번호 로그인 유지 + 저장된 정보로 자동 재로그인 (토큰 만료를 고객이 느끼지 못함. 비밀번호가 localStorage에 평문으로 저장됨)</p>
+<p>B) 원본대로 비밀번호 로그인 유지, 토큰만 저장 (16시간 지나면 관리자가 다시 설정해야 함)</p>
+<p>C) 태블릿 비밀번호 로그인 제거 — 초기 설정 때 매장ID와 테이블 번호만 입력해서 localStorage에 저장 (가장 단순함. 대신 원본 MVP 요구사항과 다르고, 다른 테이블 이름으로 주문을 넣는 것을 막지 못함. 로컬 데모용으로만 적합)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;니 추천대로&quot;)</p>
+<h3 id="question-4">Question 4</h3>
+<p>관리자가 &quot;이용 완료&quot;를 누르지 않은 채 테이블 세션이 오래 열려 있으면 어떻게 할까요? (예: 마감 후 처리를 잊은 경우)</p>
+<p>A) 자동 종료 없음 — 관리자가 &quot;이용 완료&quot;를 눌러야만 종료</p>
+<p>B) 마지막 주문 후 일정 시간(예: 16시간)이 지나면 자동으로 이용 완료 처리</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;니 추천대로&quot;)</p>
+<h2 id="issue-3-이용-완료-시-태블릿-화면-처리">Issue 3: 이용 완료 시 태블릿 화면 처리</h2>
+<p>이용 완료가 되면 서버의 주문 목록은 리셋됩니다. 하지만 태블릿의 <strong>localStorage 장바구니</strong>에는 이전 고객이 담아둔 메뉴가 남아 있을 수 있습니다.</p>
+<h3 id="question-5">Question 5</h3>
+<p>관리자가 &quot;이용 완료&quot;를 누르면 해당 테이블의 태블릿은 어떻게 할까요?</p>
+<p>A) SSE로 이벤트를 받아서 장바구니를 비우고 주문 내역을 초기화한 뒤 메뉴 화면으로 이동</p>
+<p>B) 주문 내역만 초기화하고 장바구니는 그대로 유지</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;니 추천대로&quot;)</p>
+<h2 id="issue-4-주문-삭제와-메뉴-항목-단위-상태의-관계">Issue 4: 주문 삭제와 메뉴 항목 단위 상태의 관계</h2>
+<p>메뉴 항목 단위로 상태를 관리하기로 했기 때문에(CQ1: B), 일부 메뉴는 이미 &quot;완료&quot;(서빙됨)인 주문이 생길 수 있습니다. 원본의 &quot;주문 삭제&quot;는 주문 전체를 삭제하는 기능입니다.</p>
+<h3 id="question-6">Question 6</h3>
+<p>주문 삭제는 어떤 단위로 할까요?</p>
+<p>A) 주문 단위로만 삭제 (상태와 관계없이 주문 전체 삭제)</p>
+<p>B) 주문 단위 삭제 + 주문 안의 개별 메뉴 항목 삭제도 가능 (예: 고객이 메뉴 하나만 취소)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;니 추천대로&quot;)</p>
+<h2 id="issue-5-cq3-답변-재확인">Issue 5: CQ3 답변 재확인</h2>
+<p>이전 질문 파일의 CQ3 답변이 <code>[Answer]:</code> 뒤가 아니라 선택지 C 줄 끝(&quot;C) 둘 다 표시A&quot;)에 적혀 있었습니다. 현재는 A로 해석해 두었습니다.</p>
+<h3 id="question-7">Question 7</h3>
+<p>고객 화면에 예상 시간을 어떻게 보여줄까요?</p>
+<p>A) 남은 시간 카운트다운만 — &quot;약 12분 남음&quot;</p>
+<p>B) 완료 예정 시각만 — &quot;12:45 완료 예정&quot;</p>
+<p>C) 둘 다 — &quot;약 12분 남음 (12:45 예정)&quot;</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;니 추천대로&quot;)</p>
+<hr>
+<h2 id="참고-제가-정한-사소한-가정-변경을-원하시면-알려주세요">참고: 제가 정한 사소한 가정 (변경을 원하시면 알려주세요)</h2>
+<p>아래 항목은 질문 없이 진행합니다. 기존 <code>requirements.md</code> 7절의 가정 2~10번도 그대로 유지합니다.</p>
+<ul>
+<li>주문 번호: 매장별로 하루 단위로 순차 증가 (예: 0001, 0002…)</li>
+<li>고객 주문 내역 정렬: 최신 주문이 위</li>
+<li>주문 항목에 메뉴명과 단가를 주문 시점 값으로 저장 (나중에 메뉴를 수정하거나 삭제해도 과거 주문은 그대로 유지)</li>
+<li>메뉴 삭제는 실제 삭제가 아니라 &quot;숨김&quot;(soft delete) 처리 — Q1이 B로 바뀌어서 해당 없음</li>
+<li>로그인 시도 제한(5회/15분)은 관리자 로그인과 태블릿 로그인 모두에 적용</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="requirement-clarification-questions.html"><span>← 이전</span>질문 2차 · 명확화 (8문항)</a><a class="pager-next" href="requirements.html"><span>다음 →</span>요구사항 정리</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

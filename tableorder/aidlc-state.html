@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AI-DLC State Tracking · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../index.html">홈</a></li><li><a href="../seminar.html">세미나 진행 순서</a></li><li><a href="../aidlc.html">AI-DLC 소개</a></li><li><a href="index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="inception/user-stories/personas.html">페르소나</a></li><li><a href="inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="inception/application-design/components.html">컴포넌트</a></li><li><a href="inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="inception/application-design/services.html">서비스</a></li><li><a href="inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="aidlc-state.html" class="active" aria-current="page">진행 상태 (aidlc-state)</a></li><li><a href="audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">기록 · <code>docs/tableorder/aidlc-state.md</code></div>
+<article class="markdown"><h1 id="ai-dlc-state-tracking">AI-DLC State Tracking</h1>
+<h2 id="project-information">Project Information</h2>
+<ul>
+<li><strong>Project Name</strong>: Table Order Service (테이블오더)</li>
+<li><strong>Project Type</strong>: Greenfield</li>
+<li><strong>Start Date</strong>: 2026-10-14T11:36:34Z</li>
+<li><strong>Current Stage</strong>: CONSTRUCTION - Code Generation backend (Part 1 Planning, awaiting plan approval)</li>
+</ul>
+<h2 id="workspace-state">Workspace State</h2>
+<ul>
+<li><strong>Existing Code</strong>: No</li>
+<li><strong>Programming Languages</strong>: None (greenfield)</li>
+<li><strong>Build System</strong>: None</li>
+<li><strong>Project Structure</strong>: Empty (only requirements/ and .kiro/ present)</li>
+<li><strong>Reverse Engineering Needed</strong>: No</li>
+<li><strong>Workspace Root</strong>: tableorder</li>
+</ul>
+<h2 id="code-location-rules">Code Location Rules</h2>
+<ul>
+<li><strong>Application Code</strong>: Workspace root (NEVER in aidlc-docs/)</li>
+<li><strong>Documentation</strong>: aidlc-docs/ only</li>
+<li><strong>Structure patterns</strong>: See code-generation.md Critical Rules</li>
+</ul>
+<h2 id="extension-configuration">Extension Configuration</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Enabled</th>
+<th>Decided At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security Baseline</td>
+<td>No</td>
+<td>Requirements Analysis</td>
+</tr>
+<tr>
+<td>Property-Based Testing</td>
+<td>No</td>
+<td>Requirements Analysis</td>
+</tr>
+<tr>
+<td>Resiliency Baseline</td>
+<td>No</td>
+<td>Requirements Analysis</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="execution-plan-summary">Execution Plan Summary</h2>
+<ul>
+<li><strong>Stages to Execute</strong>: Application Design, Units Generation, Functional Design (backend unit), Code Generation (per unit), Build and Test</li>
+<li><strong>Stages to Skip</strong>:
+<ul>
+<li>Reverse Engineering — greenfield</li>
+<li>NFR Requirements — tech stack &amp; NFR targets already defined</li>
+<li>NFR Design — NFR Requirements skipped</li>
+<li>Infrastructure Design — local-only MVP</li>
+</ul>
+</li>
+</ul>
+<h2 id="stage-progress">Stage Progress</h2>
+<h3 id="-inception-phase">🔵 INCEPTION PHASE</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> Workspace Detection</li>
+<li class="task"><input type="checkbox" disabled checked> Reverse Engineering - SKIPPED</li>
+<li class="task"><input type="checkbox" disabled checked> Requirements Analysis (approved 2026-10-14T13:19:12Z)</li>
+<li class="task"><input type="checkbox" disabled checked> User Stories (approved 2026-10-14T13:33:17Z)</li>
+<li class="task"><input type="checkbox" disabled checked> Workflow Planning (approved 2026-10-14T13:36:18Z)</li>
+<li class="task"><input type="checkbox" disabled checked> Application Design - EXECUTE (approved 2026-10-14T13:50:36Z)</li>
+<li class="task"><input type="checkbox" disabled checked> Units Generation - EXECUTE (approved 2026-10-14T13:55:46Z; units: backend, frontend)</li>
+</ul>
+<h3 id="-construction-phase">🟢 CONSTRUCTION PHASE</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> Functional Design - EXECUTE (backend unit only) — approved 2026-10-14T14:00:34Z</li>
+<li class="task"><input type="checkbox" disabled> NFR Requirements - SKIP</li>
+<li class="task"><input type="checkbox" disabled> NFR Design - SKIP</li>
+<li class="task"><input type="checkbox" disabled> Infrastructure Design - SKIP</li>
+<li class="task"><input type="checkbox" disabled checked> Code Generation - EXECUTE (backend + frontend approved)</li>
+<li class="task"><input type="checkbox" disabled checked> Build and Test - EXECUTE (approved 2026-10-14T14:38:47+09:00)</li>
+</ul>
+<h3 id="-operations-phase">🟡 OPERATIONS PHASE</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled> Operations - PLACEHOLDER</li>
+</ul>
+<h2 id="current-status">Current Status</h2>
+<ul>
+<li><strong>Lifecycle Phase</strong>: CONSTRUCTION</li>
+<li><strong>Current Stage</strong>: Build and Test — complete, awaiting approval</li>
+<li><strong>Next Stage</strong>: Build and Test</li>
+<li><strong>Status</strong>: Build and Test complete: build OK; unit 73+115, integration 9, browser E2E 7 all pass; performance passes at realistic load (known SQLite write limit at extreme load). Awaiting user approval; next: Operations (placeholder).</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="construction/build-and-test/e2e-test-instructions.html"><span>← 이전</span>E2E 테스트</a><a class="pager-next" href="audit.html"><span>다음 →</span>전체 기록 (audit)</a></nav>
+</main>
+</div>
+<script src="../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

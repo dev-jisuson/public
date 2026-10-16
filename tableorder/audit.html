@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AI-DLC Audit Log · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../index.html">홈</a></li><li><a href="../seminar.html">세미나 진행 순서</a></li><li><a href="../aidlc.html">AI-DLC 소개</a></li><li><a href="index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="inception/user-stories/personas.html">페르소나</a></li><li><a href="inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="inception/application-design/components.html">컴포넌트</a></li><li><a href="inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="inception/application-design/services.html">서비스</a></li><li><a href="inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="audit.html" class="active" aria-current="page">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">기록 · <code>docs/tableorder/audit.md</code></div>
+<article class="markdown"><h1 id="ai-dlc-audit-log">AI-DLC Audit Log</h1>
+<h2 id="initial-user-request">Initial User Request</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T11:36:34Z
+<strong>User Input</strong>: &quot;requirements/ 디렉토리안에 md파일 2개를 읽고 ai-dlc 워크플로를 시작해줘.&quot;
+<strong>AI Response</strong>: Read requirements/constraints.md and requirements/table-order-requirements.md. Started AI-DLC workflow.
+<strong>Context</strong>: Workflow initiation</p>
+<hr>
+<h2 id="workspace-detection">Workspace Detection</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T11:36:34Z
+<strong>AI Response</strong>: Scanned workspace. No existing source code or build files found (only requirements/ and .kiro/ directories). No existing aidlc-state.md. Determined Greenfield project. Reverse Engineering skipped. Proceeding to Requirements Analysis.
+<strong>Context</strong>: INCEPTION - Workspace Detection complete</p>
+<hr>
+<h2 id="requirements-analysis---clarifying-questions">Requirements Analysis - Clarifying Questions</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T11:36:34Z
+<strong>AI Response</strong>: Analyzed requirements documents. Intent: New Project (Greenfield), System-wide scope, Moderate-to-Complex. Requirements are functionally detailed but lack tech stack / architecture / data store decisions. Created aidlc-docs/inception/requirements/requirement-verification-questions.md with 9 clarifying questions plus 3 extension opt-in questions (Security, Property-Based Testing, Resiliency). Awaiting user answers (GATE).
+<strong>Context</strong>: INCEPTION - Requirements Analysis (awaiting answers)</p>
+<hr>
+<h2 id="requirements-analysis---answers-received">Requirements Analysis - Answers Received</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T11:51:45Z
+<strong>User Input</strong>: &quot;답변 완료&quot;
+<strong>AI Response</strong>: Read answers: Q1 B (FastAPI), Q2 A (Vite / Next.js 둘 중 하나 가벼운걸로), Q3 C (SQLite), Q4 A (Docker 는 설치 안되었으면 그냥 로컬에서 실행해도됨. MVP 고려.), Q5 A, Q6 A, Q7 B, Q8 &quot;B + 고객용: 메뉴가 나오기까지 예상 시간 표시, 서빙 직전에 완료됨 확 / 관리자용: 메뉴 준비 시작하면서 예상 시각 입력. 테이블 서빙 직전에 완료 처리.&quot;, Q9 A, Security B, PBT C, Resiliency B. Extensions all disabled (full rule files not loaded). Decisions: React+Vite chosen; Docker 29.9.0 detected so Docker Compose default + local run instructions. Detected ambiguities in Q8 additions (granularity, input format, display format, transition rules, customer update mechanism, completion notice) and Q7 (image provisioning). Created requirement-clarification-questions.md with 8 questions. Awaiting answers (GATE).
+<strong>Context</strong>: INCEPTION - Requirements Analysis (clarification round)</p>
+<hr>
+<h2 id="requirements-analysis---clarification-answers--requirements-document">Requirements Analysis - Clarification Answers &amp; Requirements Document</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T11:54:54Z
+<strong>User Input</strong>: &quot;완료&quot;
+<strong>AI Response</strong>: Read clarification answers: CQ1 B, CQ2 A, CQ3 answer tag empty — &quot;A&quot; written at end of option C line (&quot;C) 둘 다 표시A&quot;), interpreted as A and flagged in requirements, CQ4 A, CQ5 A, CQ6 A, CQ7 B, CQ8 B. Generated aidlc-docs/inception/requirements/requirements.md with 10 documented assumptions (item-level status → derived order status, etc.). Presented approval prompt; next stage User Stories (multi-persona, user-facing → execute).
+<strong>Context</strong>: INCEPTION - Requirements Analysis (awaiting approval)</p>
+<hr>
+<h2 id="requirements-analysis---user-question">Requirements Analysis - User Question</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:07:13Z
+<strong>User Input</strong>: &quot;다음으로 뭐해야해?&quot;
+<strong>AI Response</strong>: Explained that requirements.md is awaiting review/approval; user can request changes or approve to proceed to User Stories. Not treated as approval.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (still awaiting approval)</p>
+<hr>
+<h2 id="requirements-analysis---self-review-request">Requirements Analysis - Self Review Request</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:10:37Z
+<strong>User Input</strong>: &quot;니가 다시 문서 다 읽어봐. 그리고 내 확인 필요한게 있다면 알려줘.&quot;
+<strong>AI Response</strong>: Re-read original requirements, constraints, answers, and requirements.md. Found: (1) menu management defined in 3.2.4 but missing from MVP scope section 4; category management undefined; (2) tablet &quot;16시간 세션&quot; vs &quot;테이블 세션&quot; are distinct concepts — token expiry handling and plaintext password in localStorage; table session auto-expiry undefined; (3) leftover localStorage cart after session end; (4) order delete granularity vs item-level status; (5) CQ3 answer placement ambiguity. Created requirement-review-questions.md with 7 questions plus listed minor assumptions. Awaiting answers (GATE).
+<strong>Context</strong>: INCEPTION - Requirements Analysis (review round)</p>
+<hr>
+<h2 id="requirements-analysis---review-answer-partial-via-chat">Requirements Analysis - Review Answer (partial, via chat)</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:12:09Z
+<strong>User Input</strong>: &quot;1. 메뉴 관리 넣자.&quot;
+<strong>AI Response</strong>: Recorded Review Q1 = A (menu management in scope) in requirement-review-questions.md. Q2–Q7 still unanswered; asked user to continue.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (review round, partial)</p>
+<hr>
+<h2 id="requirements-analysis---review-answer-changed-via-chat">Requirements Analysis - Review Answer Changed (via chat)</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:12:46Z
+<strong>User Input</strong>: &quot;마음이 바꼇어. 메뉴관리 넣지말고, 디폴트로 주어진 메뉴기반으로 하자. 이건 mvp 니까.&quot;
+<strong>AI Response</strong>: Changed Review Q1 from A to B (menu management excluded; menus/categories provided via seed data only). Marked Q2 (category management) as N/A. Q3–Q7 still unanswered.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (review round, partial)</p>
+<hr>
+<h2 id="requirements-analysis---review-q3-re-check-request">Requirements Analysis - Review Q3 Re-check Request</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:14:23Z
+<strong>User Input</strong>: &quot;Q3. 로그인 기능이 필요한건지 다시 확인&quot;
+<strong>AI Response</strong>: Re-checked original docs: tablet auto-login is listed as mandatory in 3.1.1 and section 4 MVP scope; constraints.md excludes only complex auth (OAuth/SNS/2FA). Admin login (3.2.1) is also MVP-mandatory. Rewrote Review Q3 with options A (login + auto re-login), B (login, token only), C (remove tablet password; store/table config only — deviates from original MVP). Awaiting answer.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (review round, partial)</p>
+<hr>
+<h2 id="requirements-analysis---user-messages">Requirements Analysis - User Messages</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:15:04Z
+<strong>User Input</strong>: &quot;ㅇㅇ&quot; (live steering, 2026-10-14T13:14~) / &quot;또 확인할거 남았니&quot;
+<strong>AI Response</strong>: &quot;ㅇㅇ&quot; treated as acknowledgment, not an answer to rewritten Q3 (ambiguous). Listed remaining unanswered review questions Q3–Q7 with AI recommendations.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (review round, partial)</p>
+<hr>
+<h2 id="requirements-analysis---user-clarification">Requirements Analysis - User Clarification</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:16:00Z
+<strong>User Input</strong>: &quot;ㅇㅇ는 오타야&quot;
+<strong>AI Response</strong>: Confirmed &quot;ㅇㅇ&quot; was a typo and is disregarded. No answers recorded from it. Q3–Q7 still awaiting answers.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (review round, partial)</p>
+<hr>
+<h2 id="requirements-analysis---review-answers--requirements-update">Requirements Analysis - Review Answers &amp; Requirements Update</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:15:45Z
+<strong>User Input</strong>: &quot;니 추천대로&quot;
+<strong>AI Response</strong>: Recorded Review Q3–Q7 = A (tablet password login + auto re-login; no table session auto-expiry; session end clears tablet cart/orders via SSE; order deletion per order only; countdown-only display). Rewrote requirements.md: removed FR-A5 menu management (seed only), added FR-C7 tablet reset, terminology split (tablet auth session vs table session), updated scope exclusions and assumptions. Presented approval prompt; next stage User Stories.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (awaiting approval)</p>
+<hr>
+<h2 id="requirements-analysis---user-question-1">Requirements Analysis - User Question</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:18:51Z
+<strong>User Input</strong>: &quot;이제 뭐해야해?&quot;
+<strong>AI Response</strong>: Explained requirements.md (final) awaits approval or change requests; next stage is User Stories. Not treated as approval.
+<strong>Context</strong>: INCEPTION - Requirements Analysis (awaiting approval)</p>
+<hr>
+<h2 id="requirements-analysis---approval">Requirements Analysis - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:19:12Z
+<strong>User Input</strong>: &quot;승인&quot;
+<strong>AI Response</strong>: Requirements approved. Marked Requirements Analysis complete. Proceeding to User Stories.
+<strong>Context</strong>: INCEPTION - Requirements Analysis complete</p>
+<hr>
+<h2 id="user-stories---part-1-planning">User Stories - Part 1 Planning</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:19:12Z
+<strong>AI Response</strong>: Assessment: Execute (new user features, multi-persona, complex item-level status/session logic). Created aidlc-docs/inception/plans/user-stories-assessment.md and aidlc-docs/inception/plans/story-generation-plan.md with 6 questions (grouping, granularity, AC format, error cases, admin persona count, priority labels), each with a recommendation. Awaiting answers (GATE).
+<strong>Context</strong>: INCEPTION - User Stories (planning, awaiting answers)</p>
+<hr>
+<h2 id="user-stories---plan-answers--approval--generation">User Stories - Plan Answers / Approval &amp; Generation</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:24:49Z
+<strong>User Input</strong>: &quot;추천대로&quot;
+<strong>AI Response</strong>: Recorded Q1–Q6 = A in story-generation-plan.md. Treated &quot;추천대로&quot; as approval of the recommended story approach (all open plan decisions were these questions; no ambiguity). Generated personas.md (P1 테이블 고객, P2 매장 운영자) and stories.md (10 Epics, 37 stories, Given/When/Then with error cases, FR traceability, INVEST check). Marked all plan checkboxes [x]. Presented completion/approval prompt; next stage Workflow Planning.
+<strong>Context</strong>: INCEPTION - User Stories (awaiting approval)</p>
+<hr>
+<h2 id="user-stories---user-question">User Stories - User Question</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:32:05Z
+<strong>User Input</strong>: &quot;이제 뭐해야하지?&quot;
+<strong>AI Response</strong>: Explained stories.md/personas.md await review/approval; next stage is Workflow Planning. Not treated as approval.
+<strong>Context</strong>: INCEPTION - User Stories (awaiting approval)</p>
+<hr>
+<h2 id="user-stories---approval">User Stories - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:33:17Z
+<strong>User Input</strong>: &quot;승인&quot;
+<strong>AI Response</strong>: User stories and personas approved. Marked User Stories complete. Proceeding to Workflow Planning.
+<strong>Context</strong>: INCEPTION - User Stories complete</p>
+<hr>
+<h2 id="workflow-planning---plan-created">Workflow Planning - Plan Created</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:33:17Z
+<strong>AI Response</strong>: Created aidlc-docs/inception/plans/execution-plan.md. EXECUTE: Application Design, Units Generation, Functional Design (backend unit only), Code Generation, Build and Test. SKIP: NFR Requirements, NFR Design, Infrastructure Design (tech stack/NFR targets already defined, local-only MVP, extensions disabled). Risk Medium-Low. Updated aidlc-state.md. AI Prompt: &quot;Ready to proceed with this plan?&quot; — awaiting approval.
+<strong>Context</strong>: INCEPTION - Workflow Planning (awaiting approval)</p>
+<hr>
+<h2 id="workflow-planning---approval">Workflow Planning - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:36:18Z
+<strong>AI Prompt</strong>: &quot;Ready to proceed with this plan?&quot;
+<strong>User Response</strong>: &quot;이어서 진행하자.&quot;
+<strong>Status</strong>: Approved
+<strong>Context</strong>: Workflow plan created with 5 stages to execute (Application Design, Units Generation, Functional Design-backend, Code Generation, Build and Test), 3 skipped (NFR Requirements, NFR Design, Infrastructure Design)</p>
+<hr>
+<h2 id="application-design---planning">Application Design - Planning</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:36:18Z
+<strong>AI Response</strong>: Created aidlc-docs/inception/plans/application-design-plan.md with 8 questions (frontend app count, backend layering, DB library, SSE broker, SSE payload, SSE auth, frontend state mgmt, repo structure), each with recommendation. Awaiting answers (GATE).
+<strong>Context</strong>: INCEPTION - Application Design (awaiting answers)</p>
+<hr>
+<h2 id="application-design---answers--generation">Application Design - Answers &amp; Generation</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:40:14Z
+<strong>User Input</strong>: &quot;추천안으로 가자.&quot;
+<strong>AI Response</strong>: Recorded Q1–Q8 = A (single React+Vite app with /table and /admin routes; layered router→service→repository; SQLAlchemy 2.0; in-memory asyncio EventBroker behind interface, single process; SSE payload includes changed data + full resync on reconnect; SSE token via query param; Zustand with persist; backend/ + frontend/ + root docker-compose.yml). No ambiguity. Generated components.md, component-methods.md (incl. REST endpoints and SSE events), services.md (orchestration flows S1–S7, story coverage 37/37), component-dependency.md (matrix, Mermaid flow + sequence with text alternatives), application-design.md (consolidated). Marked plan checkboxes [x]. Presented approval prompt; next stage Units Generation.
+<strong>Context</strong>: INCEPTION - Application Design (awaiting approval)</p>
+<hr>
+<h2 id="application-design---change-request">Application Design - Change Request</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:48:35Z
+<strong>User Input</strong>: &quot;보관 표시만하자.&quot;
+<strong>AI Response</strong>: Applied decision: on session completion, orders are soft-archived (Order.archived_at = completion time); no copy to a separate OrderHistory table. Removed OrderHistory entity and OrderHistoryRepository; OrderRepository gained archive_by_session/list_archived; OrderHistoryService now reads archived orders grouped by session. Updated requirements.md (FR-A4, data section with note on deviation from original &quot;OrderHistory 테이블&quot; wording), stories.md (US-A14 AC1 wording), components.md, component-methods.md, services.md (S5), component-dependency.md (matrix, sequence), execution-plan.md; regenerated application-design.md. Verified no stale references. Re-presented approval prompt.
+<strong>Context</strong>: INCEPTION - Application Design (awaiting approval)</p>
+<hr>
+<h2 id="application-design---approval">Application Design - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:50:36Z
+<strong>User Input</strong>: &quot;다음 단계 진행하자.&quot;
+<strong>AI Response</strong>: Application design approved. Marked complete. Proceeding to Units Generation.
+<strong>Context</strong>: INCEPTION - Application Design complete</p>
+<hr>
+<h2 id="units-generation---part-1-planning">Units Generation - Part 1 Planning</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:50:36Z
+<strong>AI Response</strong>: Created aidlc-docs/inception/plans/unit-of-work-plan.md with 3 questions (unit count, implementation order, frontend API type strategy), each with recommendation. Team Alignment / Technical Considerations / Business Domain categories documented as N/A with justification. Awaiting answers (GATE).
+<strong>Context</strong>: INCEPTION - Units Generation (planning, awaiting answers)</p>
+<hr>
+<h2 id="units-generation---answers-plan-approval--generation">Units Generation - Answers, Plan Approval &amp; Generation</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:52:10Z
+<strong>User Input</strong>: &quot;추천대로&quot;
+<strong>AI Prompt (plan approval)</strong>: &quot;Unit of work plan complete. Review the plan in aidlc-docs/inception/plans/unit-of-work-plan.md. Ready to proceed to generation?&quot; — treated &quot;추천대로&quot; as answers Q1–Q3 = A and approval of the recommended plan (no remaining open decisions).
+<strong>AI Response</strong>: Generated unit-of-work.md (2 units: backend, frontend; deployment model; code organization tree), unit-of-work-dependency.md (frontend → backend runtime dependency only, contracts, order backend → frontend → build &amp; test), unit-of-work-story-map.md (37/37 stories mapped; verified IDs match stories.md via diff). Marked plan checkboxes [x]. Presented completion/approval prompt; next CONSTRUCTION - Functional Design (backend).
+<strong>Context</strong>: INCEPTION - Units Generation (awaiting approval)</p>
+<hr>
+<h2 id="units-generation---approval">Units Generation - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:55:46Z
+<strong>User Input</strong>: &quot;승인&quot;
+<strong>AI Response</strong>: Units generation approved (units: backend, frontend). Marked complete. Proceeding to CONSTRUCTION - Functional Design (backend).
+<strong>Context</strong>: INCEPTION complete → CONSTRUCTION begins</p>
+<hr>
+<h2 id="functional-design-backend---planning">Functional Design (backend) - Planning</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:55:46Z
+<strong>AI Response</strong>: Created aidlc-docs/construction/plans/backend-functional-design-plan.md with 7 questions (quantity-line vs per-piece item status, order-number day boundary, quantity/estimate limits, session completion with unfinished items, password change vs existing tokens, session after last order deleted, seed data), each with recommendation. Awaiting answers (GATE).
+<strong>Context</strong>: CONSTRUCTION - Functional Design backend (awaiting answers)</p>
+<hr>
+<h2 id="functional-design-backend---answers--generation">Functional Design (backend) - Answers &amp; Generation</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:57:21Z
+<strong>User Input</strong>: &quot;추천대로. 수량이 2이상인 메뉴에서 1개만 나가더라도 완료처리 안하도록. 다 완료되어야 완료.&quot;
+<strong>AI Response</strong>: Recorded Q1–Q7 = A in backend-functional-design-plan.md. The user's Q1 addendum (an item with quantity ≥2 is not completed until the whole line is served) matches option A (order-line granularity); no ambiguity. Generated aidlc-docs/construction/backend/functional-design/{domain-entities,business-rules,business-logic-model}.md including state-transition table, lock rules, order-number rules, session completion (soft archive), SSE payloads, seed data. Synced component-methods.md event payloads and TableSummaryDTO (unfinished_item_count); regenerated application-design.md. Plan checkboxes marked [x].
+<strong>Context</strong>: CONSTRUCTION - Functional Design backend (awaiting approval)</p>
+<hr>
+<h2 id="live-steering---speed-request">Live Steering - Speed Request</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T13:58:30Z
+<strong>User Input (steer-d06f1cf6c4df4440a2f215f6d6efd1f8)</strong>: &quot;지금 단계가 어디지? construction 단계니?&quot;
+<strong>AI Response</strong>: Answered: current stage is CONSTRUCTION - Functional Design (backend).</p>
+<p><strong>User Input (steer-908c33cb66c742fb8a57197122cc3869)</strong>: &quot;최대한 construction 단계를 빠르게 끝내야해. 대부분 추천안으로 적용해서 진행해줘.&quot;
+<strong>AI Response</strong>: Will apply recommended options by default for the rest of Construction, ask only questions that cannot be defaulted, and present plans in a single approval step. Required approval gates are kept.
+<strong>Context</strong>: CONSTRUCTION - process adjustment</p>
+<hr>
+<h2 id="functional-design-backend---approval">Functional Design (backend) - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:00:34Z
+<strong>User Input</strong>: &quot;다음으로 진행.&quot;
+<strong>AI Response</strong>: Treated as approval of backend functional design and as instruction to proceed. Marked Functional Design complete. Started Code Generation Part 1 (planning).
+<strong>Context</strong>: CONSTRUCTION - Functional Design backend complete</p>
+<hr>
+<h2 id="code-generation-backend---part-1-planning">Code Generation (backend) - Part 1 Planning</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:00:34Z
+<strong>AI Response</strong>: Created aidlc-docs/construction/plans/backend-code-generation-plan.md (17 steps: structure, core, models/schemas/repositories, events, services, tests, routers/app, seed/images, docs, Docker, verification run). No questions asked (fast-track per user steering). <strong>Approval prompt</strong>: &quot;Backend code generation plan (17 steps) is ready at aidlc-docs/construction/plans/backend-code-generation-plan.md. Approve to start generation?&quot; — awaiting approval.
+<strong>Context</strong>: CONSTRUCTION - Code Generation backend (awaiting plan approval)</p>
+<hr>
+<h2 id="code-generation-backend---plan-approval">Code Generation (backend) - Plan Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:01:36+09:00
+<strong>User Input</strong>: &quot;계획 승인.&quot;
+<strong>AI Response</strong>: Backend code generation plan (17 steps) approved. Part 1 (Planning) marked complete; starting Part 2 (Generation) from Step 1.
+<strong>Context</strong>: CONSTRUCTION - Code Generation backend, Part 1 → Part 2</p>
+<hr>
+<h2 id="code-generation-backend---scope-change-live-steering">Code Generation (backend) - Scope Change (Live Steering)</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:20:00+09:00
+<strong>User Input (steer-893b8852478d4b62b7a0f24b470a6499)</strong>: &quot;인증 관련된건 다 뺴도되. mvp 니까.&quot;
+<strong>AI Response</strong>: Removed authentication from backend scope: no login endpoints, JWT, bcrypt/passwords, login lockout, AdminUser/LoginAttempt entities, token-based SSE auth. Store/table are identified by <code>X-Store-Code</code> / <code>X-Table-Number</code> headers (query params <code>store_code</code>/<code>table_number</code> for SSE, since EventSource cannot set headers); default store from config. Store/table scoping (US-I06 data isolation by store_id/table_id) is kept. Already-created security.py was deleted; errors/config/pyproject trimmed. Plan updated (backend-code-generation-plan.md). Note: requirements.md, stories (US-C01~C03, US-A01~A03), and functional-design BR-AUTH/BR-LOCK are now out of sync with the code; to be marked &quot;out of MVP scope&quot; in code-summary.md. Endpoints are unauthenticated by design (MVP, local only) — flagged to user.
+<strong>Context</strong>: CONSTRUCTION - Code Generation backend, Part 2</p>
+<hr>
+<h2 id="code-generation-backend---generation-complete">Code Generation (backend) - Generation Complete</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:35:00+09:00
+<strong>AI Response</strong>: Executed plan steps 1–17 (Step 8 excluded by scope change). Created backend/ (app, tests, Dockerfile, README, .env.example), root .gitignore and docker-compose.yml, and aidlc-docs/construction/backend/code/code-summary.md. 73 tests pass; verified with a real uvicorn server including live SSE channel isolation. Found and fixed 3 bugs during testing (autoflush stale counts, stale identity map after bulk archive, SSE subscription cleanup). Docker build not verified. <strong>Approval prompt</strong>: &quot;Code generation for backend complete. Request Changes or Continue to Next Stage (frontend)?&quot; — awaiting approval.
+<strong>Context</strong>: CONSTRUCTION - Code Generation backend (awaiting approval)</p>
+<hr>
+<h2 id="code-generation-backend---approval">Code Generation (backend) - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:11:25+09:00
+<strong>User Input</strong>: &quot;다음으로 진행.&quot;
+<strong>AI Response</strong>: Treated as approval of backend code generation and instruction to proceed. Backend Code Generation marked complete. Started Code Generation (frontend) Part 1 (planning).
+<strong>Context</strong>: CONSTRUCTION - Code Generation backend complete → frontend begins</p>
+<hr>
+<h2 id="code-generation-frontend---part-1-planning">Code Generation (frontend) - Part 1 Planning</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:12:00+09:00
+<strong>AI Response</strong>: Created aidlc-docs/construction/plans/frontend-code-generation-plan.md (14 steps). Authentication excluded consistent with backend scope change (tablet setup = store code + table number only; admin enters without login). No questions asked (fast-track). <strong>Approval prompt</strong>: &quot;Frontend code generation plan (14 steps) is ready at aidlc-docs/construction/plans/frontend-code-generation-plan.md. Approve to start generation?&quot; — awaiting approval.
+<strong>Context</strong>: CONSTRUCTION - Code Generation frontend (awaiting plan approval)</p>
+<hr>
+<h2 id="code-generation-frontend---plan-approval">Code Generation (frontend) - Plan Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:14:28+09:00
+<strong>User Input</strong>: &quot;진행&quot;
+<strong>AI Response</strong>: Frontend code generation plan (14 steps) approved. Part 1 complete; starting Part 2 (Generation) from Step 1.
+<strong>Context</strong>: CONSTRUCTION - Code Generation frontend, Part 1 → Part 2</p>
+<hr>
+<h2 id="code-generation-frontend---generation-complete">Code Generation (frontend) - Generation Complete</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:50:00+09:00
+<strong>AI Response</strong>: Executed plan steps 1–14. Created frontend/ (React+Vite+TS; shared, table, admin; Dockerfile, nginx.conf), updated docker-compose.yml (frontend service, FRONTEND_PORT/BACKEND_PORT), root README.md, frontend/README.md, aidlc-docs/construction/frontend/code/code-summary.md. 115 Vitest tests pass; <code>npm run build</code> OK; verified via Vite proxy against a live backend and via <code>docker compose up</code> (SPA fallback, API/static proxy, SSE through nginx). Mutation check confirmed button-rule tests fail when the rule is broken. Not verified: real-browser rendering/touch (no browser automation available). Found port 3000 already used by another local app → made host ports configurable. <strong>Approval prompt</strong>: &quot;Code generation for frontend complete. Request Changes or Continue to Build and Test?&quot; — awaiting approval.
+<strong>Context</strong>: CONSTRUCTION - Code Generation frontend (awaiting approval)</p>
+<hr>
+<h2 id="code-generation-frontend---approval">Code Generation (frontend) - Approval</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:26:55+09:00
+<strong>User Input</strong>: &quot;빌드하고 테스트해볼까?&quot;
+<strong>AI Response</strong>: Treated as approval of frontend code generation and instruction to proceed to Build and Test. Code Generation marked complete for both units. Starting Build and Test.
+<strong>Context</strong>: CONSTRUCTION - Code Generation complete → Build and Test begins</p>
+<hr>
+<h2 id="build-and-test-stage">Build and Test Stage</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:45:00+09:00
+<strong>Build Status</strong>: Success (fresh venv + <code>npm ci</code>; docker compose build/up verified)
+<strong>Test Status</strong>: Pass — pytest 73, Vitest 115, live-server integration 9, Chrome E2E 7. Performance: PASS at 50 subscribers/200 orders (max 658ms); FAIL on max latency only at 200 subscribers/500 orders/20 concurrent writers (2,218ms, SQLite write serialization; documented, not tuned).
+<strong>Findings fixed</strong>: (1) server did not exit with open SSE streams → <code>--timeout-graceful-shutdown</code> in Dockerfile/README; (2) stretched status badges and (3) unfilled menu grid found via real-browser screenshots; (4) host port 3000 conflict → FRONTEND_PORT/BACKEND_PORT. Corrected an earlier claim in backend code-summary about clean shutdown.
+<strong>Not verified</strong>: real tablet hardware, Safari/Firefox, long-running SSE, coverage numbers, Python dependency audit.
+<strong>Files Generated</strong>:</p>
+<ul>
+<li>aidlc-docs/construction/build-and-test/{build-instructions,unit-test-instructions,integration-test-instructions,performance-test-instructions,e2e-test-instructions,build-and-test-summary}.md</li>
+<li>backend/tests_integration/ (live.py, conftest.py, test_live_flow.py, perf_sse.py), e2e/ (Playwright)
+<strong>Approval prompt</strong>: &quot;Build and test instructions complete. Ready to proceed to Operations stage?&quot; — awaiting approval.</li>
+</ul>
+<hr>
+<h2 id="build-and-test---approval--run-request">Build and Test - Approval / Run Request</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:38:47+09:00
+<strong>User Input</strong>: &quot;다 완료했으면 띄워볼까? 인증은 무시해도됨.&quot;
+<strong>AI Response</strong>: Treated as approval of Build and Test and a request to run the app. Operations stage is a placeholder (no activities). Started the app with docker compose on free host ports (3000 is used by another local app).
+<strong>Context</strong>: CONSTRUCTION complete → run</p>
+<hr>
+<h2 id="post-construction---ui-improvement-request">Post-Construction - UI Improvement Request</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T14:55:11+09:00
+<strong>User Input</strong>: &quot;ui 개선좀 더 해봐&quot;
+<strong>AI Response</strong>: Implemented UI improvements (admin card due/overdue hint, summary strip, idle card dimming, wide layout; realtime connection badge on both apps; category tab scroll-follow, in-cart quantity badge, success screen icon). Vitest 126 pass, Chrome E2E 7 pass, screenshots reviewed, running docker frontend rebuilt. Documented in frontend code-summary.
+<strong>Context</strong>: Post-construction change (outside the original plan; user-directed)</p>
+<hr>
+<h2 id="live-steering---question">Live Steering - Question</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T15:00:00+09:00
+<strong>User Input (steer-cf5bf8b518c74525ada54b7541096225)</strong>: &quot;unit 2개로 나온거맞지? 지금 어떻게 만든건지 나한테 아주 간략하게 설명해줘. ai dlc로 구현을 어떻게 한건지.&quot;
+<strong>AI Response</strong>: Confirmed 2 units (backend, frontend) and gave a brief explanation of how the AI-DLC workflow was applied.
+<strong>Context</strong>: Informational answer, no scope change</p>
+<hr>
+<h2 id="post-construction---admin-ui-improvement--countdown">Post-Construction - Admin UI Improvement + Countdown</h2>
+<p><strong>Timestamp</strong>: 2026-10-14T15:25:00+09:00
+<strong>User Input</strong>: &quot;admin도 비슷하게 개선해봐.&quot;
+<strong>User Input (steer-a7ff89690b3b4af9a2a3e9fad7e92dd5)</strong>: &quot;5초후 메뉴화면으로 돌아갑니다 =&gt; 5.4.3.2.1 카운트다운도 넣어줘.&quot;
+<strong>AI Response</strong>: Captured all admin screens in real Chrome, fixed layout issues (order detail row layout, ambiguous price display, delete button placement, time presets, table management form). Added 5→1 countdown on the order success screen (verified in browser: &quot;5|4|3|2|1&quot; then returns to menu). Vitest 131 pass, Chrome E2E 7 pass; running docker frontend rebuilt.
+<strong>Context</strong>: Post-construction UI changes (user-directed)</p>
+<hr>
+</article>
+<nav class="pager"><a class="pager-prev" href="aidlc-state.html"><span>← 이전</span>진행 상태 (aidlc-state)</a><span></span></nav>
+</main>
+</div>
+<script src="../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

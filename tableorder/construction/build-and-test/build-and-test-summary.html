@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Build and Test Summary · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../inception/application-design/services.html">서비스</a></li><li><a href="../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="build-and-test-summary.html" class="active" aria-current="page">빌드·테스트 요약</a></li><li><a href="build-instructions.html">빌드</a></li><li><a href="unit-test-instructions.html">단위 테스트</a></li><li><a href="integration-test-instructions.html">연동 테스트</a></li><li><a href="performance-test-instructions.html">성능 테스트</a></li><li><a href="e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 빌드와 테스트 · <code>docs/tableorder/construction/build-and-test/build-and-test-summary.md</code></div>
+<article class="markdown"><h1 id="build-and-test-summary">Build and Test Summary</h1>
+<p>검증일: 2026-10-14. 환경: macOS (Apple Silicon), Python 3.12.13, Node 25.9.0, Docker 29.x, Google Chrome.</p>
+<h2 id="build-status">Build Status</h2>
+<ul>
+<li><strong>Build Tool</strong>: backend = pip(pyproject, 버전 고정), frontend = npm + Vite 8 + TypeScript</li>
+<li><strong>Build Status</strong>: <strong>Success</strong> (새 venv / <code>npm ci</code> 상태에서 확인)</li>
+<li><strong>Build Artifacts</strong>: <code>frontend/dist/</code>(JS 301 kB, gzip 94 kB), Docker 이미지 <code>tableorder-backend</code>, <code>tableorder-frontend</code></li>
+<li><strong>Docker</strong>: <code>docker compose up --build</code>로 기동, nginx 경유 SPA·API·정적 파일·SSE 정상</li>
+</ul>
+<h2 id="test-execution-summary">Test Execution Summary</h2>
+<h3 id="unit-tests">Unit Tests</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>합계</th>
+<th>통과</th>
+<th>실패</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backend (pytest)</td>
+<td>73</td>
+<td>73</td>
+<td>0</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>frontend (Vitest)</td>
+<td>115</td>
+<td>115</td>
+<td>0</td>
+<td>Pass</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>커버리지는 측정하지 않음</li>
+</ul>
+<h3 id="integration-tests-실제-서버-프로세스--실제-httpsse">Integration Tests (실제 서버 프로세스 + 실제 HTTP/SSE)</h3>
+<ul>
+<li><strong>시나리오<strong>: 9 / </strong>통과<strong>: 9 / </strong>실패</strong>: 0 — <strong>Pass</strong></li>
+<li>주문→관리자·해당 태블릿 2초 이내(다른 테이블 무반응), 상태 변경 전파, 이용 완료 초기화, 주문 삭제, 재연결 시 재전송 없음 + 상태 API, 매장 격리, 동시 주문 36건 번호 유일, 동시 상태 변경 승자 1명, 열린 SSE가 있어도 종료</li>
+</ul>
+<h3 id="browser-e2e-실제-chrome">Browser E2E (실제 Chrome)</h3>
+<ul>
+<li><strong>시나리오<strong>: 7 / </strong>통과<strong>: 7 / </strong>실패</strong>: 0 — <strong>Pass</strong></li>
+<li>터치 영역 44px, 새로고침 후 장바구니 유지, 5초 후 복귀, 완료 토스트(메뉴 화면에서도), 오프라인 복구 후 자동 동기화, 이용 완료 초기화</li>
+<li>실측 반영 시간: 주문→관리자 42~85ms, 준비 시작→태블릿 57ms, 이용 완료→태블릿 61ms</li>
+</ul>
+<h3 id="performance-tests">Performance Tests</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>조건</th>
+<th>SSE 수신 지연 p95 / max</th>
+<th>누락·오류</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구독 50, 주문 200건 (동시 10)</td>
+<td>100 ms / 658 ms</td>
+<td>0</td>
+<td><strong>Pass</strong> (목표 2초)</td>
+</tr>
+<tr>
+<td>구독 200, 주문 500건 (동시 20)</td>
+<td>513 ms / 2,218 ms</td>
+<td>0</td>
+<td><strong>Fail (최대값만)</strong> — 한 매장 현실 사용량을 크게 넘는 조건. 원인은 SQLite 쓰기 직렬화. 조치 안 함, 근거와 대안은 performance-test-instructions.md</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="additional-tests">Additional Tests</h3>
+<ul>
+<li><strong>Contract Tests</strong>: N/A (단일 저장소, 프론트 타입은 DTO를 손으로 미러링. 통합·E2E가 실제 계약을 검증)</li>
+<li><strong>Security Tests</strong>: 미수행. 인증이 MVP 범위에서 제외되어 있고 보안 extension은 비활성. 다만 입력 검증(수량·시간 범위, 알 수 없는 필드 거부, 클라이언트가 매장/테이블/가격 지정 불가)과 매장 격리는 테스트됨</li>
+<li><strong>Dependency audit</strong>: <code>npm install</code> 시 취약점 0건 보고. Python 의존성 감사는 수행 안 함</li>
+</ul>
+<h2 id="이-단계에서-발견해-고친-것">이 단계에서 발견해 고친 것</h2>
+<ol>
+<li><strong>서버가 열린 SSE 연결이 있으면 종료되지 않음</strong> (backend). uvicorn이 연결 종료를 기다려서 lifespan 정리 코드가 실행되지 못함. 이전에 &quot;정상 종료&quot;라고 본 것은 curl 스트림이 먼저 타임아웃된 경우였음. → <code>--timeout-graceful-shutdown</code>을 Dockerfile과 실행 명령에 추가. 종료 약 2.2초, 컨테이너 정지 4초.</li>
+<li>관리자 주문 상세의 상태 배지가 세로로 늘어남 (frontend CSS)</li>
+<li>메뉴 카드가 3개인 카테고리에서 오른쪽이 비는 레이아웃 (frontend CSS)</li>
+<li>호스트 3000번 포트 충돌 → <code>FRONTEND_PORT</code>/<code>BACKEND_PORT</code>로 변경 가능하게 함</li>
+</ol>
+<h2 id="확인하지-못한-것">확인하지 못한 것</h2>
+<ul>
+<li>실제 태블릿 기기, Safari/Firefox, 화면 회전</li>
+<li>장시간(수 시간) 운영, 브라우저 슬립/백그라운드 상태의 SSE</li>
+<li>코드 커버리지 수치, Python 의존성 취약점 점검</li>
+<li>설계 문서(요구사항·스토리 일부)는 인증 제외 결정과 아직 어긋남 — backend <code>code-summary.md</code>에 목록</li>
+</ul>
+<h2 id="overall-status">Overall Status</h2>
+<ul>
+<li><strong>Build</strong>: Success</li>
+<li><strong>All Tests</strong>: Pass (성능 중 가혹 조건 1건은 알려진 한계로 문서화)</li>
+<li><strong>Ready for Operations</strong>: Yes (Operations 단계는 아직 비어 있는 자리표시자)</li>
+</ul>
+<h2 id="생성된-문서--코드">생성된 문서 / 코드</h2>
+<ul>
+<li><code>aidlc-docs/construction/build-and-test/</code>: build-instructions, unit-test-instructions, integration-test-instructions, performance-test-instructions, e2e-test-instructions, 이 요약</li>
+<li>테스트 코드: <code>backend/tests_integration/</code>(연동 9개 + <code>perf_sse.py</code>), <code>e2e/</code>(Playwright 7개)</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="../frontend/code/code-summary.html"><span>← 이전</span>프론트엔드 코드 요약</a><a class="pager-next" href="build-instructions.html"><span>다음 →</span>빌드</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

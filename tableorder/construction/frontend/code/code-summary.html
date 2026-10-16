@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Code Summary — frontend · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../../index.html">홈</a></li><li><a href="../../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../../inception/application-design/services.html">서비스</a></li><li><a href="../../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="code-summary.html" class="active" aria-current="page">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../build-and-test/build-instructions.html">빌드</a></li><li><a href="../../build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 코드 생성 · <code>docs/tableorder/construction/frontend/code/code-summary.md</code></div>
+<article class="markdown"><h1 id="code-summary--frontend">Code Summary — frontend</h1>
+<p>코드 위치: <code>tableorder/frontend/</code> (실행 방법은 <code>frontend/README.md</code>, 루트 <code>README.md</code>)</p>
+<h2 id="범위-backend와-동일하게-인증-제외">범위 (backend와 동일하게 인증 제외)</h2>
+<ul>
+<li>구현하지 않음: 관리자 로그인, 토큰/만료 타이머, 401 재로그인, 로그인 잠금 안내, 테이블 비밀번호 입력/변경 → US-C03, US-A01~A03 제외</li>
+<li>축소: US-C01은 매장 코드 + 테이블 번호만 입력(서버에 존재하는지 확인 후 저장), US-A12는 테이블 번호 등록만</li>
+<li>식별: 태블릿은 <code>X-Store-Code</code>/<code>X-Table-Number</code> 헤더(SSE는 쿼리), 관리자는 <code>VITE_STORE_CODE</code>(기본 <code>demo</code>)</li>
+<li><strong>보안 주의</strong>: 인증이 없으므로 로컬/내부망 전용</li>
+</ul>
+<h2 id="구조">구조</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>경로</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/shared/</code></td>
+<td><code>types.ts</code>(백엔드 DTO 미러), <code>apiClient</code>(오류 정규화), <code>useEventStream</code>(SSE, 지수 백오프 1→10초, 열릴 때마다 resync), <code>serverClock</code>(서버 시각 보정), <code>format</code>(원화·KST·남은 시간 판정), <code>useNow</code>, <code>OrderItemStatusBadge</code>, <code>ui</code>(Button/Modal/ConfirmDialog/Toast/MenuImage), <code>toastStore</code></td>
+</tr>
+<tr>
+<td><code>src/table/</code></td>
+<td><code>tableConfigStore</code>·<code>cartStore</code>(persist), <code>tableOrdersStore</code>(이벤트 반영·resync·주문 확정), <code>tableApi</code>, 화면 7개(설정/메뉴/장바구니/확인/성공/내역/레이아웃), <code>TableEventBridge</code></td>
+</tr>
+<tr>
+<td><code>src/admin/</code></td>
+<td><code>dashboardStore</code>(카드·강조·필터·상세 실시간 반영), <code>adminApi</code>, 화면(대시보드/카드/필터/상세/시간 입력/과거 내역/테이블 관리/레이아웃)</td>
+</tr>
+<tr>
+<td><code>Dockerfile</code>, <code>nginx.conf</code>, 루트 <code>docker-compose.yml</code></td>
+<td>빌드 → nginx, <code>/api</code>·<code>/static</code> 프록시, SSE 버퍼링 해제, SPA fallback</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="구현-결정">구현 결정</h2>
+<ul>
+<li>항목 버튼 규칙(UI): 대기중=준비 시작 / 준비중=시간 수정·완료 / 완료=없음. 서버가 최종 검증(409)하고 화면은 오류 토스트만 띄움</li>
+<li>시간 입력 검증: 1~120 정수(서버와 동일), 틀리면 요청을 보내지 않음</li>
+<li>이용 완료 확인 팝업에 미완료 메뉴 개수 표시 (Q4)</li>
+<li>내 요청의 응답과 SSE 이벤트가 모두 같은 반영 함수를 거쳐서 어느 쪽이 먼저 와도 결과가 같음(멱등)</li>
+<li>주문 확정 중 버튼 비활성화로 중복 제출 방지(서버는 막지 않음)</li>
+<li>이용 완료/세션 변경 감지: 저장된 <code>sessionId</code>와 서버 <code>session_id</code>가 다르면 장바구니·내역 초기화 (오프라인 중 이용 완료 대응)</li>
+</ul>
+<h2 id="테스트-115개-모두-통과">테스트 (115개, 모두 통과)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>파일</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shared/*.test.*</code> (19)</td>
+<td>금액/KST/남은 시간 경계(&quot;곧 나옵니다&quot;), apiClient 오류 정규화, useEventStream(이벤트 라우팅·백오프·재연결 resync·정리), 서버 시계 보정</td>
+</tr>
+<tr>
+<td><code>table/tableStores.test.ts</code> (18)</td>
+<td>장바구니(합산·증감·상한 20·persist·서버 미호출), 이벤트 반영, 세션 변경 시 초기화, 주문 확정 성공/실패, 페이지네이션</td>
+</tr>
+<tr>
+<td><code>table/tablePages.test.tsx</code> (24)</td>
+<td>설정(검증·404), 메뉴·이미지 대체·탭, 장바구니, 주문 흐름(5초 이동·실패 시 유지·중복 제출 방지), 내역, 상태 배지 카운트다운, 토스트·이용 완료 초기화·SSE 반영</td>
+</tr>
+<tr>
+<td><code>admin/dashboardStore.test.ts</code> (14)</td>
+<td>생성/삭제/상태변경/이용 완료 반영, 최신 3개, 강조·해제, 필터, 재조회</td>
+</tr>
+<tr>
+<td><code>admin/adminPages.test.tsx</code> (40)</td>
+<td>시간 입력 검증, 항목별 버튼 노출 규칙, 시작/수정/완료/전체 시작, 삭제 취소·확인·실패, 이용 완료 팝업, 과거 내역(세션 묶기·날짜), 테이블 등록, SSE 실시간 반영</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>변이 확인: 버튼 노출 규칙을 일부러 깨뜨리면 관련 테스트 2개가 실패함을 확인한 뒤 원복</li>
+</ul>
+<h2 id="동작-확인-step-14">동작 확인 (Step 14)</h2>
+<ul>
+<li><code>npm run build</code> 성공(타입 검사 포함), <code>npm test</code> 115 passed</li>
+<li>실제 백엔드 + Vite 개발 서버 프록시: 페이지·메뉴 API(12개)·정적 이미지 200, 주문 생성·항목 시작 후 테이블/관리자 SSE 둘 다 <code>order.created</code>, <code>order_item.updated</code> 수신</li>
+<li><code>docker compose build</code> 성공, <code>docker compose up</code>으로 nginx 경유 확인: SPA 경로(<code>/admin</code>, <code>/table/history</code>) 200, API·정적 파일 프록시, SSE 이벤트가 주문 후 약 1.5초 안에 도착(버퍼링 없음). 확인 후 <code>down -v</code>로 정리</li>
+<li><strong>확인하지 못한 것</strong>: 실제 브라우저에서의 화면 렌더링/터치 조작/스타일은 확인하지 못함(브라우저 자동화 도구 없음. 테스트는 jsdom). 카운트다운·애니메이션의 실제 모습, 태블릿 해상도 레이아웃은 직접 열어서 확인 필요</li>
+</ul>
+<h2 id="알려진-사항">알려진 사항</h2>
+<ul>
+<li>로컬 3000번 포트를 다른 앱이 쓰고 있으면 <code>FRONTEND_PORT</code>로 바꿔야 함(검증 중 실제로 겹쳤음)</li>
+<li>설계 문서의 인증 관련 내용(스토리, BR-AUTH/BR-LOCK 등)은 코드와 어긋남 → backend <code>code-summary.md</code>에 목록</li>
+</ul>
+<h2 id="build-and-test에서-추가-수정">Build and Test에서 추가 수정</h2>
+<ul>
+<li>실제 Chrome 스크린샷에서 발견: 관리자 주문 상세의 상태 배지가 늘어남(<code>.detail-item .badge</code>), 메뉴 그리드 <code>auto-fill</code> → <code>auto-fit</code>. 위 &quot;확인하지 못한 것&quot;의 브라우저 렌더링은 Build and Test의 E2E에서 확인함 (<code>build-and-test/e2e-test-instructions.md</code>).</li>
+</ul>
+<h2 id="ui-개선-build-and-test-이후-사용자-요청-ui-개선좀-더-해봐">UI 개선 (Build and Test 이후, 사용자 요청 &quot;ui 개선좀 더 해봐&quot;)</h2>
+<ul>
+<li>관리자: 카드 미리보기에 준비중 항목 중 가장 빠른 완료 예정(&quot;가장 빠른 완료 약 N분 후&quot;) / 지연(&quot;예상보다 N분 지연&quot;, 빨간색), 상단 요약줄(이용 중 테이블, 안 나간 메뉴), 빈 테이블 카드 흐리게, 넓은 화면 활용(최대 1440px)</li>
+<li>공통: 실시간 연결 상태 표시(<code>실시간</code> / <code>연결 끊김 · 다시 연결 중</code>). <code>useEventStream</code>이 상태를 반환함</li>
+<li>고객: 스크롤을 따라 카테고리 탭 강조(탭 클릭 직후 0.8초는 중간 카테고리로 깜빡이지 않게 무시), 메뉴 카드에 <code>N개 담김</code> 배지, 주문 완료 화면에 체크 아이콘, 애니메이션 감소 설정 존중</li>
+<li>테스트: Vitest 126개(+11), 브라우저 E2E 7개 모두 통과(카드 남은 시간·연결 배지 검증 추가)</li>
+<li>변경 중 발견: <code>Math.floor(-0)</code>이 <code>-0</code>이 되어 지연 0분 표시가 어긋날 수 있었음 → 수정</li>
+<li>주문 확인 화면/테이블 관리 목록 여백 수정(사용자 지적): <code>ul.order-items.card</code>에서 <code>.order-items { padding: 0 }</code>이 카드 여백을 덮어써 글자가 테두리에 붙어 있었음 → 전용 <code>.line-list</code>/<code>.line-total</code>로 분리, 줄 구분선, &quot;개당 N원 / 합계&quot;로 표시를 나눔(기존 <code>2,500원 · 2,500원</code>은 의미가 모호했음)</li>
+</ul>
+<h2 id="관리자-ui-개선--주문-완료-카운트다운-사용자-요청">관리자 UI 개선 + 주문 완료 카운트다운 (사용자 요청)</h2>
+<ul>
+<li>주문 완료 화면: &quot;N초 후 메뉴 화면으로 돌아갑니다&quot;가 5→4→3→2→1로 1초마다 줄어듦(실제 Chrome에서 확인). 바로 나가면 타이머 정리</li>
+<li>관리자 주문 상세: 항목 줄을 한 줄 레이아웃으로 정리(빈 칸 제거), &quot;개당 N원 · 합계 N원&quot;으로 표기 분리, 삭제 버튼을 주 버튼과 떨어뜨림</li>
+<li>시간 입력: 자주 쓰는 시간 버튼(5/10/15/20/30분), 단위 &quot;분&quot; 표시, 범위 안내, 값을 고치면 오류 문구 해제</li>
+<li>테이블 관리: 한 줄 폼(번호 입력 + 등록), 등록된 테이블을 칩으로 표시, 넓은 레이아웃</li>
+<li>과거 내역: 불러오는 중 표시. 대시보드 카드 버튼을 카드 아래쪽에 정렬</li>
+<li>테스트: Vitest 131개(+5), Chrome E2E 7개 통과</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="../../plans/frontend-code-generation-plan.html"><span>← 이전</span>프론트엔드 코드 생성 계획</a><a class="pager-next" href="../../build-and-test/build-and-test-summary.html"><span>다음 →</span>빌드·테스트 요약</a></nav>
+</main>
+</div>
+<script src="../../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../../assets/app.js"></script>
+</body>
+</html>

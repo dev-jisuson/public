@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Component Dependency · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="application-design.html">애플리케이션 설계 통합본</a></li><li><a href="components.html">컴포넌트</a></li><li><a href="component-methods.html">컴포넌트 메서드</a></li><li><a href="services.html">서비스</a></li><li><a href="component-dependency.html" class="active" aria-current="page">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="unit-of-work.html">유닛 정의</a></li><li><a href="unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 설계 · <code>docs/tableorder/inception/application-design/component-dependency.md</code></div>
+<article class="markdown"><h1 id="component-dependency">Component Dependency</h1>
+<h2 id="1-계층-의존-규칙">1. 계층 의존 규칙</h2>
+<ul>
+<li>의존 방향은 위에서 아래로만 흐릅니다.
+<ul>
+<li>백엔드: <code>api</code> → <code>services</code> → <code>repositories</code> → <code>models</code></li>
+<li><code>core</code>는 모든 계층이 사용할 수 있습니다.</li>
+</ul>
+</li>
+<li>금지되는 의존
+<ul>
+<li><code>repositories</code>는 <code>services</code>를 참조하지 않습니다.</li>
+<li><code>services</code>는 FastAPI(<code>Request</code>, <code>HTTPException</code>)를 참조하지 않습니다.</li>
+</ul>
+</li>
+<li>이벤트 흐름: <code>services</code>가 <code>EventPublisher</code>를 호출하고, <code>EventPublisher</code>가 <code>EventBroker</code>에 발행합니다. 구독은 <code>sse_router</code>가 <code>EventBroker</code>에 직접 합니다.</li>
+<li>프론트엔드 의존 방향: <code>pages</code>/<code>components</code> → <code>stores</code> → <code>api</code> → <code>shared/apiClient</code>
+<ul>
+<li>고객용 <code>table/</code>과 관리자용 <code>admin/</code>은 서로 참조하지 않고, <code>shared/</code>만 함께 씁니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-백엔드-서비스-의존-매트릭스">2. 백엔드 서비스 의존 매트릭스</h2>
+<p>행이 열을 사용하면 ●로 표시합니다.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>사용하는 쪽 \ 대상</th>
+<th>LoginAttempt</th>
+<th>TableSession</th>
+<th>OrderItem(derive)</th>
+<th>EventPublisher</th>
+<th>Store/Admin/Table Repo</th>
+<th>Menu Repo</th>
+<th>Order Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AuthService</td>
+<td>●</td>
+<td></td>
+<td></td>
+<td></td>
+<td>●</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MenuService</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>OrderService</td>
+<td></td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>OrderItemService</td>
+<td></td>
+<td></td>
+<td></td>
+<td>●</td>
+<td></td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>TableService</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>●</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TableSessionService</td>
+<td></td>
+<td></td>
+<td></td>
+<td>●</td>
+<td>●</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>DashboardService</td>
+<td></td>
+<td>●</td>
+<td></td>
+<td></td>
+<td>●</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>OrderHistoryService</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>●</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>TableStateService</td>
+<td></td>
+<td>●</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>●</td>
+</tr>
+</tbody>
+</table></div>
+<p>순환 의존은 없습니다. <code>OrderService</code>가 <code>TableSessionService</code>를 사용하지만, 반대 방향의 참조는 없습니다.</p>
+<h2 id="3-통신-패턴">3. 통신 패턴</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>구간</th>
+<th>방식</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프론트엔드 → 백엔드</td>
+<td>REST (JSON over HTTP)</td>
+<td><code>Authorization: Bearer</code> 헤더</td>
+</tr>
+<tr>
+<td>백엔드 → 프론트엔드</td>
+<td>SSE (<code>text/event-stream</code>)</td>
+<td>쿼리 토큰 인증, 15초 ping, 재연결 시 전체 상태 재조회</td>
+</tr>
+<tr>
+<td>서비스 → SSE 구독자</td>
+<td>메모리 내 Pub/Sub (asyncio 큐)</td>
+<td>서버 프로세스 1개 전제. <code>EventBroker</code> 인터페이스로 교체 가능</td>
+</tr>
+<tr>
+<td>백엔드 → DB</td>
+<td>SQLAlchemy 2.0 → SQLite 파일</td>
+<td>요청 단위 세션</td>
+</tr>
+<tr>
+<td>태블릿 상태 저장</td>
+<td>localStorage (Zustand persist)</td>
+<td>로그인 정보, 장바구니</td>
+</tr>
+<tr>
+<td>관리자 상태 저장</td>
+<td>localStorage (Zustand persist)</td>
+<td>JWT, 만료 시각</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-데이터-흐름도">4. 데이터 흐름도</h2>
+<div class="diagram"><pre class="mermaid">flowchart LR
+    subgraph Browser_Table[&quot;태블릿 브라우저 /table&quot;]
+        TUI[&quot;Table Pages&quot;]
+        TStore[&quot;tableAuthStore / cartStore / tableOrdersStore&quot;]
+        TSSE[&quot;TableEventBridge&quot;]
+    end
+
+    subgraph Browser_Admin[&quot;관리자 브라우저 /admin&quot;]
+        AUI[&quot;Admin Pages&quot;]
+        AStore[&quot;adminAuthStore / dashboardStore&quot;]
+        ASSE[&quot;Dashboard SSE&quot;]
+    end
+
+    subgraph Backend[&quot;FastAPI 단일 프로세스&quot;]
+        API[&quot;Routers&quot;]
+        SVC[&quot;Services&quot;]
+        REPO[&quot;Repositories&quot;]
+        PUB[&quot;EventPublisher&quot;]
+        BRK[&quot;InMemoryEventBroker&quot;]
+        SSER[&quot;sse_router&quot;]
+    end
+
+    DB[(&quot;SQLite&quot;)]
+
+    TUI --&gt; TStore
+    TStore --&gt;|REST| API
+    AUI --&gt; AStore
+    AStore --&gt;|REST| API
+    API --&gt; SVC
+    SVC --&gt; REPO
+    REPO --&gt; DB
+    SVC --&gt;|after commit| PUB
+    PUB --&gt; BRK
+    BRK --&gt; SSER
+    SSER --&gt;|&quot;SSE table:id&quot;| TSSE
+    SSER --&gt;|&quot;SSE store:id&quot;| ASSE
+    TSSE --&gt; TStore
+    ASSE --&gt; AStore
+</pre></div>
+<h3 id="text-alternative">Text Alternative</h3>
+<pre><code>[Table UI] -&gt; tableStores -&gt; REST -&gt; Routers -&gt; Services -&gt; Repositories -&gt; SQLite
+[Admin UI] -&gt; adminStores -&gt; REST -&gt; Routers -&gt; Services -&gt; Repositories -&gt; SQLite
+Services --(after commit)--&gt; EventPublisher -&gt; InMemoryEventBroker -&gt; sse_router
+sse_router --SSE table:{id}--&gt; TableEventBridge -&gt; tableStores
+sse_router --SSE store:{id}--&gt; Dashboard SSE    -&gt; dashboardStore
+</code></pre>
+<h2 id="5-대표-시나리오-시퀀스-주문부터-이용-완료까지">5. 대표 시나리오 시퀀스: 주문부터 이용 완료까지</h2>
+<div class="diagram"><pre class="mermaid">sequenceDiagram
+    participant T as Tablet
+    participant API as Backend
+    participant DB as SQLite
+    participant A as Admin
+
+    T-&gt;&gt;API: POST /api/table/orders
+    API-&gt;&gt;DB: session get_or_start, insert order
+    API--&gt;&gt;T: 201 OrderDTO
+    API--)A: SSE order.created
+    A-&gt;&gt;API: POST /api/admin/order-items/ID/start (15)
+    API-&gt;&gt;DB: status PREPARING, estimated_ready_at
+    API--)T: SSE order_item.updated
+    A-&gt;&gt;API: POST /api/admin/order-items/ID/complete
+    API-&gt;&gt;DB: status COMPLETED
+    API--)T: SSE order_item.updated (toast)
+    A-&gt;&gt;API: POST /api/admin/tables/ID/complete-session
+    API-&gt;&gt;DB: set archived_at on orders, close session
+    API--)T: SSE table.session_completed (reset cart)
+    API--)A: SSE table.session_completed (card reset)
+</pre></div>
+<h3 id="text-alternative-1">Text Alternative</h3>
+<pre><code>1. Tablet  -&gt; Backend : 주문 생성 -&gt; DB 저장 -&gt; Tablet에 OrderDTO 응답 -&gt; Admin에 order.created
+2. Admin   -&gt; Backend : 항목 준비 시작(15분) -&gt; DB 갱신 -&gt; Tablet에 order_item.updated
+3. Admin   -&gt; Backend : 항목 완료 -&gt; DB 갱신 -&gt; Tablet에 order_item.updated (완료 토스트)
+4. Admin   -&gt; Backend : 이용 완료 -&gt; 주문 보관 표시, 세션 종료 -&gt; Tablet/Admin에 table.session_completed
+</code></pre>
+</article>
+<nav class="pager"><a class="pager-prev" href="services.html"><span>← 이전</span>서비스</a><a class="pager-next" href="../plans/unit-of-work-plan.html"><span>다음 →</span>유닛 계획 (질문 3)</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/vendor/mermaid/mermaid.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Business Logic Model — backend · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../../index.html">홈</a></li><li><a href="../../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../../inception/application-design/services.html">서비스</a></li><li><a href="../../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="domain-entities.html">도메인 엔티티</a></li><li><a href="business-rules.html">비즈니스 규칙</a></li><li><a href="business-logic-model.html" class="active" aria-current="page">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../build-and-test/build-instructions.html">빌드</a></li><li><a href="../../build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 기능 설계 · <code>docs/tableorder/construction/backend/functional-design/business-logic-model.md</code></div>
+<article class="markdown"><h1 id="business-logic-model--backend">Business Logic Model — backend</h1>
+<p>규칙 ID(BR-*)는 <code>business-rules.md</code>를 가리킵니다.</p>
+<hr>
+<h2 id="1-주문-생성-us-c10c12-us-i01">1. 주문 생성 (US-C10~C12, US-I01)</h2>
+<p>입력: 태블릿 토큰, 항목 목록 <code>[{menu_id, quantity}]</code></p>
+<ol>
+<li>토큰에서 <code>store_id</code>, <code>table_id</code>를 얻습니다. (BR-ORDER-1)</li>
+<li>입력을 검증합니다. (BR-ORDER-3, 4)
+<ul>
+<li>줄 수 1~20, 수량 1~20, <code>menu_id</code> 중복 없음</li>
+</ul>
+</li>
+<li>해당 매장의 메뉴를 조회해 모든 <code>menu_id</code>가 있는지 확인합니다. 하나라도 없으면 전체 거부. (BR-ORDER-5)</li>
+<li><strong>트랜잭션 시작</strong>
+<ol>
+<li>테이블의 활성 세션을 찾고, 없으면 새로 만듭니다. (BR-ORDER-9)</li>
+<li>지금 시각을 KST 날짜로 바꿔 <code>business_date</code>를 정합니다.</li>
+<li>(<code>store_id</code>, <code>business_date</code>) 카운터를 1 올려 <code>order_no</code>를 만듭니다. (BR-NO-1~4)</li>
+<li>각 줄에 메뉴명/단가 스냅샷을 담아 OrderItem을 만들고, 총액을 계산합니다. (BR-ORDER-2, 6)</li>
+<li>Order(상태 <code>PENDING</code>)와 OrderItem(모두 <code>PENDING</code>)을 저장합니다. (BR-ORDER-7)</li>
+</ol>
+</li>
+<li>커밋. 실패하면 모두 취소하고 이벤트를 보내지 않습니다. (BR-ORDER-8)</li>
+<li><code>order.created</code>를 매장 채널과 해당 테이블 채널에 발행합니다.</li>
+<li><code>OrderDTO</code>를 응답합니다.</li>
+</ol>
+<hr>
+<h2 id="2-메뉴-항목-상태-변경-us-a08a11-us-i02">2. 메뉴 항목 상태 변경 (US-A08~A11, US-I02)</h2>
+<h3 id="21-준비-시작--예상-시간-수정--완료-항목-1개">2.1 준비 시작 / 예상 시간 수정 / 완료 (항목 1개)</h3>
+<ol>
+<li>항목을 찾고 관리자 매장 범위인지 확인합니다. 아니면 <code>NOT_FOUND</code>. (BR-ITEM-8)</li>
+<li>주문이 보관됐으면 <code>ORDER_ARCHIVED</code>. (BR-ITEM-7)</li>
+<li>전이 표에서 현재 상태와 요청 동작이 허용되는지 확인합니다. 아니면 <code>INVALID_STATE_TRANSITION</code>.</li>
+<li>시간 입력이 필요한 동작이면 1~120 정수인지 확인합니다. 아니면 <code>VALIDATION_ERROR</code>. (BR-ITEM-1)</li>
+<li>항목 필드를 갱신합니다. (BR-ITEM-2, 3, 4)</li>
+<li>주문의 모든 항목 상태로 주문 상태를 다시 계산해 저장합니다. (BR-STATUS-1~4)</li>
+<li>커밋 후 <code>order_item.updated</code>를 발행합니다.</li>
+</ol>
+<h3 id="22-전체-준비-시작-주문-1개">2.2 전체 준비 시작 (주문 1개)</h3>
+<ol>
+<li>주문을 찾고 범위/보관 여부를 확인합니다.</li>
+<li><code>PENDING</code> 항목을 모읍니다. 없으면 <code>INVALID_STATE_TRANSITION</code>. (BR-ITEM-5)</li>
+<li>시간 입력을 검증합니다.</li>
+<li>모은 항목 전체에 같은 <code>now</code>로 준비 시작을 적용합니다.</li>
+<li>주문 상태를 다시 계산하고 커밋한 뒤 <code>order_item.updated</code>를 <strong>한 번</strong>(항목 여러 개 포함) 발행합니다.</li>
+</ol>
+<h3 id="주문-상태-계산-순수-함수">주문 상태 계산 (순수 함수)</h3>
+<pre><code>derive_order_status(statuses):
+    if all(s == PENDING):   return PENDING
+    if all(s == COMPLETED): return COMPLETED
+    return PREPARING
+</code></pre>
+<h3 id="예-파스타-x3-콜라-x1-주문">예: 파스타 x3, 콜라 x1 주문</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>시점</th>
+<th>파스타</th>
+<th>콜라</th>
+<th>주문 상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주문 직후</td>
+<td>PENDING</td>
+<td>PENDING</td>
+<td>PENDING</td>
+</tr>
+<tr>
+<td>콜라 완료(준비 시작 후)</td>
+<td>PENDING</td>
+<td>COMPLETED</td>
+<td>PREPARING</td>
+</tr>
+<tr>
+<td>파스타 준비 시작(12분)</td>
+<td>PREPARING</td>
+<td>COMPLETED</td>
+<td>PREPARING</td>
+</tr>
+<tr>
+<td>파스타 완료</td>
+<td>COMPLETED</td>
+<td>COMPLETED</td>
+<td>COMPLETED</td>
+</tr>
+</tbody>
+</table></div>
+<p>파스타 x3 중 1개만 나가는 중간 상태는 없습니다. 줄 전체가 완료돼야 <code>COMPLETED</code>입니다.</p>
+<hr>
+<h2 id="3-주문-삭제-us-a13-us-i04">3. 주문 삭제 (US-A13, US-I04)</h2>
+<ol>
+<li>주문을 찾고 범위를 확인합니다. 없으면 <code>NOT_FOUND</code>, 보관됐으면 <code>ORDER_ARCHIVED</code>. (BR-DELETE-1, 2)</li>
+<li>주문과 항목을 삭제합니다.</li>
+<li>같은 세션의 남은 현재 주문 총액과 미완료 항목 수를 다시 계산합니다. (BR-DELETE-4)</li>
+<li>커밋 후 <code>order.deleted</code>를 발행합니다. 세션은 유지합니다. (BR-DELETE-5)</li>
+</ol>
+<hr>
+<h2 id="4-이용-완료-us-a14-us-i03">4. 이용 완료 (US-A14, US-I03)</h2>
+<ol>
+<li>테이블을 찾고 범위를 확인합니다.</li>
+<li>활성 세션이 없으면 아무것도 바꾸지 않고 <code>{session_id: null, archived_order_count: 0}</code>을 성공으로 응답합니다. 이벤트는 보내지 않습니다. (BR-SESSION-6)</li>
+<li><strong>트랜잭션</strong>: 세션의 <code>archived_at</code>이 없는 주문 전부에 <code>archived_at = now</code>, 세션에 <code>ended_at = now</code>. (BR-SESSION-3)</li>
+<li>커밋. 실패하면 전부 취소하고 이벤트도 보내지 않습니다. (BR-SESSION-8)</li>
+<li><code>table.session_completed</code>를 매장 채널과 해당 테이블 채널에 발행합니다.</li>
+</ol>
+<hr>
+<h2 id="5-과거-내역-조회-us-a15">5. 과거 내역 조회 (US-A15)</h2>
+<ol>
+<li>테이블을 찾고 범위를 확인합니다.</li>
+<li>그 테이블의 <code>archived_at</code>이 있는 주문을 <code>created_at</code> 내림차순(동률이면 ID 내림차순)으로 가져옵니다.</li>
+<li><code>date</code>가 있으면 주문 시각의 KST 날짜가 같은 주문만 남깁니다. (BR-VIEW-6)</li>
+<li><code>cursor</code>/<code>limit</code>로 잘라서 응답합니다. 각 주문에 <code>session_id</code>, <code>archived_at</code>이 들어갑니다.</li>
+</ol>
+<hr>
+<h2 id="6-대시보드와-재동기화-us-a04a07-us-i03-us-i05">6. 대시보드와 재동기화 (US-A04~A07, US-I03, US-I05)</h2>
+<h3 id="대시보드-관리자">대시보드 (관리자)</h3>
+<p>매장의 각 테이블마다:</p>
+<ol>
+<li>활성 세션을 찾습니다. 없으면 <code>session_id: null</code>, 총액 0, 주문 0건, 미완료 0, 미리보기 없음.</li>
+<li>있으면 활성 세션의 현재 주문에서 <code>total_amount</code> 합, 주문 수, <code>COMPLETED</code>가 아닌 항목 수, 최신 3개 주문을 계산합니다. (BR-VIEW-3, 4, BR-STATUS-5)</li>
+</ol>
+<h3 id="태블릿-상태-get-apitablestate">태블릿 상태 (<code>GET /api/table/state</code>)</h3>
+<ul>
+<li>자기 테이블의 활성 세션 ID와 현재 주문 전체, 서버 시각을 돌려줍니다. 활성 세션이 없으면 <code>session_id: null</code>, <code>orders: []</code>.</li>
+<li>태블릿은 응답의 <code>session_id</code>가 자기가 저장한 값과 다르면 장바구니와 주문 내역을 비웁니다(프론트엔드 규칙).</li>
+</ul>
+<hr>
+<h2 id="7-로그인과-잠금-us-c01-us-a01-us-a03">7. 로그인과 잠금 (US-C01, US-A01, US-A03)</h2>
+<pre><code>login(kind, store_code, identifier, password):
+    attempt = find(kind, store_code, identifier)
+    if attempt.locked_until &gt; now:
+        raise ACCOUNT_LOCKED(locked_until)                  # BR-LOCK-3
+    if attempt.locked_until &lt;= now (잠금이 끝남):
+        attempt.fail_count = 0; attempt.locked_until = null # BR-LOCK-4
+
+    subject = find_account(...)                              # 없으면 None
+    if subject is None or not verify(password, subject.hash):
+        attempt.fail_count += 1
+        if attempt.fail_count &gt;= 5:
+            attempt.locked_until = now + 15min               # BR-LOCK-2
+        save(attempt)
+        raise INVALID_CREDENTIALS                            # BR-AUTH-2
+
+    attempt.fail_count = 0; attempt.locked_until = null      # BR-LOCK-5
+    return issue_token(subject, 16h)
+</code></pre>
+<ul>
+<li>5번째 실패 응답은 <code>INVALID_CREDENTIALS</code>이고, 6번째 시도부터 <code>ACCOUNT_LOCKED</code>입니다.</li>
+<li>존재하지 않는 계정도 같은 경로로 기록됩니다. (BR-LOCK-6)</li>
+</ul>
+<hr>
+<h2 id="8-sse-이벤트">8. SSE 이벤트</h2>
+<h3 id="채널-규칙-br-scope-3">채널 규칙 (BR-SCOPE-3)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>채널</th>
+<th>구독자</th>
+<th>키</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매장 채널</td>
+<td>관리자</td>
+<td><code>store:{store_id}</code></td>
+</tr>
+<tr>
+<td>테이블 채널</td>
+<td>해당 테이블 태블릿</td>
+<td><code>table:{table_id}</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>모든 이벤트는 커밋 성공 후에만, 해당 매장 채널과 <strong>영향받는 테이블의 채널</strong>에 발행합니다. 다른 테이블 채널에는 보내지 않습니다. (US-I02 AC3)</p>
+<h3 id="이벤트-봉투">이벤트 봉투</h3>
+<pre><code>id:    프로세스 안에서 증가하는 정수 (재연결 때 재전송에는 쓰지 않음)
+event: 이벤트 타입
+data:  {&quot;sent_at&quot;: &quot;서버 시각&quot;, ...아래 페이로드}
+</code></pre>
+<p>15초마다 <code>: ping</code> 주석 줄을 보냅니다. 재연결 때 놓친 이벤트를 다시 보내지 않고, 클라이언트가 상태 API를 다시 호출해 맞춥니다. <code>sent_at</code>은 클라이언트가 시계 차이를 보정해서 카운트다운에 사용합니다.</p>
+<h3 id="페이로드">페이로드</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>이벤트</th>
+<th>페이로드</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>order.created</code></td>
+<td><code>order</code>(OrderDTO), <code>table_id</code>, <code>table_number</code>, <code>table_total</code>, <code>unfinished_item_count</code></td>
+</tr>
+<tr>
+<td><code>order.deleted</code></td>
+<td><code>order_id</code>, <code>table_id</code>, <code>table_total</code>, <code>unfinished_item_count</code></td>
+</tr>
+<tr>
+<td><code>order_item.updated</code></td>
+<td><code>items[]</code>(OrderItemDTO, 바뀐 항목만), <code>order_id</code>, <code>order_status</code>, <code>table_id</code>, <code>unfinished_item_count</code></td>
+</tr>
+<tr>
+<td><code>table.session_completed</code></td>
+<td><code>table_id</code>, <code>session_id</code>, <code>completed_at</code>, <code>archived_order_count</code></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><code>order_item.updated</code>에서 <code>items[]</code>에 <code>COMPLETED</code>로 바뀐 항목이 있으면 태블릿이 완료 토스트를 띄웁니다. 토스트에 쓸 메뉴명은 <code>menu_name</code>으로 들어 있습니다.</li>
+<li>대시보드는 이벤트를 받으면 <code>table_total</code>, <code>unfinished_item_count</code>를 그대로 카드에 반영합니다.</li>
+</ul>
+<hr>
+<h2 id="9-seed-데이터-q7-a">9. Seed 데이터 (Q7: A)</h2>
+<p>앱을 시작할 때 <code>demo</code> 매장이 없으면 아래 데이터를 한 번만 넣습니다. 이미 있으면 건너뜁니다.</p>
+<h3 id="계정과-테이블-로컬-데모-전용-값-readme에-기재">계정과 테이블 (로컬 데모 전용 값, README에 기재)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매장</td>
+<td>code <code>demo</code>, name <code>데모 식당</code></td>
+</tr>
+<tr>
+<td>관리자</td>
+<td><code>admin</code> / <code>admin1234</code></td>
+</tr>
+<tr>
+<td>테이블</td>
+<td>1~6번, 비밀번호 모두 <code>1234</code></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="카테고리와-메뉴-12개">카테고리와 메뉴 (12개)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>카테고리 (순서)</th>
+<th>메뉴 (순서)</th>
+<th>가격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>메인 (1)</td>
+<td>김치찌개, 불고기 덮밥, 돈까스</td>
+<td>9,000 / 10,000 / 11,000</td>
+</tr>
+<tr>
+<td>사이드 (2)</td>
+<td>군만두, 감자튀김, 계란말이</td>
+<td>5,000 / 4,500 / 6,000</td>
+</tr>
+<tr>
+<td>음료 (3)</td>
+<td>콜라, 사이다, 아이스 아메리카노</td>
+<td>2,000 / 2,000 / 3,000</td>
+</tr>
+<tr>
+<td>디저트 (4)</td>
+<td>호떡, 아이스크림, 식혜</td>
+<td>3,500 / 3,000 / 2,500</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>메뉴마다 설명 한 줄과 이미지 경로 <code>/static/images/{영문-이름}.svg</code>를 가집니다.</li>
+<li>이미지는 Code Generation에서 메뉴별 간단한 SVG 플레이스홀더로 만듭니다.</li>
+<li>이미지 파일이 없을 때를 대비해 <code>/static/images/placeholder.svg</code>도 함께 둡니다.</li>
+</ul>
+<hr>
+<h2 id="10-동시성-정리">10. 동시성 정리</h2>
+<ul>
+<li>쓰기는 모두 트랜잭션 1개로 처리하고, 데이터베이스가 쓰기를 직렬화합니다.</li>
+<li>두 관리자가 같은 항목을 동시에 바꾸면 나중 요청은 바뀐 상태를 보고 전이 표에 따라 거부(409)됩니다.</li>
+<li>활성 세션이 테이블당 1개라는 제약은 데이터베이스 제약으로도 보장합니다.</li>
+<li>같은 주문 요청을 연속으로 두 번 보내는 중복 제출은 백엔드가 막지 않습니다. 프론트엔드가 전송 중 버튼을 비활성화합니다.</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="business-rules.html"><span>← 이전</span>비즈니스 규칙</a><a class="pager-next" href="../../plans/backend-code-generation-plan.html"><span>다음 →</span>백엔드 코드 생성 계획</a></nav>
+</main>
+</div>
+<script src="../../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../../assets/app.js"></script>
+</body>
+</html>

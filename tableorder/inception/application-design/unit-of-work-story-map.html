@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Unit of Work — Story Map · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="application-design.html">애플리케이션 설계 통합본</a></li><li><a href="components.html">컴포넌트</a></li><li><a href="component-methods.html">컴포넌트 메서드</a></li><li><a href="services.html">서비스</a></li><li><a href="component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="unit-of-work.html">유닛 정의</a></li><li><a href="unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="unit-of-work-story-map.html" class="active" aria-current="page">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 유닛 · <code>docs/tableorder/inception/application-design/unit-of-work-story-map.md</code></div>
+<article class="markdown"><h1 id="unit-of-work--story-map">Unit of Work — Story Map</h1>
+<p>표기</p>
+<ul>
+<li>● 주 담당: 인수 조건의 핵심 동작을 구현합니다.</li>
+<li>○ 보조: 화면 표시 또는 API 제공만 맡습니다.</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>스토리</th>
+<th>제목</th>
+<th>backend</th>
+<th>frontend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US-C01</td>
+<td>태블릿 초기 설정</td>
+<td>● 로그인 API, 잠금</td>
+<td>● 설정 화면, localStorage 저장</td>
+</tr>
+<tr>
+<td>US-C02</td>
+<td>자동 로그인</td>
+<td>○ 토큰 검증</td>
+<td>● 저장 정보로 진입</td>
+</tr>
+<tr>
+<td>US-C03</td>
+<td>토큰 만료 시 자동 재로그인</td>
+<td>○ 401 응답</td>
+<td>● 재로그인 후 재시도</td>
+</tr>
+<tr>
+<td>US-C04</td>
+<td>카테고리별 메뉴 카드</td>
+<td>● 메뉴 API, 정적 이미지</td>
+<td>● 카드 UI, 플레이스홀더</td>
+</tr>
+<tr>
+<td>US-C05</td>
+<td>카테고리 빠른 이동</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-C06</td>
+<td>장바구니 담기</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-C07</td>
+<td>수량 조절/삭제</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-C08</td>
+<td>장바구니 비우기</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-C09</td>
+<td>새로고침해도 유지</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-C10</td>
+<td>주문 확인/확정</td>
+<td>● 주문 생성, 세션 시작</td>
+<td>● 확인 화면</td>
+</tr>
+<tr>
+<td>US-C11</td>
+<td>주문 성공 안내</td>
+<td>○ 주문 번호</td>
+<td>● 5초 후 이동</td>
+</tr>
+<tr>
+<td>US-C12</td>
+<td>주문 실패 처리</td>
+<td>○ 에러 응답</td>
+<td>● 장바구니 유지</td>
+</tr>
+<tr>
+<td>US-C13</td>
+<td>현재 세션 주문 내역</td>
+<td>● 세션 필터, 페이지네이션</td>
+<td>● 목록, 무한 스크롤</td>
+</tr>
+<tr>
+<td>US-C14</td>
+<td>항목 상태/남은 시간</td>
+<td>● 주문 상태 결정, 예상 시각</td>
+<td>● 카운트다운, &quot;곧 나옵니다&quot;</td>
+</tr>
+<tr>
+<td>US-C15</td>
+<td>실시간 갱신</td>
+<td>● 테이블 채널 이벤트</td>
+<td>● SSE 반영</td>
+</tr>
+<tr>
+<td>US-C16</td>
+<td>완료 알림 배너</td>
+<td>○ 이벤트</td>
+<td>● 토스트</td>
+</tr>
+<tr>
+<td>US-A01</td>
+<td>관리자 로그인</td>
+<td>● JWT, bcrypt</td>
+<td>● 로그인 화면</td>
+</tr>
+<tr>
+<td>US-A02</td>
+<td>로그인 유지/자동 로그아웃</td>
+<td>● 16시간 만료</td>
+<td>● 만료 타이머</td>
+</tr>
+<tr>
+<td>US-A03</td>
+<td>로그인 시도 제한</td>
+<td>● 5회/15분 잠금</td>
+<td>○ 안내 메시지</td>
+</tr>
+<tr>
+<td>US-A04</td>
+<td>그리드 대시보드</td>
+<td>● 대시보드 API</td>
+<td>● 그리드 UI</td>
+</tr>
+<tr>
+<td>US-A05</td>
+<td>신규 주문 실시간 강조</td>
+<td>● 매장 채널 이벤트</td>
+<td>● 강조/해제</td>
+</tr>
+<tr>
+<td>US-A06</td>
+<td>주문 상세</td>
+<td>● 상세 API</td>
+<td>● 모달</td>
+</tr>
+<tr>
+<td>US-A07</td>
+<td>테이블 필터</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-A08</td>
+<td>준비 시작(시간 필수)</td>
+<td>● 전이/검증</td>
+<td>● 입력 다이얼로그</td>
+</tr>
+<tr>
+<td>US-A09</td>
+<td>전체 준비 시작</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-A10</td>
+<td>예상 시간 수정</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-A11</td>
+<td>완료 처리</td>
+<td>● 전이 규칙</td>
+<td>● 버튼 노출 규칙</td>
+</tr>
+<tr>
+<td>US-A12</td>
+<td>테이블 등록/비밀번호</td>
+<td>●</td>
+<td>● 관리 화면</td>
+</tr>
+<tr>
+<td>US-A13</td>
+<td>주문 삭제</td>
+<td>● 삭제, 총액 재계산</td>
+<td>● 확인 팝업</td>
+</tr>
+<tr>
+<td>US-A14</td>
+<td>이용 완료</td>
+<td>● 보관 표시, 세션 종료 (트랜잭션)</td>
+<td>● 확인 팝업, 카드 리셋</td>
+</tr>
+<tr>
+<td>US-A15</td>
+<td>과거 내역</td>
+<td>● 보관 주문 조회, 날짜 필터</td>
+<td>● 모달</td>
+</tr>
+<tr>
+<td>US-I01</td>
+<td>주문 → 대시보드</td>
+<td>● 이벤트 발행</td>
+<td>● 수신/반영</td>
+</tr>
+<tr>
+<td>US-I02</td>
+<td>상태 변경 → 고객 화면</td>
+<td>● 채널 분리</td>
+<td>● 수신/반영</td>
+</tr>
+<tr>
+<td>US-I03</td>
+<td>이용 완료 → 태블릿 초기화</td>
+<td>● 이벤트, 상태 API</td>
+<td>● 초기화, 재접속 동기화</td>
+</tr>
+<tr>
+<td>US-I04</td>
+<td>주문 삭제 → 태블릿</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>US-I05</td>
+<td>재연결 동기화</td>
+<td>● 상태 조회 API, ping</td>
+<td>● 재연결, resync</td>
+</tr>
+<tr>
+<td>US-I06</td>
+<td>매장/테이블 데이터 분리</td>
+<td>● 범위 강제</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="배정-점검">배정 점검</h2>
+<ul>
+<li>37개 스토리 모두 하나 이상의 단위에 배정되어 있습니다.</li>
+<li>backend 단독 스토리는 1개입니다: US-I06</li>
+<li>frontend 단독 스토리는 6개입니다: US-C05, C06, C07, C08, C09, US-A07</li>
+<li>나머지 30개는 두 단위가 함께 구현합니다.</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="unit-of-work-dependency.html"><span>← 이전</span>유닛 의존성</a><a class="pager-next" href="../../construction/plans/backend-functional-design-plan.html"><span>다음 →</span>기능 설계 계획 (질문 7)</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

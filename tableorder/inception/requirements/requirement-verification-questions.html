@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>요구사항 명확화 질문 (Requirements Clarification Questions) · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="requirement-verification-questions.html" class="active" aria-current="page">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../application-design/components.html">컴포넌트</a></li><li><a href="../application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../application-design/services.html">서비스</a></li><li><a href="../application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 요구사항 · <code>docs/tableorder/inception/requirements/requirement-verification-questions.md</code></div>
+<article class="markdown"><h1 id="요구사항-명확화-질문-requirements-clarification-questions">요구사항 명확화 질문 (Requirements Clarification Questions)</h1>
+<p>제공해주신 요구사항 정의서와 예외사항 문서를 분석했습니다. 요구사항은 기능적으로 매우 상세하지만, 구현을 위한 <strong>기술 스택 / 아키텍처 / 데이터 저장소</strong> 등 핵심 기술 결정 사항이 명시되지 않았습니다. 아래 질문에 <code>[Answer]:</code> 태그 뒤에 선택지 letter(A, B, C...)를 입력해 주세요. 맞는 선택지가 없으면 마지막 &quot;Other&quot;를 선택하고 설명을 적어주세요.</p>
+<hr>
+<h2 id="question-1">Question 1</h2>
+<p>백엔드 서버는 어떤 기술 스택으로 구현할까요?</p>
+<p>A) Node.js (Express/NestJS) + TypeScript</p>
+<p>B) Python (FastAPI/Django)</p>
+<p>C) Java/Kotlin (Spring Boot)</p>
+<p>D) Go</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B (FastAPI)</p>
+<h2 id="question-2">Question 2</h2>
+<p>프론트엔드(고객용 웹UI + 관리자용 웹UI)는 어떤 프레임워크로 구현할까요?</p>
+<p>A) React (+ Vite 또는 Next.js)</p>
+<p>B) Vue.js</p>
+<p>C) Svelte/SvelteKit</p>
+<p>D) 서버 사이드 렌더링 템플릿 (별도 SPA 프레임워크 미사용)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A(Vite / Next.js 둘 중 하나 가벼운걸로)</p>
+<h2 id="question-3">Question 3</h2>
+<p>데이터 저장소는 무엇을 사용할까요? (매장, 메뉴, 주문, 주문이력, 세션 저장)</p>
+<p>A) 관계형 DB - PostgreSQL</p>
+<p>B) 관계형 DB - MySQL</p>
+<p>C) 관계형 DB - SQLite (경량, 로컬 개발/MVP용)</p>
+<p>D) NoSQL Document - MongoDB</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> C</p>
+<h2 id="question-4">Question 4</h2>
+<p>배포/실행 환경은 어떻게 가정할까요?</p>
+<p>A) 로컬 개발 환경 중심 (Docker Compose로 로컬 실행, MVP 데모 목적)</p>
+<p>B) AWS 클라우드 (ECS/Lambda 등)</p>
+<p>C) 기타 클라우드 (Azure/GCP)</p>
+<p>D) 아직 결정하지 않음 — 코드 레벨 구현에만 집중</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (Docker 는 설치 안되었으면 그냥 로컬에서 실행해도됨. MVP 고려.)</p>
+<h2 id="question-5">Question 5</h2>
+<p>고객용 태블릿 자동 로그인 시 &quot;로컬 저장&quot; 및 장바구니 유지는 어떤 방식으로 구현할까요?</p>
+<p>A) 브라우저 localStorage 사용</p>
+<p>B) 브라우저 쿠키 + 서버 세션</p>
+<p>C) IndexedDB</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A</p>
+<h2 id="question-6">Question 6</h2>
+<p>관리자 실시간 주문 모니터링은 요구사항에 SSE(Server-Sent Events)로 명시되어 있습니다. 이 방식을 그대로 사용할까요?</p>
+<p>A) 예, SSE 사용 (요구사항 그대로)</p>
+<p>B) 아니요, WebSocket으로 대체</p>
+<p>C) 아니요, 폴링(polling) 방식으로 단순화</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A</p>
+<h2 id="question-7">Question 7</h2>
+<p>메뉴 이미지는 &quot;이미지 URL&quot; 필드로 관리된다고 되어 있고, 이미지 업로드/리사이징은 제외 대상입니다. 이미지는 어떻게 처리할까요?</p>
+<p>A) 외부 URL 문자열만 저장 (실제 업로드 없음, 요구사항 그대로)</p>
+<p>B) 로컬 정적 파일 경로 참조</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B</p>
+<h2 id="question-8">Question 8</h2>
+<p>MVP 범위를 요구사항 문서의 &quot;4. MVP 개발 범위&quot;에 명시된 핵심 기능으로 한정할까요?</p>
+<p>A) 예, 문서의 MVP 범위대로 (고객용 5개 + 관리자용 3개 기능 그룹)</p>
+<p>B) 아니요, 일부 기능 추가/제외 필요 (Other에 설명)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B + 고객용: 메뉴가 나오기까지 예상 시간 표시, 서빙 직전에 완료됨 확 / 관리자용: 메뉴 준비 시작하면서 예상 시각 입력. 테이블 서빙 직전에 완료 처리.</p>
+<h2 id="question-9">Question 9</h2>
+<p>주문 상태(대기중/준비중/완료) 변경 권한과 흐름은 관리자만 수행하는 것으로 가정하면 될까요?</p>
+<p>A) 예, 관리자만 주문 상태를 변경 (고객은 조회만)</p>
+<p>B) 아니요, 고객도 일부 상태 변경 가능 (Other에 설명)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A</p>
+<hr>
+<h1 id="extension-opt-in-질문">Extension Opt-In 질문</h1>
+<p>AI-DLC는 선택적으로 적용할 수 있는 확장(extension) 규칙들을 제공합니다. 이 프로젝트에 어떤 확장을 적용할지 선택해 주세요.</p>
+<h2 id="question-security-extensions">Question: Security Extensions</h2>
+<p>이 프로젝트에 보안(SECURITY) 확장 규칙을 적용(강제)할까요?</p>
+<p>A) Yes — 모든 SECURITY 규칙을 blocking 제약으로 강제 (프로덕션급 애플리케이션 권장)</p>
+<p>B) No — SECURITY 규칙 생략 (PoC, 프로토타입, 실험 프로젝트에 적합)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B</p>
+<h2 id="question-property-based-testing-extension">Question: Property-Based Testing Extension</h2>
+<p>이 프로젝트에 속성 기반 테스트(PBT) 규칙을 적용(강제)할까요?</p>
+<p>A) Yes — 모든 PBT 규칙을 blocking 제약으로 강제 (비즈니스 로직/데이터 변환/직렬화/상태 컴포넌트가 있는 프로젝트 권장)</p>
+<p>B) Partial — 순수 함수 및 직렬화 라운드트립에만 PBT 적용 (알고리즘 복잡도가 제한적인 프로젝트에 적합)</p>
+<p>C) No — PBT 규칙 생략 (단순 CRUD, UI 전용, 얇은 통합 계층에 적합)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> C</p>
+<h2 id="question-resiliency-extensions">Question: Resiliency Extensions</h2>
+<p>이 프로젝트에 복원력(Resiliency) 기준선을 적용할까요? (AWS Well-Architected Reliability Pillar 기반의 설계 시점 모범 사례 — 프로덕션 보증이 아닌 &quot;첫 초안&quot; 가이드)</p>
+<p>A) Yes — 복원력 기준선을 설계 시점 가이드로 적용 (비즈니스 크리티컬 워크로드 권장)</p>
+<p>B) No — 복원력 기준선 생략 (PoC, 프로토타입, 빠른 반복이 중요한 실험 프로젝트에 적합)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B</p>
+</article>
+<nav class="pager"><a class="pager-prev" href="../../input/constraints.html"><span>← 이전</span>예외사항</a><a class="pager-next" href="requirement-clarification-questions.html"><span>다음 →</span>질문 2차 · 명확화 (8문항)</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

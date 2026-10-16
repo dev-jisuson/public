@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Personas · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="personas.html" class="active" aria-current="page">페르소나</a></li><li><a href="stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../application-design/components.html">컴포넌트</a></li><li><a href="../application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../application-design/services.html">서비스</a></li><li><a href="../application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 사용자 스토리 · <code>docs/tableorder/inception/user-stories/personas.md</code></div>
+<article class="markdown"><h1 id="personas">Personas</h1>
+<h2 id="p1-테이블-고객--김손님">P1. 테이블 고객 — &quot;김손님&quot;</h2>
+<ul>
+<li><strong>누구인가</strong>: 매장에 방문해 테이블에 앉은 손님. 일행과 함께 식사하며, 테이블에 놓인 태블릿으로 주문합니다.</li>
+<li><strong>상황</strong>:
+<ul>
+<li>태블릿은 이미 관리자가 설정해 두었기 때문에 로그인을 직접 하지 않습니다.</li>
+<li>식사 중에 여러 번 추가 주문을 할 수 있습니다.</li>
+</ul>
+</li>
+<li><strong>목표</strong>:
+<ul>
+<li>직원을 부르지 않고 바로 주문하기</li>
+<li>내가 시킨 메뉴가 언제 나오는지 알기</li>
+<li>지금까지 얼마나 주문했는지 확인하기</li>
+</ul>
+</li>
+<li><strong>불편 요소</strong>:
+<ul>
+<li>메뉴를 찾기 어렵거나 버튼이 작아서 잘못 누르는 경우</li>
+<li>주문이 제대로 들어갔는지 확신하지 못하는 경우</li>
+<li>음식이 언제 나올지 몰라 계속 기다리는 경우</li>
+</ul>
+</li>
+<li><strong>기술 숙련도</strong>: 낮음~보통. 화면 구성이 단순하고 터치하기 쉬워야 합니다.</li>
+<li><strong>사용 화면</strong>: 고객용 웹UI (태블릿 브라우저)</li>
+</ul>
+<h2 id="p2-매장-운영자--박사장">P2. 매장 운영자 — &quot;박사장&quot;</h2>
+<ul>
+<li><strong>누구인가</strong>: 매장을 운영하며 홀/주방 상황을 관리하는 사람. 시스템상 관리자 계정 1종을 사용합니다. 직원 권한 구분은 범위 밖입니다.</li>
+<li><strong>상황</strong>:
+<ul>
+<li>영업 시간 동안 관리자 화면을 계속 띄워 두고 들어오는 주문을 확인합니다.</li>
+<li>메뉴 준비 시작, 서빙 직전 완료 처리, 손님이 나가면 이용 완료 처리를 합니다.</li>
+</ul>
+</li>
+<li><strong>목표</strong>:
+<ul>
+<li>신규 주문을 놓치지 않기</li>
+<li>테이블별 주문 현황과 총액을 한눈에 보기</li>
+<li>손님에게 정확한 예상 시간 알려주기</li>
+<li>테이블 회전 빠르게 처리하기</li>
+</ul>
+</li>
+<li><strong>불편 요소</strong>:
+<ul>
+<li>주문이 몰릴 때 어떤 테이블의 어떤 메뉴가 대기 중인지 헷갈리는 경우</li>
+<li>잘못 들어간 주문을 정정하기 어려운 경우</li>
+<li>이전 손님의 주문이 다음 손님에게 섞이는 경우</li>
+</ul>
+</li>
+<li><strong>기술 숙련도</strong>: 보통</li>
+<li><strong>사용 화면</strong>: 관리자용 웹UI (PC 또는 태블릿 브라우저). 태블릿 초기 설정 시에는 고객용 화면의 설정 메뉴도 사용</li>
+</ul>
+<h2 id="페르소나--epic-매핑">페르소나 ↔ Epic 매핑</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Epic</th>
+<th>P1 고객</th>
+<th>P2 운영자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1 태블릿 설정 및 자동 로그인</td>
+<td>사용(자동 로그인)</td>
+<td>사용(초기 설정)</td>
+</tr>
+<tr>
+<td>E2 메뉴 탐색</td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>E3 장바구니</td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>E4 주문하기</td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>E5 주문 내역 및 진행 상황</td>
+<td>●</td>
+<td></td>
+</tr>
+<tr>
+<td>E6 관리자 인증</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>E7 실시간 주문 모니터링</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>E8 메뉴 항목 상태 및 예상 시간 관리</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>E9 테이블 관리</td>
+<td></td>
+<td>●</td>
+</tr>
+<tr>
+<td>E10 고객↔관리자 실시간 연동</td>
+<td>●</td>
+<td>●</td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<nav class="pager"><a class="pager-prev" href="../plans/story-generation-plan.html"><span>← 이전</span>스토리 생성 계획 (질문 6)</a><a class="pager-next" href="stories.html"><span>다음 →</span>유저 스토리 37개</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

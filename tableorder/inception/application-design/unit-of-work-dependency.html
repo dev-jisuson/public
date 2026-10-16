@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Unit of Work Dependency · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="application-design.html">애플리케이션 설계 통합본</a></li><li><a href="components.html">컴포넌트</a></li><li><a href="component-methods.html">컴포넌트 메서드</a></li><li><a href="services.html">서비스</a></li><li><a href="component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="unit-of-work.html">유닛 정의</a></li><li><a href="unit-of-work-dependency.html" class="active" aria-current="page">유닛 의존성</a></li><li><a href="unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 유닛 · <code>docs/tableorder/inception/application-design/unit-of-work-dependency.md</code></div>
+<article class="markdown"><h1 id="unit-of-work-dependency">Unit of Work Dependency</h1>
+<h2 id="의존-매트릭스">의존 매트릭스</h2>
+<p>행이 열에 의존하면 ●로 표시합니다.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>의존하는 쪽 \ 대상</th>
+<th>backend</th>
+<th>frontend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backend</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>frontend</td>
+<td>● (런타임: REST + SSE 계약)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>의존 방향은 <code>frontend</code> → <code>backend</code> 한쪽뿐이라 순환이 없습니다.</li>
+<li>빌드할 때는 서로 의존하지 않습니다. 각자 따로 빌드하고 테스트할 수 있습니다.</li>
+</ul>
+<h2 id="통합-계약">통합 계약</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>계약</th>
+<th>정의 위치</th>
+<th>소유 단위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REST 엔드포인트 20개</td>
+<td><code>component-methods.md</code> 4절</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>SSE 이벤트 4종과 채널 규칙</td>
+<td><code>component-methods.md</code> 5절</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>요청/응답 스키마</td>
+<td><code>backend/app/schemas/</code> (Pydantic)</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>TypeScript 타입 (사본)</td>
+<td><code>frontend/src/shared/types.ts</code></td>
+<td>frontend. backend 스키마와 일치해야 함</td>
+</tr>
+<tr>
+<td>인증 방식</td>
+<td><code>Authorization: Bearer</code> / SSE는 <code>?token=</code></td>
+<td>backend</td>
+</tr>
+<tr>
+<td>정적 이미지 경로</td>
+<td><code>/static/images/{file}</code></td>
+<td>backend</td>
+</tr>
+<tr>
+<td>프록시 규칙</td>
+<td><code>/api/*</code>, <code>/static/*</code> → backend</td>
+<td>frontend (vite.config.ts, nginx.conf)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>계약 변경 규칙</strong>: backend 스키마를 바꾸면 같은 작업에서 <code>types.ts</code>도 고칩니다. 바뀐 내용은 Code Generation 요약에 적습니다.</li>
+</ul>
+<h2 id="구현-순서">구현 순서</h2>
+<ol>
+<li><strong>backend</strong>
+<ol>
+<li>Functional Design</li>
+<li>Code Generation</li>
+<li>pytest로 계약 확정</li>
+</ol>
+</li>
+<li><strong>frontend</strong>: Code Generation (확정된 backend 계약을 기준으로 함)</li>
+<li><strong>Build and Test</strong>
+<ul>
+<li>양쪽 빌드와 테스트</li>
+<li>Docker Compose 통합 실행</li>
+<li>연동 시나리오(US-I01~I06) 확인</li>
+</ul>
+</li>
+</ol>
+<h2 id="통합-검증-지점">통합 검증 지점</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>시점</th>
+<th>검증 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backend Code Generation 완료</td>
+<td>API 테스트로 엔드포인트와 SSE 이벤트 계약 검증</td>
+</tr>
+<tr>
+<td>frontend Code Generation 완료</td>
+<td>실제 backend 대상으로 로그인 → 주문 → 상태 변경 → 이용 완료 흐름 확인</td>
+</tr>
+<tr>
+<td>Build and Test</td>
+<td>Docker Compose로 함께 실행, 연동 스토리 6개의 인수 조건 확인</td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<nav class="pager"><a class="pager-prev" href="unit-of-work.html"><span>← 이전</span>유닛 정의</a><a class="pager-next" href="unit-of-work-story-map.html"><span>다음 →</span>유닛–스토리 매핑</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

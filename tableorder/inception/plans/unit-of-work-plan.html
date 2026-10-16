@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Unit of Work Plan · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../application-design/components.html">컴포넌트</a></li><li><a href="../application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../application-design/services.html">서비스</a></li><li><a href="../application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="unit-of-work-plan.html" class="active" aria-current="page">유닛 계획 (질문 3)</a></li><li><a href="../application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 유닛 · <code>docs/tableorder/inception/plans/unit-of-work-plan.md</code></div>
+<article class="markdown"><h1 id="unit-of-work-plan">Unit of Work Plan</h1>
+<h2 id="목적">목적</h2>
+<p>Application Design의 컴포넌트를 개발 단위(Unit of Work)로 나누고 다음 세 가지를 정합니다.</p>
+<ul>
+<li>각 단위가 맡는 스토리</li>
+<li>단위 간 의존성</li>
+<li>구현 순서</li>
+</ul>
+<h2 id="분해-근거-분석-결과">분해 근거 (분석 결과)</h2>
+<ul>
+<li><strong>배포 구조</strong>: 독립 배포 서비스가 아닙니다. 아래 두 덩어리를 Docker Compose 하나로 함께 실행합니다.
+<ul>
+<li>백엔드: FastAPI 단일 프로세스</li>
+<li>프론트엔드: React+Vite 앱 1개</li>
+</ul>
+</li>
+<li><strong>기술 경계</strong>: 백엔드와 프론트엔드는 다음이 모두 다릅니다. 그래서 둘을 자연스러운 분해 경계로 봅니다.</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>백엔드</th>
+<th>프론트엔드</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>언어</td>
+<td>Python</td>
+<td>TypeScript</td>
+</tr>
+<tr>
+<td>빌드</td>
+<td>pip/uv</td>
+<td>npm</td>
+</tr>
+<tr>
+<td>테스트</td>
+<td>pytest</td>
+<td>Vitest</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>계약 경계</strong>: 두 단위는 아래 두 가지로만 통신합니다 (<code>component-methods.md</code> 4~5절).
+<ul>
+<li>REST 엔드포인트 20개</li>
+<li>SSE 이벤트 4종</li>
+</ul>
+</li>
+<li><strong>질문 생략 카테고리</strong>
+<ul>
+<li>Team Alignment: 개발 주체가 1명(사용자 + AI)이라 소유권을 나눌 필요가 없습니다.</li>
+<li>Technical Considerations(단위별 확장성 차이): 로컬 MVP라 단위별로 다른 확장 요구가 없습니다.</li>
+<li>Business Domain: 매장 1개 범위의 단일 도메인입니다. 세부 경계는 백엔드 서비스 계층에서 이미 나눴습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="실행-체크리스트-승인-후-생성">실행 체크리스트 (승인 후 생성)</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> 1. <code>unit-of-work.md</code> — 단위 정의, 책임, 포함 컴포넌트, 코드 구성(디렉터리 구조) 전략</li>
+<li class="task"><input type="checkbox" disabled checked> 2. <code>unit-of-work-dependency.md</code> — 단위 의존 매트릭스, 통합 계약, 구현 순서</li>
+<li class="task"><input type="checkbox" disabled checked> 3. <code>unit-of-work-story-map.md</code> — 37개 스토리를 단위에 매핑</li>
+<li class="task"><input type="checkbox" disabled checked> 4. 단위 경계와 의존성 검증 (순환 없음, 계약 일치)</li>
+<li class="task"><input type="checkbox" disabled checked> 5. 모든 스토리가 하나 이상의 단위에 배정되었는지 확인</li>
+</ul>
+<hr>
+<h1 id="질문">질문</h1>
+<p>각 <code>[Answer]:</code> 뒤에 선택지 letter를 적어주세요. 질문마다 제 추천을 <strong>(추천)</strong>으로 표시했습니다. 전부 추천대로 하시려면 채팅으로 &quot;추천대로&quot;라고만 하셔도 됩니다.</p>
+<h2 id="question-1">Question 1</h2>
+<p>개발 단위를 몇 개로 나눌까요?</p>
+<p>A) 2개 — <code>backend</code>(API, SSE, DB, seed)와 <code>frontend</code>(고객용 + 관리자용 화면). 단위마다 설계 → 코드 → 승인을 한 번씩 거치므로 승인 횟수가 가장 적음 <strong>(추천)</strong></p>
+<p>B) 3개 — <code>backend</code>, <code>frontend-table</code>(고객 화면), <code>frontend-admin</code>(관리자 화면). 같은 프론트엔드 앱 안의 모듈을 순서대로 구현. 단위 크기가 작아서 검토하기 쉽지만 승인 횟수가 늘어남</p>
+<p>C) 1개 — 전체를 한 단위로 한 번에 구현. 승인은 가장 적지만 코드 생성 결과물이 매우 커서 검토하기 어려움</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+<h2 id="question-2">Question 2</h2>
+<p>구현 순서는 어떻게 할까요?</p>
+<p>A) 백엔드 먼저 — 백엔드를 구현하고 테스트로 API/SSE 계약을 확정한 뒤, 프론트엔드가 실제 API에 연결 <strong>(추천)</strong></p>
+<p>B) 계약 먼저 + 병행 — OpenAPI 계약만 먼저 확정하고, 프론트엔드는 목(mock) 데이터로 동시에 개발</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+<h2 id="question-3">Question 3</h2>
+<p>프론트엔드가 쓰는 API 요청/응답 타입은 어떻게 만들까요?</p>
+<p>A) 백엔드 Pydantic 스키마를 기준으로 TypeScript 타입을 직접 작성 (<code>frontend/src/shared/types.ts</code>). 추가 도구가 없음 <strong>(추천)</strong></p>
+<p>B) 백엔드가 만드는 OpenAPI 문서에서 자동 생성 (<code>openapi-typescript</code>). 타입이 어긋날 일은 없지만 개발 의존성과 생성 스크립트가 추가됨</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+</article>
+<nav class="pager"><a class="pager-prev" href="../application-design/component-dependency.html"><span>← 이전</span>컴포넌트 의존성</a><a class="pager-next" href="../application-design/unit-of-work.html"><span>다음 →</span>유닛 정의</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

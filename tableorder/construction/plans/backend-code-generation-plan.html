@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Code Generation Plan — backend · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../inception/application-design/services.html">서비스</a></li><li><a href="../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="backend-code-generation-plan.html" class="active" aria-current="page">백엔드 코드 생성 계획</a></li><li><a href="../backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../build-and-test/build-instructions.html">빌드</a></li><li><a href="../build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 코드 생성 · <code>docs/tableorder/construction/plans/backend-code-generation-plan.md</code></div>
+<article class="markdown"><h1 id="code-generation-plan--backend">Code Generation Plan — backend</h1>
+<blockquote>
+<p>이 문서가 backend Code Generation의 유일한 기준입니다. 승인 후 순서대로 실행하고, 끝낸 단계는 즉시 <code>[x]</code>로 바꿉니다.</p>
+</blockquote>
+<h2 id="범위-변경-2026-10-14t1420-사용자-지시-인증-관련된건-다-빼도-돼-mvp니까">범위 변경 (2026-10-14T14:20 사용자 지시: &quot;인증 관련된건 다 빼도 돼. MVP니까&quot;)</h2>
+<ul>
+<li><strong>제외</strong>: 로그인/로그아웃, JWT, 비밀번호(bcrypt), 로그인 잠금, AdminUser·LoginAttempt, 테이블 비밀번호 등록/변경, SSE 토큰 검증, 토큰 종류 검사</li>
+<li><strong>대체</strong>: 요청이 <code>X-Store-Code</code>(없으면 기본 매장 <code>demo</code>), 태블릿은 <code>X-Table-Number</code> 헤더로 매장/테이블을 식별. SSE는 헤더를 못 쓰므로 쿼리 <code>store_code</code>, <code>table_number</code>.</li>
+<li><strong>유지</strong>: 매장·테이블 범위 격리(타 매장 데이터 404), 주문/상태/세션/SSE/seed 전부</li>
+<li>영향 스토리: US-C01~C03, US-A01~A03은 구현 제외, US-A12는 &quot;테이블 등록(번호)&quot;만 구현, US-I06은 헤더로 식별한 범위 안에서 격리</li>
+<li>주의: 모든 엔드포인트가 인증 없이 열려 있음 (로컬 MVP 전용, 공개 배포 금지)</li>
+</ul>
+<h2 id="단위-정보">단위 정보</h2>
+<ul>
+<li><strong>단위</strong>: <code>backend</code> (Unit 1)</li>
+<li><strong>코드 위치</strong>: <code>tableorder/backend/</code> (aidlc-docs/ 안에는 코드를 두지 않음)</li>
+<li><strong>문서 위치</strong>: <code>aidlc-docs/construction/backend/code/</code> (마크다운 요약만)</li>
+<li><strong>프로젝트 유형</strong>: Greenfield, 다중 단위(<code>{unit-name}/</code> 패턴)</li>
+<li><strong>기준 설계</strong>: <code>functional-design/{domain-entities,business-rules,business-logic-model}.md</code>, <code>application-design/*</code></li>
+</ul>
+<h2 id="담당-스토리-unit-of-work-story-mapmd-기준-backend-담당">담당 스토리 (unit-of-work-story-map.md 기준 backend 담당)</h2>
+<p>US-C04, C10~C16, US-A04~A06, A08~A15, US-I01~I06 (인증 스토리 C01~C03, A01~A03은 MVP에서 제외, frontend 단독 스토리 C05~C09, A07 제외)</p>
+<h2 id="의존성과-계약">의존성과 계약</h2>
+<ul>
+<li>다른 단위에 의존하지 않습니다. frontend가 이 단위의 REST/SSE 계약(<code>component-methods.md</code> 4~5절)에 의존합니다.</li>
+<li>소유 엔티티: Store, Table, TableSession, Category, Menu, Order, OrderItem, DailyOrderCounter</li>
+</ul>
+<h2 id="기술-선택-확정">기술 선택 (확정)</h2>
+<ul>
+<li>Python 3.12 이상, FastAPI, SQLAlchemy, SQLite, pytest, httpx</li>
+<li>의존성 버전은 설치 가능한 실제 버전을 확인해서 <code>pyproject.toml</code>에 정확한 버전으로 고정합니다.</li>
+<li>마이그레이션 도구(Alembic)는 쓰지 않습니다. MVP이므로 시작 시 테이블이 없으면 생성하고 seed를 적재합니다. (Database Migration Scripts 단계는 이 이유로 생략)</li>
+<li>구현 결정(설계 문서에 없는 세부)
+<ul>
+<li>SQLite 파일 경로는 <code>DATABASE_URL</code>(기본 <code>backend/data/tableorder.db</code>), 연결 시 외래키 제약을 켭니다.</li>
+<li>서비스는 시계(<code>now</code>)를 주입받을 수 있게 해서 테스트에서 시간을 고정합니다.</li>
+<li>활성 세션 1개 제약은 SQLite 부분 유니크 인덱스로 보장합니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="실행-단계">실행 단계</h2>
+<h3 id="a-구조와-기반">A. 구조와 기반</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 1. 프로젝트 구조 설정</strong>
+<ul>
+<li><code>backend/pyproject.toml</code>, <code>backend/.env.example</code>, 루트 <code>.gitignore</code>(DB 파일, 가상환경, node_modules 등)</li>
+<li>디렉터리와 <code>__init__.py</code> 생성: <code>app/{api,core,services,repositories,models,schemas,seed}</code>, <code>tests/</code></li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 2. Core 모듈</strong>
+<ul>
+<li><code>core/config.py</code>, <code>core/database.py</code>, <code>core/errors.py</code>(도메인 예외 + 오류 응답 변환), <code>core/deps.py</code>(<code>get_db</code>, 매장/테이블 컨텍스트 해석: 헤더/쿼리), <code>core/clock.py</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="b-데이터-계층">B. 데이터 계층</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 3. ORM 모델</strong> — <code>models/</code> : 8개 엔티티(Store, DiningTable, TableSession, Category, Menu, DailyOrderCounter, Order, OrderItem), 제약(유일 키, 활성 세션 부분 유니크 인덱스), 관계</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 4. Pydantic 스키마</strong> — <code>schemas/</code> : 요청/응답 DTO, SSE 페이로드, 오류 응답</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 5. 리포지토리</strong> — <code>repositories/</code> : 리포지토리. 모든 조회가 <code>store_id</code> 범위 안에서만 동작</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 6. 리포지토리 단위 테스트</strong> — 범위 격리(다른 매장 데이터 안 보임), 주문 번호 카운터, 활성 세션 제약, 보관 주문 조회</li>
+</ul>
+<h3 id="c-비즈니스-로직">C. 비즈니스 로직</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 7. 이벤트 인프라</strong> — <code>services/events.py</code> : <code>EventBroker</code> 인터페이스, <code>InMemoryEventBroker</code>, <code>EventPublisher</code>(매장 채널 + 해당 테이블 채널)</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 8. (제외됨)</strong> 인증 서비스 — 사용자 지시로 범위에서 뺌</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 9. 도메인 서비스</strong>
+<ul>
+<li><code>MenuService</code>, <code>TableService</code>, <code>TableSessionService</code>(이용 완료 = 보관 표시)</li>
+<li><code>OrderService</code>(주문 생성/삭제/현재 세션 조회, 주문 번호), <code>OrderItemService</code>(상태 전이, <code>derive_order_status</code>)</li>
+<li><code>DashboardService</code>, <code>OrderHistoryService</code>, <code>TableStateService</code></li>
+<li>커밋 성공 후에만 이벤트 발행</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 10. 비즈니스 로직 단위 테스트</strong>
+<ul>
+<li>상태 전이 표 전체(허용/거부), 주문 상태 자동 결정, 예상 시간 계산/수정, 전체 준비 시작</li>
+<li>주문 생성 검증(수량/줄 수/중복/없는 메뉴/타 매장 메뉴), 금액·스냅샷, 번호 채번(자정 초기화, 삭제 후 미재사용)</li>
+<li>이용 완료(보관 표시, 총액 0, 활성 세션 없음일 때 no-op, 미완료 항목 있어도 허용), 주문 삭제 후 세션 유지</li>
+<li>실패 시 롤백 + 이벤트 미발행</li>
+</ul>
+</li>
+</ul>
+<h3 id="d-api-계층">D. API 계층</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 11. 라우터</strong> — <code>api/</code> : table, admin_dashboard, admin_order, admin_table, sse (로그인 엔드포인트 제외, 정적 파일)</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 12. 앱 조립</strong> — <code>app/main.py</code> : 라우터 등록, 오류 처리기, <code>/static</code> 마운트, 시작 시 테이블 생성 + seed 적재, 헬스체크 <code>GET /api/health</code></li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 13. API 테스트</strong>
+<ul>
+<li>메뉴 → 주문 → 대시보드 → 상태 변경 → 이용 완료의 전체 흐름</li>
+<li>매장/테이블 격리(US-I06): 타 매장 리소스 404, 타 테이블 주문 미노출</li>
+<li>SSE: 주문 생성 시 관리자·해당 태블릿만 수신, 다른 테이블 태블릿은 미수신, 이용 완료 이벤트, 재동기화용 상태 API</li>
+</ul>
+</li>
+</ul>
+<h3 id="e-seed와-정적-자원">E. Seed와 정적 자원</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 14. Seed와 이미지</strong> — <code>seed/seed.py</code>(멱등, 매장·테이블 1~6·메뉴), <code>static/images/</code> 메뉴별 SVG 12개 + <code>placeholder.svg</code>, seed 테스트</li>
+</ul>
+<h3 id="f-문서와-배포">F. 문서와 배포</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 15. 문서</strong> — <code>backend/README.md</code>(실행 방법, API 문서 주소 <code>/docs</code>), <code>aidlc-docs/construction/backend/code/code-summary.md</code></li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 16. 배포 산출물</strong> — <code>backend/Dockerfile</code>(단일 워커), 루트 <code>docker-compose.yml</code>의 backend 서비스 + DB 볼륨 (frontend 서비스는 frontend 단위에서 추가)</li>
+<li class="task"><input type="checkbox" disabled checked> <strong>Step 17. 동작 확인</strong> — 로컬 가상환경에서 <code>pytest</code> 실행, 서버를 실제로 띄워 <code>GET /api/health</code>, 메뉴 조회, SSE 연결 확인. 결과를 요약에 기록</li>
+</ul>
+<h2 id="스토리-구현-체크-구현-완료-시-x">스토리 구현 체크 (구현 완료 시 <code>[x]</code>)</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> US-C01 · US-C02 · US-C03 (인증 — MVP 제외)</li>
+<li class="task"><input type="checkbox" disabled checked> US-C04 (메뉴)</li>
+<li class="task"><input type="checkbox" disabled checked> US-C10 · US-C11 · US-C12 (주문 생성)</li>
+<li class="task"><input type="checkbox" disabled checked> US-C13 · US-C14 · US-C15 · US-C16 (조회, 상태, 실시간)</li>
+<li class="task"><input type="checkbox" disabled checked> US-A01 · US-A02 · US-A03 (인증 — MVP 제외)</li>
+<li class="task"><input type="checkbox" disabled checked> US-A04 · US-A05 · US-A06 (대시보드, 상세)</li>
+<li class="task"><input type="checkbox" disabled checked> US-A08 · US-A09 · US-A10 · US-A11 (상태·예상 시간)</li>
+<li class="task"><input type="checkbox" disabled checked> US-A12 · US-A13 · US-A14 · US-A15 (테이블 관리)</li>
+<li class="task"><input type="checkbox" disabled checked> US-I01 · US-I02 · US-I03 · US-I04 · US-I05 · US-I06 (연동)</li>
+</ul>
+<h2 id="범위-메모">범위 메모</h2>
+<ul>
+<li>이번 단위에서 생성하는 테스트는 backend 코드의 단위·API 테스트입니다. 통합 시나리오(frontend 포함)는 Build and Test 단계에서 다룹니다.</li>
+<li>총 17단계입니다.</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="../backend/functional-design/business-logic-model.html"><span>← 이전</span>비즈니스 로직 모델</a><a class="pager-next" href="../backend/code/code-summary.html"><span>다음 →</span>백엔드 코드 요약</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

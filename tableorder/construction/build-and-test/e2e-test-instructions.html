@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>End-to-End (Browser) Test Instructions · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../inception/application-design/services.html">서비스</a></li><li><a href="../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="build-instructions.html">빌드</a></li><li><a href="unit-test-instructions.html">단위 테스트</a></li><li><a href="integration-test-instructions.html">연동 테스트</a></li><li><a href="performance-test-instructions.html">성능 테스트</a></li><li><a href="e2e-test-instructions.html" class="active" aria-current="page">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 빌드와 테스트 · <code>docs/tableorder/construction/build-and-test/e2e-test-instructions.md</code></div>
+<article class="markdown"><h1 id="end-to-end-browser-test-instructions">End-to-End (Browser) Test Instructions</h1>
+<h2 id="목적">목적</h2>
+<p>실제 <strong>Google Chrome</strong>으로 빌드된 프론트엔드 + 실제 backend를 사용해, 두 대의 태블릿(1번, 2번 테이블)과 관리자 화면이 함께 도는 전체 흐름을 확인합니다. 단위 테스트(jsdom)가 잡지 못하는 렌더링·터치 영역·실제 SSE 재연결을 확인합니다.</p>
+<h2 id="준비">준비</h2>
+<ul>
+<li>시스템에 Google Chrome 설치 (브라우저를 따로 내려받지 않습니다. <code>channel: 'chrome'</code> 사용)</li>
+<li><code>backend/.venv</code>가 만들어져 있어야 합니다 (build-instructions 1번)</li>
+</ul>
+<pre><code class="language-bash">cd e2e &amp;&amp; npm install
+</code></pre>
+<h2 id="실행">실행</h2>
+<pre><code class="language-bash">cd e2e &amp;&amp; npx playwright test        # 약 25초
+</code></pre>
+<ul>
+<li>Playwright가 직접 backend(포트 8010, 매번 새 임시 DB)와 <code>npm run build</code> + <code>vite preview</code>(포트 5174)를 띄우고 끝나면 내립니다. 3000/8000번 포트를 쓰지 않습니다.</li>
+<li>스크린샷이 <code>e2e/screenshots/</code>에 저장됩니다 (매 실행 덮어씀). 실패하면 <code>e2e/test-results/</code>에 trace가 남습니다 (<code>npx playwright show-trace &lt;trace.zip&gt;</code>).</li>
+</ul>
+<h2 id="시나리오-7개-2026-10-14-전부-통과">시나리오 (7개, 2026-10-14 전부 통과)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>내용</th>
+<th>실측</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>설정 전에는 설정 화면 → 테이블 번호 입력 → 메뉴 12개와 이미지 정상 로드(placeholder 대체 0건). <strong>화면의 모든 버튼·탭이 44x44px 이상</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>장바구니 담기·합산·총액, <strong>새로고침 후 유지</strong>, 주문 확정 전에는 서버로 쓰기 요청 0건</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>주문 확정 → 확인 화면 → 주문 번호 <code>0001</code> → <strong>5초 후 메뉴 복귀</strong>, 장바구니 비워짐 → 관리자 화면에 신규 주문 강조</td>
+<td>주문→관리자 반영 <strong>42~85ms</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>관리자 상세에서 대기중 항목엔 완료 버튼 없음, 잘못된 시간(0) 거부, 15분으로 준비 시작 → 태블릿에 &quot;준비중 · 약 15분 남음&quot;. 태블릿이 <strong>메뉴 화면에 있어도</strong> 완료 시 토스트, 2번 테이블 태블릿엔 토스트 없음, 완료 항목엔 버튼 없음</td>
+<td>준비 시작→태블릿 <strong>57ms</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>네트워크 단절(오프라인) 동안</strong> 일어난 상태 변경과 새 주문이 복구 후 자동 반영</td>
+<td>복구 후 약 8초 (백오프 최대 10초)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>이용 완료: 확인 팝업에 &quot;아직 나가지 않은 메뉴 N개&quot;, 취소하면 변화 없음, 확인하면 카드 0원·태블릿 장바구니와 내역 초기화(설정은 유지)·과거 내역에 2건 표시·다음 주문은 새 세션(번호 <code>0003</code>)</td>
+<td>이용 완료→태블릿 <strong>61ms</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td>주문 삭제(취소/확인), 테이블 등록(중복 오류, 7번 등록 후 대시보드에 카드 추가)</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="이-단계에서-e2e가-찾아-고친-문제">이 단계에서 E2E가 찾아 고친 문제</h2>
+<ul>
+<li>스크린샷에서 발견: 관리자 주문 상세의 상태 배지가 세로로 늘어난 알약 모양 → <code>align-self</code> 지정</li>
+<li>스크린샷에서 발견: 메뉴 카드가 3개뿐인 카테고리에서 오른쪽이 비는 레이아웃 → <code>auto-fit</code>으로 변경(카드가 폭을 채움)</li>
+<li>(jsdom 단위 테스트로는 둘 다 발견할 수 없었음)</li>
+</ul>
+<h2 id="한계">한계</h2>
+<ul>
+<li>데스크톱 Chrome에서 태블릿 크기(1024x768)·터치 에뮬레이션으로 확인했습니다. <strong>실제 태블릿 기기, Safari/Firefox, 가로·세로 회전은 확인하지 않았습니다.</strong></li>
+<li>카운트다운이 시간에 따라 줄어드는 모습과 &quot;곧 나옵니다&quot; 전환은 단위 테스트(가짜 시계)로 확인했고 브라우저에서 15분을 기다리지는 않았습니다.</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="performance-test-instructions.html"><span>← 이전</span>성능 테스트</a><a class="pager-next" href="../../aidlc-state.html"><span>다음 →</span>진행 상태 (aidlc-state)</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

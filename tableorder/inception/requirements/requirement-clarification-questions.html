@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>요구사항 확인 질문 (Requirements Clarification Questions) · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="requirement-clarification-questions.html" class="active" aria-current="page">질문 2차 · 명확화 (8문항)</a></li><li><a href="requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../application-design/components.html">컴포넌트</a></li><li><a href="../application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../application-design/services.html">서비스</a></li><li><a href="../application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 요구사항 · <code>docs/tableorder/inception/requirements/requirement-clarification-questions.md</code></div>
+<article class="markdown"><h1 id="요구사항-확인-질문-requirements-clarification-questions">요구사항 확인 질문 (Requirements Clarification Questions)</h1>
+<p>답변 감사합니다. Q8에 추가하신 <strong>&quot;예상 시간 표시 / 서빙 직전 완료 처리&quot;</strong> 기능은 구현 방식에 따라 해석이 달라질 수 있어서 아래 내용을 확인하려고 합니다. <code>[Answer]:</code> 태그 뒤에 선택지 letter를 입력해 주세요.</p>
+<p>참고로 다음 항목들은 제가 임의로 결정했습니다. 다르게 하고 싶으시면 알려주세요.</p>
+<ul>
+<li>Q2 프론트엔드: <strong>React + Vite</strong>로 진행합니다 (Next.js보다 가볍고 SPA 용도로 충분합니다)</li>
+<li>Q4 실행 환경: Docker 29.9.0이 설치되어 있어 <strong>Docker Compose로 실행</strong>하는 것을 기본으로 하고, 로컬에서 직접 실행하는 방법도 함께 제공합니다</li>
+<li>Security extension은 사용하지 않기로 하셨지만, 요구사항 문서에 명시된 보안 기능(bcrypt 해싱, JWT, 로그인 시도 제한)은 <strong>기능 요구사항으로 그대로 구현</strong>합니다</li>
+</ul>
+<hr>
+<h2 id="ambiguity-1-예상-시간을-어떤-단위로-관리할지">Ambiguity 1: 예상 시간을 어떤 단위로 관리할지</h2>
+<p>Q8에서 &quot;메뉴가 나오기까지 예상 시간&quot;이라고 하셨습니다. 그런데 하나의 주문에 메뉴가 여러 개 들어갈 수 있어서, 예상 시간을 어느 단위로 입력할지 정해야 합니다.</p>
+<h3 id="clarification-question-1">Clarification Question 1</h3>
+<p>예상 시간은 어느 단위로 입력/표시할까요?</p>
+<p>A) 주문 단위 — 주문 1건당 예상 시간 1개 (주문 전체가 준비되는 시간)</p>
+<p>B) 메뉴 항목 단위 — 주문 안의 각 메뉴마다 예상 시간을 따로 입력</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B</p>
+<h2 id="ambiguity-2-관리자가-예상-시간을-입력하는-형식">Ambiguity 2: 관리자가 예상 시간을 입력하는 형식</h2>
+<p>관리자 쪽 설명에는 &quot;예상 <strong>시각<strong> 입력&quot;이라고 되어 있고, 고객 쪽 설명에는 &quot;예상 </strong>시간</strong> 표시&quot;라고 되어 있습니다.</p>
+<h3 id="clarification-question-2">Clarification Question 2</h3>
+<p>관리자는 예상 시간을 어떤 형식으로 입력할까요?</p>
+<p>A) 소요 시간(분) 입력 — 예: &quot;15분&quot; (시스템이 완료 예정 시각을 자동으로 계산)</p>
+<p>B) 완료 예정 시각을 직접 입력 — 예: &quot;12:45&quot;</p>
+<p>C) 미리 정해둔 버튼 중에서 선택 — 예: 5/10/15/20/30분</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A</p>
+<h3 id="clarification-question-3">Clarification Question 3</h3>
+<p>고객 화면에는 예상 시간을 어떻게 보여줄까요?</p>
+<p>A) 남은 시간 카운트다운 — 예: &quot;약 12분 남음&quot;</p>
+<p>B) 완료 예정 시각 — 예: &quot;12:45 완료 예정&quot;</p>
+<p>C) 둘 다 표시A</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span></p>
+<h2 id="ambiguity-3-상태-전환-규칙">Ambiguity 3: 상태 전환 규칙</h2>
+<p>&quot;메뉴 준비 시작하면서 예상 시각 입력&quot;이라고 하셨습니다. 이 말이 대기중 → 준비중으로 바꿀 때 예상 시간을 꼭 입력해야 한다는 뜻인지 확인이 필요합니다.</p>
+<h3 id="clarification-question-4">Clarification Question 4</h3>
+<p>대기중 → 준비중으로 상태를 바꿀 때 예상 시간 입력을 필수로 할까요?</p>
+<p>A) 필수 — 예상 시간을 입력해야만 &quot;준비중&quot;으로 바꿀 수 있음</p>
+<p>B) 선택 — 입력하지 않아도 &quot;준비중&quot;으로 바꿀 수 있고, 나중에 입력/수정 가능</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A</p>
+<h3 id="clarification-question-5">Clarification Question 5</h3>
+<p>&quot;준비중&quot;인 주문의 예상 시간을 관리자가 나중에 수정할 수 있어야 할까요? (예: 주방이 바빠져서 시간이 늦어지는 경우)</p>
+<p>A) 예, 수정할 수 있음</p>
+<p>B) 아니요, 한 번 입력하면 고정</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A</p>
+<h2 id="ambiguity-4-고객-화면의-상태-업데이트-방식">Ambiguity 4: 고객 화면의 상태 업데이트 방식</h2>
+<p>원래 요구사항에서는 고객 화면의 주문 상태 실시간 업데이트가 &quot;선택사항&quot;이었습니다. 하지만 고객이 예상 시간과 &quot;완료됨&quot;을 확인하려면 화면이 새로고침 없이 갱신되어야 합니다.</p>
+<h3 id="clarification-question-6">Clarification Question 6</h3>
+<p>고객 화면의 주문 상태와 예상 시간은 어떻게 업데이트할까요?</p>
+<p>A) SSE로 실시간 업데이트 (관리자 화면과 같은 방식)</p>
+<p>B) 주기적으로 서버에 다시 요청 (예: 10초마다)</p>
+<p>C) 고객이 주문 내역 화면을 직접 열거나 새로고침할 때만 업데이트</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A</p>
+<h3 id="clarification-question-7">Clarification Question 7</h3>
+<p>주문이 &quot;완료&quot;로 바뀌면 고객에게 어떻게 알려줄까요? (참고: 소리/진동/푸시 알림은 예외사항에 따라 구현하지 않습니다)</p>
+<p>A) 주문 내역 화면에서 상태 표시만 &quot;완료&quot;로 바뀜</p>
+<p>B) 상태 표시 변경 + 지금 보고 있는 화면(메뉴 화면 포함)에 눈에 띄는 배너/토스트 표시</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B</p>
+<h2 id="ambiguity-5-메뉴-이미지-정적-파일-q7-b">Ambiguity 5: 메뉴 이미지 정적 파일 (Q7: B)</h2>
+<h3 id="clarification-question-8">Clarification Question 8</h3>
+<p>메뉴 이미지 파일은 어떻게 준비할까요? (참고: 이미지 업로드 기능은 예외사항이라 만들지 않습니다)</p>
+<p>A) 개발자/운영자가 서버의 정적 폴더(예: <code>static/images/</code>)에 파일을 직접 넣고, 관리자가 메뉴를 등록할 때 파일 경로를 입력</p>
+<p>B) A와 같은 방식 + 데모용 샘플 메뉴와 플레이스홀더 이미지를 seed 데이터로 함께 제공</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> B</p>
+</article>
+<nav class="pager"><a class="pager-prev" href="requirement-verification-questions.html"><span>← 이전</span>질문 1차 · 기술 결정 (12문항)</a><a class="pager-next" href="requirement-review-questions.html"><span>다음 →</span>질문 3차 · 재검토 (7문항)</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Execution Plan · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="execution-plan.html" class="active" aria-current="page">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../application-design/components.html">컴포넌트</a></li><li><a href="../application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../application-design/services.html">서비스</a></li><li><a href="../application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 실행 계획 · <code>docs/tableorder/inception/plans/execution-plan.md</code></div>
+<article class="markdown"><h1 id="execution-plan">Execution Plan</h1>
+<h2 id="detailed-analysis-summary">Detailed Analysis Summary</h2>
+<h3 id="change-impact-assessment">Change Impact Assessment</h3>
+<ul>
+<li><strong>User-facing changes</strong>: Yes. 고객용 태블릿 웹UI와 관리자용 웹UI를 새로 만듭니다.</li>
+<li><strong>Structural changes</strong>: Yes. 처음부터 시스템 구조를 정합니다.
+<ul>
+<li>React+Vite 프론트엔드</li>
+<li>FastAPI 백엔드 (REST API, SSE)</li>
+<li>SQLite</li>
+</ul>
+</li>
+<li><strong>Data model changes</strong>: Yes. 엔티티 9종을 새로 정의합니다.
+<ul>
+<li>Store, AdminUser, LoginAttempt, Table, TableSession, Category, Menu</li>
+<li>Order(보관 표시 <code>archived_at</code> 포함), OrderItem</li>
+</ul>
+</li>
+<li><strong>API changes</strong>: Yes. 새로 만드는 API는 다음과 같습니다.
+<ul>
+<li>REST API: 인증, 메뉴, 주문, 테이블</li>
+<li>SSE 스트림: 관리자용 1종, 테이블용 1종</li>
+</ul>
+</li>
+<li><strong>NFR impact</strong>: Yes, 범위는 제한적입니다.
+<ul>
+<li>실시간 반영 2초 이내</li>
+<li>JWT/bcrypt 인증과 로그인 시도 제한</li>
+<li>매장 간, 테이블 간 데이터 분리</li>
+<li>Security/PBT/Resiliency extension은 모두 비활성입니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="risk-assessment">Risk Assessment</h3>
+<ul>
+<li><strong>Risk Level</strong>: Medium-Low. 로컬에서 돌리는 MVP이고 운영 영향이 없습니다. 기술적으로 불확실한 부분은 SSE 연동과 상태 동기화입니다.</li>
+<li><strong>Rollback Complexity</strong>: Easy. 신규 프로젝트이고 운영 데이터가 없습니다.</li>
+<li><strong>Testing Complexity</strong>: Moderate.
+<ul>
+<li>메뉴 항목 상태 전이, 세션 라이프사이클, SSE 이벤트 전달을 검증해야 합니다.</li>
+<li>단위 테스트와 API 통합 테스트를 합니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="workflow-visualization">Workflow Visualization</h2>
+<div class="diagram"><pre class="mermaid">flowchart TD
+    Start([&quot;User Request&quot;])
+
+    subgraph INCEPTION[&quot;🔵 INCEPTION PHASE&quot;]
+        WD[&quot;Workspace Detection&lt;br/&gt;&lt;b&gt;COMPLETED&lt;/b&gt;&quot;]
+        RE[&quot;Reverse Engineering&lt;br/&gt;&lt;b&gt;SKIP&lt;/b&gt;&quot;]
+        RA[&quot;Requirements Analysis&lt;br/&gt;&lt;b&gt;COMPLETED&lt;/b&gt;&quot;]
+        US[&quot;User Stories&lt;br/&gt;&lt;b&gt;COMPLETED&lt;/b&gt;&quot;]
+        WP[&quot;Workflow Planning&lt;br/&gt;&lt;b&gt;IN PROGRESS&lt;/b&gt;&quot;]
+        AD[&quot;Application Design&lt;br/&gt;&lt;b&gt;EXECUTE&lt;/b&gt;&quot;]
+        UG[&quot;Units Generation&lt;br/&gt;&lt;b&gt;EXECUTE&lt;/b&gt;&quot;]
+    end
+
+    subgraph CONSTRUCTION[&quot;🟢 CONSTRUCTION PHASE&quot;]
+        FD[&quot;Functional Design&lt;br/&gt;&lt;b&gt;EXECUTE - backend unit&lt;/b&gt;&quot;]
+        NFRA[&quot;NFR Requirements&lt;br/&gt;&lt;b&gt;SKIP&lt;/b&gt;&quot;]
+        NFRD[&quot;NFR Design&lt;br/&gt;&lt;b&gt;SKIP&lt;/b&gt;&quot;]
+        ID[&quot;Infrastructure Design&lt;br/&gt;&lt;b&gt;SKIP&lt;/b&gt;&quot;]
+        CG[&quot;Code Generation&lt;br/&gt;&lt;b&gt;EXECUTE&lt;/b&gt;&quot;]
+        BT[&quot;Build and Test&lt;br/&gt;&lt;b&gt;EXECUTE&lt;/b&gt;&quot;]
+    end
+
+    subgraph OPERATIONS[&quot;🟡 OPERATIONS PHASE&quot;]
+        OPS[&quot;Operations&lt;br/&gt;&lt;b&gt;PLACEHOLDER&lt;/b&gt;&quot;]
+    end
+
+    Start --&gt; WD
+    WD -.-&gt; RE
+    WD --&gt; RA
+    RA --&gt; US
+    US --&gt; WP
+    WP --&gt; AD
+    AD --&gt; UG
+    UG --&gt; FD
+    FD -.-&gt; NFRA
+    NFRA -.-&gt; NFRD
+    NFRD -.-&gt; ID
+    FD --&gt; CG
+    CG -.-&gt;|Next Unit| FD
+    CG --&gt; BT
+    BT -.-&gt; OPS
+    BT --&gt; End([&quot;Complete&quot;])
+
+    style WD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style RA fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style US fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style WP fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style CG fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style BT fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style AD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style UG fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style FD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style RE fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    style NFRA fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    style NFRD fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    style ID fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    style OPS fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    style INCEPTION fill:#BBDEFB,stroke:#1565C0,stroke-width:3px,color:#000
+    style CONSTRUCTION fill:#C8E6C9,stroke:#2E7D32,stroke-width:3px,color:#000
+    style OPERATIONS fill:#FFF59D,stroke:#F57F17,stroke-width:3px,color:#000
+    style Start fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,color:#000
+    style End fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,color:#000
+
+    linkStyle default stroke:#333,stroke-width:2px
+</pre></div>
+<h3 id="text-alternative">Text Alternative</h3>
+<pre><code>INCEPTION
+- Workspace Detection ...... COMPLETED
+- Reverse Engineering ...... SKIP (greenfield)
+- Requirements Analysis .... COMPLETED
+- User Stories ............. COMPLETED
+- Workflow Planning ........ IN PROGRESS
+- Application Design ....... EXECUTE
+- Units Generation ......... EXECUTE
+
+CONSTRUCTION (per unit)
+- Functional Design ........ EXECUTE (backend unit only)
+- NFR Requirements ......... SKIP
+- NFR Design ............... SKIP
+- Infrastructure Design .... SKIP
+- Code Generation .......... EXECUTE (every unit)
+- Build and Test ........... EXECUTE (after all units)
+
+OPERATIONS
+- Operations ............... PLACEHOLDER
+</code></pre>
+<h2 id="phases-to-execute">Phases to Execute</h2>
+<h3 id="-inception-phase">🔵 INCEPTION PHASE</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> Workspace Detection (COMPLETED)</li>
+<li class="task"><input type="checkbox" disabled checked> Reverse Engineering (SKIPPED — greenfield)</li>
+<li class="task"><input type="checkbox" disabled checked> Requirements Analysis (COMPLETED)</li>
+<li class="task"><input type="checkbox" disabled checked> User Stories (COMPLETED)</li>
+<li class="task"><input type="checkbox" disabled checked> Execution Plan (IN PROGRESS)</li>
+<li class="task"><input type="checkbox" disabled> Application Design - EXECUTE (standard depth)
+<ul>
+<li><strong>Rationale</strong>: 모든 컴포넌트가 새로 생기므로 아래 항목을 코드 작성 전에 정해야 합니다.
+<ul>
+<li>백엔드 서비스 계층: 인증, 주문, 항목 상태, 테이블 세션, SSE 이벤트 브로커</li>
+<li>프론트엔드 구조: 고객용과 관리자용을 앱 1개로 만들지 2개로 나눌지</li>
+<li>SSE 채널 설계: 매장 채널, 테이블 채널</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled> Units Generation - EXECUTE (minimal depth)
+<ul>
+<li><strong>Rationale</strong>: 백엔드와 프론트엔드는 기술 스택과 빌드가 다릅니다. 그래서 작업 단위를 나누고 구현 순서와 API 계약 의존성을 정해야 합니다.</li>
+<li>예상 단위는 2~3개입니다.
+<ul>
+<li>backend</li>
+<li>프론트엔드 1개 또는 2개 (customer-web, admin-web)</li>
+</ul>
+</li>
+<li>최종 개수는 Application Design 결과에 따라 확정합니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="-construction-phase">🟢 CONSTRUCTION PHASE</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled> Functional Design - EXECUTE (backend unit만)
+<ul>
+<li><strong>Rationale</strong>: 핵심 비즈니스 규칙을 코드 전에 정확히 정의해야 합니다.
+<ul>
+<li>메뉴 항목 상태 머신, 주문 상태 자동 결정</li>
+<li>예상 시간 계산과 수정</li>
+<li>테이블 세션 시작/종료 트랜잭션, 주문 보관 표시</li>
+<li>주문 번호 채번</li>
+<li>로그인 잠금</li>
+<li>DB 스키마</li>
+</ul>
+</li>
+<li>프론트엔드 unit은 상태 관리 로직이 단순해서 생략합니다. 대상은 장바구니, SSE 구독, 카운트다운입니다. 이 부분은 스토리의 인수 조건과 Code Generation 계획에서 다룹니다.</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled> NFR Requirements - SKIP
+<ul>
+<li><strong>Rationale</strong>:
+<ul>
+<li>기술 스택은 이미 확정되었습니다. (FastAPI, React+Vite, SQLite, SSE)</li>
+<li>NFR 목표도 <code>requirements.md</code> 5절에 수치로 정의되어 있습니다.</li>
+<li>Security/Resiliency extension이 비활성이라 추가 평가할 항목이 없습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled> NFR Design - SKIP
+<ul>
+<li><strong>Rationale</strong>: NFR Requirements를 생략하므로 함께 생략합니다. 아래 항목은 Application Design과 Functional Design에서 다룹니다.
+<ul>
+<li>SSE 재연결</li>
+<li>트랜잭션 처리</li>
+<li>인증 미들웨어</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled> Infrastructure Design - SKIP
+<ul>
+<li><strong>Rationale</strong>: 클라우드 리소스가 없는 로컬 실행 MVP입니다. 실행 환경은 Code Generation에서 함께 만듭니다.
+<ul>
+<li>Docker Compose 파일</li>
+<li>로컬 실행 스크립트</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled> Code Generation - EXECUTE (ALWAYS, unit별)
+<ul>
+<li><strong>Rationale</strong>: 각 unit의 코드, seed 데이터, 테스트를 생성합니다.</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled> Build and Test - EXECUTE (ALWAYS)
+<ul>
+<li><strong>Rationale</strong>: 아래 항목을 작성하고 실제로 실행해서 검증합니다.
+<ul>
+<li>빌드 및 실행 방법 (Docker Compose, 로컬)</li>
+<li>백엔드 pytest</li>
+<li>프론트엔드 Vitest</li>
+<li>고객↔관리자 연동 시나리오 테스트</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="-operations-phase">🟡 OPERATIONS PHASE</h3>
+<ul>
+<li class="task"><input type="checkbox" disabled> Operations - PLACEHOLDER
+<ul>
+<li><strong>Rationale</strong>: 향후 배포/모니터링 워크플로용</li>
+</ul>
+</li>
+</ul>
+<h2 id="estimated-timeline">Estimated Timeline</h2>
+<ul>
+<li><strong>남은 단계</strong>: 5종 (Application Design, Units Generation, Functional Design, Code Generation, Build and Test)</li>
+<li><strong>승인 게이트</strong>: unit을 3개로 나누면 약 7~9회입니다.</li>
+<li><strong>예상 진행</strong>: 설계 문서 3종을 만든 뒤, backend → frontend 순서로 코드를 생성하고 통합 테스트를 합니다.</li>
+</ul>
+<h2 id="success-criteria">Success Criteria</h2>
+<ul>
+<li><strong>Primary Goal</strong>: 로컬에서 실행되는 테이블오더 MVP. 37개 스토리의 인수 조건을 충족해야 합니다.</li>
+<li><strong>Key Deliverables</strong>:
+<ul>
+<li>FastAPI 백엔드 (REST + SSE, SQLite, seed 데이터)</li>
+<li>React+Vite 고객용/관리자용 웹UI</li>
+<li>Docker Compose 및 로컬 실행 방법</li>
+<li>pytest / Vitest 테스트</li>
+</ul>
+</li>
+<li><strong>Quality Gates</strong>:
+<ul>
+<li>백엔드/프론트엔드 빌드 성공</li>
+<li>단위 및 API 테스트 통과</li>
+<li>다음 흐름이 실제로 동작하는지 수동 시나리오로 확인
+<ol>
+<li>주문</li>
+<li>대시보드 표시</li>
+<li>준비 시작</li>
+<li>고객 카운트다운</li>
+<li>완료 배너</li>
+<li>이용 완료 후 태블릿 초기화</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="../user-stories/stories.html"><span>← 이전</span>유저 스토리 37개</a><a class="pager-next" href="application-design-plan.html"><span>다음 →</span>설계 계획 (질문 8)</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/vendor/mermaid/mermaid.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

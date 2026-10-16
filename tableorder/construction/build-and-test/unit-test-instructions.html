@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Unit Test Execution · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../inception/application-design/services.html">서비스</a></li><li><a href="../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="build-instructions.html">빌드</a></li><li><a href="unit-test-instructions.html" class="active" aria-current="page">단위 테스트</a></li><li><a href="integration-test-instructions.html">연동 테스트</a></li><li><a href="performance-test-instructions.html">성능 테스트</a></li><li><a href="e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 빌드와 테스트 · <code>docs/tableorder/construction/build-and-test/unit-test-instructions.md</code></div>
+<article class="markdown"><h1 id="unit-test-execution">Unit Test Execution</h1>
+<h2 id="실행">실행</h2>
+<pre><code class="language-bash">cd backend  &amp;&amp; .venv/bin/python -m pytest          # backend 단위 + API 테스트
+cd frontend &amp;&amp; npm test                            # Vitest (jsdom)
+</code></pre>
+<h2 id="기대-결과-2026-10-14-검증-새로-만든-venv--npm-ci-상태에서-실행">기대 결과 (2026-10-14 검증, 새로 만든 venv / <code>npm ci</code> 상태에서 실행)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>대상</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backend pytest</td>
+<td><strong>73 passed</strong>, 0 failed (약 2초)</td>
+</tr>
+<tr>
+<td>frontend Vitest</td>
+<td><strong>131 passed</strong> (8 파일), 0 failed (약 5초)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="backend-73개">backend 73개</h3>
+<p><code>test_repositories.py</code>(8) 매장 범위 격리, 주문 번호 카운터, 활성 세션 제약, 보관/집계, KST 날짜 필터 /
+<code>test_services.py</code>(46) 상태 전이 표 전체, 주문 상태 자동 결정, 예상 시간, 전체 준비 시작, 주문 검증·스냅샷, 번호 KST 자정 초기화, 이용 완료, 롤백 시 이벤트 미발행 /
+<code>test_api.py</code>(16) 전체 흐름, 오류 형식, 매장·테이블 격리, SSE 채널 격리·형식 /
+<code>test_seed.py</code>(3)</p>
+<h3 id="frontend-115개">frontend 115개</h3>
+<p>shared 19, table 스토어 18, table 화면 24, admin 스토어 14, admin 화면 40 (상세는 <code>frontend/code/code-summary.md</code>)</p>
+<h2 id="결과-확인">결과 확인</h2>
+<ul>
+<li>보고서 파일은 만들지 않고 콘솔로 확인합니다.</li>
+<li><strong>커버리지는 측정하지 않았습니다</strong> (도구 미설정). 대신 요구사항·스토리 인수 조건 기준으로 테스트를 작성했고, 상태 버튼 규칙은 변이(규칙을 일부러 깨뜨림)로 테스트가 실패하는지 확인했습니다.</li>
+</ul>
+<h2 id="실패-시">실패 시</h2>
+<ol>
+<li>실패한 테스트 이름과 출력 확인</li>
+<li><code>-k 이름</code> 으로 단독 실행해서 순서 의존인지 확인 (테스트는 서로 독립이며 backend는 3회 연속 실행으로 확인)</li>
+<li>수정 후 전체 재실행</li>
+</ol>
+</article>
+<nav class="pager"><a class="pager-prev" href="build-instructions.html"><span>← 이전</span>빌드</a><a class="pager-next" href="integration-test-instructions.html"><span>다음 →</span>연동 테스트</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

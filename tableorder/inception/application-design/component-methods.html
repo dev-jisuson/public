@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Component Methods · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../user-stories/personas.html">페르소나</a></li><li><a href="../user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="application-design.html">애플리케이션 설계 통합본</a></li><li><a href="components.html">컴포넌트</a></li><li><a href="component-methods.html" class="active" aria-current="page">컴포넌트 메서드</a></li><li><a href="services.html">서비스</a></li><li><a href="component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="unit-of-work.html">유닛 정의</a></li><li><a href="unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Inception · 설계 · <code>docs/tableorder/inception/application-design/component-methods.md</code></div>
+<article class="markdown"><h1 id="component-methods">Component Methods</h1>
+<p>메서드 시그니처와 입출력 타입을 정리한 문서입니다. 상세 비즈니스 규칙(검증 수치, 상태 전이 표, 스키마)은 Functional Design에서 정의합니다.</p>
+<p>표기 규칙</p>
+<ul>
+<li><code>ctx: TableContext</code>는 <code>store_id</code>, <code>table_id</code>, <code>table_number</code>를 담습니다.</li>
+<li><code>ctx: AdminContext</code>는 <code>store_id</code>, <code>admin_id</code>를 담습니다.</li>
+<li><code>db: Session</code>은 SQLAlchemy 세션입니다.</li>
+<li>모든 서비스 메서드는 <code>ctx</code>의 <code>store_id</code> 범위 밖 데이터를 다루지 않습니다.</li>
+</ul>
+<hr>
+<h2 id="1-core">1. Core</h2>
+<h3 id="security">security</h3>
+<pre><code class="language-python">def hash_password(plain: str) -&gt; str
+def verify_password(plain: str, hashed: str) -&gt; bool
+def create_token(subject: TokenSubject, expires_in: timedelta) -&gt; tuple[str, datetime]   # (token, expires_at)
+def decode_token(token: str) -&gt; TokenSubject        # 만료/위조 시 InvalidToken
+# TokenSubject: kind(&quot;admin&quot;|&quot;table&quot;), store_id, admin_id | table_id
+</code></pre>
+<h3 id="deps">deps</h3>
+<pre><code class="language-python">def get_db() -&gt; Iterator[Session]
+def get_current_admin(token: str = Header/Query) -&gt; AdminContext     # kind == &quot;admin&quot;
+def get_current_table(token: str = Header/Query) -&gt; TableContext     # kind == &quot;table&quot;
+</code></pre>
+<hr>
+<h2 id="2-services">2. Services</h2>
+<h3 id="authservice">AuthService</h3>
+<pre><code class="language-python">def login_admin(db, store_code: str, username: str, password: str) -&gt; TokenResponse
+def login_table(db, store_code: str, table_number: int, password: str) -&gt; TableTokenResponse
+# TokenResponse: token, expires_at
+# TableTokenResponse: token, expires_at, store_id, table_id, table_number
+# 실패: InvalidCredentials, 잠금: AccountLocked(locked_until)
+</code></pre>
+<h3 id="loginattemptservice">LoginAttemptService</h3>
+<pre><code class="language-python">def ensure_not_locked(db, key: LoginKey) -&gt; None             # 잠금 중이면 AccountLocked
+def record_failure(db, key: LoginKey) -&gt; None                 # 임계치 도달 시 잠금 설정
+def reset(db, key: LoginKey) -&gt; None
+# LoginKey: (&quot;admin&quot;, store_code, username) | (&quot;table&quot;, store_code, table_number)
+</code></pre>
+<h3 id="menuservice">MenuService</h3>
+<pre><code class="language-python">def list_menu(db, store_id: int) -&gt; list[CategoryWithMenus]
+</code></pre>
+<h3 id="orderservice">OrderService</h3>
+<pre><code class="language-python">def create_order(db, ctx: TableContext, items: list[OrderItemInput]) -&gt; OrderDTO
+# OrderItemInput: menu_id, quantity
+# 세션이 없으면 TableSessionService.get_or_start()로 시작
+# 단가/총액은 서버의 Menu 값으로 계산하고, 메뉴명/단가 스냅샷 저장
+# 커밋 후 이벤트: order.created
+def list_current_session_orders(db, ctx: TableContext, cursor: int | None, limit: int) -&gt; Page[OrderDTO]
+def delete_order(db, ctx: AdminContext, order_id: int) -&gt; OrderDeletedResult
+# OrderDeletedResult: order_id, table_id, table_total
+# 커밋 후 이벤트: order.deleted
+</code></pre>
+<h3 id="orderitemservice">OrderItemService</h3>
+<pre><code class="language-python">def start_item(db, ctx: AdminContext, item_id: int, estimated_minutes: int) -&gt; OrderItemChange
+def start_all(db, ctx: AdminContext, order_id: int, estimated_minutes: int) -&gt; list[OrderItemChange]
+def update_estimate(db, ctx: AdminContext, item_id: int, estimated_minutes: int) -&gt; OrderItemChange
+def complete_item(db, ctx: AdminContext, item_id: int) -&gt; OrderItemChange
+def derive_order_status(item_statuses: list[ItemStatus]) -&gt; OrderStatus      # 순수 함수
+# OrderItemChange: item(OrderItemDTO), order_id, order_status, table_id
+# 잘못된 전이: InvalidStateTransition
+# 커밋 후 이벤트: order_item.updated
+</code></pre>
+<h3 id="tableservice">TableService</h3>
+<pre><code class="language-python">def list_tables(db, ctx: AdminContext) -&gt; list[TableDTO]
+def create_table(db, ctx: AdminContext, table_number: int, password: str) -&gt; TableDTO
+def change_password(db, ctx: AdminContext, table_id: int, new_password: str) -&gt; None
+# 중복 번호: DuplicateTableNumber
+</code></pre>
+<h3 id="tablesessionservice">TableSessionService</h3>
+<pre><code class="language-python">def get_active(db, table_id: int) -&gt; TableSession | None
+def get_or_start(db, store_id: int, table_id: int) -&gt; TableSession
+def complete_session(db, ctx: AdminContext, table_id: int) -&gt; SessionCompletedResult
+# 단일 트랜잭션: 세션 주문에 archived_at 설정(보관 표시), 세션 종료 시각 기록
+# 커밋 후 이벤트: table.session_completed
+</code></pre>
+<h3 id="dashboardservice">DashboardService</h3>
+<pre><code class="language-python">def get_dashboard(db, ctx: AdminContext) -&gt; list[TableSummaryDTO]
+# TableSummaryDTO: table_id, table_number, session_id, total_amount, order_count, unfinished_item_count, recent_orders(최대 3)
+def get_order_detail(db, ctx: AdminContext, order_id: int) -&gt; OrderDTO
+</code></pre>
+<h3 id="orderhistoryservice">OrderHistoryService</h3>
+<pre><code class="language-python">def list_history(db, ctx: AdminContext, table_id: int, date: date | None) -&gt; list[HistoryOrderDTO]
+# HistoryOrderDTO: order_no, ordered_at, items, total_amount, session_completed_at
+</code></pre>
+<h3 id="tablestateservice-재연결-동기화용-orderservice에-포함-가능">TableStateService (재연결 동기화용, OrderService에 포함 가능)</h3>
+<pre><code class="language-python">def get_table_state(db, ctx: TableContext) -&gt; TableStateDTO
+# TableStateDTO: session_id | None, orders(현재 세션 전체), server_time
+</code></pre>
+<h3 id="eventbroker--eventpublisher">EventBroker / EventPublisher</h3>
+<pre><code class="language-python">class EventBroker(Protocol):
+    async def subscribe(self, channel: str) -&gt; AsyncIterator[Event]
+    def publish(self, channel: str, event: Event) -&gt; None     # 동기 코드(서비스)에서 호출 가능
+
+class InMemoryEventBroker(EventBroker): ...                     # 채널별 asyncio.Queue 목록
+
+class EventPublisher:
+    def order_created(self, order: OrderDTO) -&gt; None              # store:{id}, table:{id}
+    def order_deleted(self, result: OrderDeletedResult) -&gt; None   # store:{id}, table:{id}
+    def order_items_updated(self, changes: list[OrderItemChange]) -&gt; None
+    def session_completed(self, result: SessionCompletedResult) -&gt; None
+# Event: type(str), data(dict), id(단조 증가)
+</code></pre>
+<hr>
+<h2 id="3-repositories-주요-메서드">3. Repositories (주요 메서드)</h2>
+<pre><code class="language-python">StoreRepository.get_by_code(db, code) -&gt; Store | None
+AdminUserRepository.get_by_username(db, store_id, username) -&gt; AdminUser | None
+LoginAttemptRepository.get(db, key) -&gt; LoginAttempt | None ; upsert(db, attempt)
+TableRepository.get(db, store_id, table_id) ; get_by_number(db, store_id, number) ; list(db, store_id) ; add(db, table)
+TableSessionRepository.get_active(db, table_id) ; add(db, session)
+MenuRepository.list_categories_with_menus(db, store_id) ; get_menus(db, store_id, menu_ids)
+OrderRepository.add(db, order) ; get(db, store_id, order_id) ; get_item(db, store_id, item_id)
+               list_by_session(db, session_id, cursor, limit) ; delete(db, order)
+               next_order_no(db, store_id, business_date) -&gt; str
+               recent_by_session(db, session_id, n) ; total_by_session(db, session_id)
+               archive_by_session(db, session_id, archived_at) -&gt; int
+               list_archived(db, store_id, table_id, date) -&gt; list[Order]
+</code></pre>
+<hr>
+<h2 id="4-rest-api-엔드포인트">4. REST API 엔드포인트</h2>
+<h3 id="태블릿-인증-authorization-bearer-table-token">태블릿 (인증: <code>Authorization: Bearer &lt;table token&gt;</code>)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>서비스</th>
+<th>스토리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/table/auth/login</code></td>
+<td>AuthService.login_table</td>
+<td>C01~C03</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/table/menu</code></td>
+<td>MenuService.list_menu</td>
+<td>C04, C05</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/table/orders</code></td>
+<td>OrderService.create_order</td>
+<td>C10~C12</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/table/orders?cursor=&amp;limit=</code></td>
+<td>OrderService.list_current_session_orders</td>
+<td>C13, C14</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/table/state</code></td>
+<td>TableStateService.get_table_state</td>
+<td>I03, I05</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/sse/table?token=</code></td>
+<td>SSE 테이블 채널</td>
+<td>C15, C16, I02~I05</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="관리자-인증-authorization-bearer-admin-token">관리자 (인증: <code>Authorization: Bearer &lt;admin token&gt;</code>)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>서비스</th>
+<th>스토리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/admin/auth/login</code></td>
+<td>AuthService.login_admin</td>
+<td>A01~A03</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/admin/dashboard</code></td>
+<td>DashboardService.get_dashboard</td>
+<td>A04, A07</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/admin/orders/{order_id}</code></td>
+<td>DashboardService.get_order_detail</td>
+<td>A06</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/admin/orders/{order_id}</code></td>
+<td>OrderService.delete_order</td>
+<td>A13</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/admin/orders/{order_id}/start-all</code></td>
+<td>OrderItemService.start_all</td>
+<td>A09</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/admin/order-items/{item_id}/start</code></td>
+<td>OrderItemService.start_item</td>
+<td>A08</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/api/admin/order-items/{item_id}/estimate</code></td>
+<td>OrderItemService.update_estimate</td>
+<td>A10</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/admin/order-items/{item_id}/complete</code></td>
+<td>OrderItemService.complete_item</td>
+<td>A11</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/admin/tables</code></td>
+<td>TableService.list_tables</td>
+<td>A12</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/admin/tables</code></td>
+<td>TableService.create_table</td>
+<td>A12</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/api/admin/tables/{table_id}/password</code></td>
+<td>TableService.change_password</td>
+<td>A12</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/admin/tables/{table_id}/complete-session</code></td>
+<td>TableSessionService.complete_session</td>
+<td>A14</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/admin/tables/{table_id}/history?date=</code></td>
+<td>OrderHistoryService.list_history</td>
+<td>A15</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/sse/admin?token=</code></td>
+<td>SSE 매장 채널</td>
+<td>A05, I01</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="정적-파일">정적 파일</h3>
+<ul>
+<li><code>GET /static/images/{file}</code>: 메뉴 이미지</li>
+</ul>
+<hr>
+<h2 id="5-sse-이벤트">5. SSE 이벤트</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>이벤트 타입</th>
+<th>채널</th>
+<th>페이로드 개요</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>order.created</code></td>
+<td>store, table</td>
+<td><code>order</code>(OrderDTO), <code>table_id</code>, <code>table_number</code>, <code>table_total</code>, <code>unfinished_item_count</code></td>
+</tr>
+<tr>
+<td><code>order.deleted</code></td>
+<td>store, table</td>
+<td><code>order_id</code>, <code>table_id</code>, <code>table_total</code>, <code>unfinished_item_count</code></td>
+</tr>
+<tr>
+<td><code>order_item.updated</code></td>
+<td>store, table</td>
+<td><code>items[]</code>(바뀐 OrderItemDTO), <code>order_id</code>, <code>order_status</code>, <code>table_id</code>, <code>unfinished_item_count</code></td>
+</tr>
+<tr>
+<td><code>table.session_completed</code></td>
+<td>store, table</td>
+<td><code>table_id</code>, <code>session_id</code>, <code>completed_at</code>, <code>archived_order_count</code></td>
+</tr>
+<tr>
+<td><code>ping</code> (주석 라인)</td>
+<td>모두</td>
+<td>15초마다 연결 유지용 하트비트</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>매장 채널 <code>store:{store_id}</code>: 관리자 대시보드가 구독합니다.</li>
+<li>테이블 채널 <code>table:{table_id}</code>: 해당 태블릿만 구독합니다 (US-I02 AC3).</li>
+</ul>
+<hr>
+<h2 id="6-프론트엔드-주요-인터페이스">6. 프론트엔드 주요 인터페이스</h2>
+<pre><code class="language-ts">// shared
+apiClient.request&lt;T&gt;(method, path, body?, opts?: { token?: string }): Promise&lt;T&gt;
+useEventStream(url: string | null, handlers: Record&lt;string, (data) =&gt; void&gt;, onResync: () =&gt; void): void
+
+// table
+tableAuthStore: { credentials, token, expiresAt, setup(c), relogin(): Promise&lt;boolean&gt;, clear() }
+cartStore: { items, add(menu), increment(id), decrement(id), remove(id), clear(), total(): number }
+tableOrdersStore: { orders, load(), applyCreated(o), applyDeleted(id), applyItemUpdated(e), reset() }
+tableApi: { login, getMenu, createOrder, listOrders, getState }
+
+// admin
+adminAuthStore: { token, expiresAt, login(c), logout(), isExpired() }
+dashboardStore: { tables, highlighted:Set&lt;orderId&gt;, filter:Set&lt;tableId&gt;, load(),
+                  applyCreated, applyDeleted, applyItemUpdated, applySessionCompleted, acknowledge(orderId) }
+adminApi: { login, getDashboard, getOrder, deleteOrder, startItem, startAll, updateEstimate,
+            completeItem, listTables, createTable, changePassword, completeSession, getHistory }
+</code></pre>
+</article>
+<nav class="pager"><a class="pager-prev" href="components.html"><span>← 이전</span>컴포넌트</a><a class="pager-next" href="services.html"><span>다음 →</span>서비스</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

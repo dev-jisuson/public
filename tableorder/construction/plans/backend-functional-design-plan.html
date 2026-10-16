@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Functional Design Plan — backend · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../../index.html">홈</a></li><li><a href="../../../seminar.html">세미나 진행 순서</a></li><li><a href="../../../aidlc.html">AI-DLC 소개</a></li><li><a href="../../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="../../input/table-order-requirements.html">요구사항 정의서</a></li><li><a href="../../input/constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../../inception/user-stories/personas.html">페르소나</a></li><li><a href="../../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../../inception/application-design/components.html">컴포넌트</a></li><li><a href="../../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../../inception/application-design/services.html">서비스</a></li><li><a href="../../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="backend-functional-design-plan.html" class="active" aria-current="page">기능 설계 계획 (질문 7)</a></li><li><a href="../backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../build-and-test/build-instructions.html">빌드</a></li><li><a href="../build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">Construction · 기능 설계 · <code>docs/tableorder/construction/plans/backend-functional-design-plan.md</code></div>
+<article class="markdown"><h1 id="functional-design-plan--backend">Functional Design Plan — backend</h1>
+<h2 id="목적">목적</h2>
+<p>backend 단위의 상세 비즈니스 로직을 기술에 얽매이지 않고 정의합니다.</p>
+<ul>
+<li>도메인 엔티티와 관계</li>
+<li>비즈니스 규칙과 검증</li>
+<li>핵심 흐름의 상세 로직</li>
+</ul>
+<h2 id="입력-자료">입력 자료</h2>
+<ul>
+<li><code>unit-of-work.md</code>, <code>unit-of-work-story-map.md</code></li>
+<li><code>application-design/</code> (components, methods, services)</li>
+<li><code>requirements.md</code>, <code>stories.md</code></li>
+</ul>
+<h2 id="산출물-승인-후-생성">산출물 (승인 후 생성)</h2>
+<p><code>aidlc-docs/construction/backend/functional-design/</code></p>
+<ul>
+<li class="task"><input type="checkbox" disabled checked> 1. <code>domain-entities.md</code> — 엔티티, 필드, 관계, 제약, 상태 값</li>
+<li class="task"><input type="checkbox" disabled checked> 2. <code>business-rules.md</code> — 검증 규칙, 상태 전이 표, 제한 수치, 오류 조건</li>
+<li class="task"><input type="checkbox" disabled checked> 3. <code>business-logic-model.md</code> — 핵심 흐름의 단계별 로직
+<ul>
+<li class="task"><input type="checkbox" disabled checked> 3.1 주문 생성과 세션 시작, 주문 번호 채번</li>
+<li class="task"><input type="checkbox" disabled checked> 3.2 메뉴 항목 상태 전이와 주문 상태 결정</li>
+<li class="task"><input type="checkbox" disabled checked> 3.3 이용 완료 (보관 표시) 와 과거 내역 조회</li>
+<li class="task"><input type="checkbox" disabled checked> 3.4 로그인 시도 제한</li>
+<li class="task"><input type="checkbox" disabled checked> 3.5 SSE 이벤트 페이로드 구성</li>
+</ul>
+</li>
+<li class="task"><input type="checkbox" disabled checked> 4. seed 데이터 정의 (매장, 계정, 테이블, 카테고리, 메뉴)</li>
+<li class="task"><input type="checkbox" disabled checked> 5. 37개 스토리 중 backend 담당 스토리의 인수 조건과 규칙 대조</li>
+</ul>
+<p>frontend 단위는 execution-plan.md에서 Functional Design을 생략하기로 했습니다.</p>
+<hr>
+<h1 id="질문">질문</h1>
+<p>각 <code>[Answer]:</code> 뒤에 선택지 letter를 적어주세요. 질문마다 제 추천을 <strong>(추천)</strong>으로 표시했습니다. 전부 추천대로 하시려면 채팅으로 &quot;추천대로&quot;라고만 하셔도 됩니다.</p>
+<h2 id="question-1">Question 1</h2>
+<p>주문에서 같은 메뉴를 여러 개 시켰을 때(예: 파스타 3개) 상태와 예상 시간을 어떤 단위로 관리할까요? 이미 &quot;메뉴 항목 단위&quot;로 정했지만, 수량이 2 이상일 때의 &quot;항목&quot;이 무엇인지는 정하지 않았습니다.</p>
+<p>A) 주문 줄 단위 — &quot;파스타 x3&quot;이 항목 1개. 상태와 예상 시간도 3개에 대해 하나만 가짐 <strong>(추천)</strong></p>
+<p>B) 개수 단위 — &quot;파스타 x3&quot;을 항목 3개로 쪼개서 각각 상태와 예상 시간을 가짐. 일부만 먼저 나가는 상황을 표현할 수 있지만, 화면과 로직이 복잡해짐</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로. 수량이 2이상인 메뉴에서 1개만 나가더라도 완료처리 안하도록. 다 완료되어야 완료.&quot;)</p>
+<h2 id="question-2">Question 2</h2>
+<p>&quot;하루 단위로 순차 증가&quot;하는 주문 번호의 하루 기준은 언제일까요?</p>
+<p>A) 한국 시간(KST) 자정 기준. 매일 0시에 0001부터 다시 시작 <strong>(추천)</strong></p>
+<p>B) 영업 마감 시각 기준(예: 새벽 4시). 심야 영업 매장에서 자정 직후 번호가 초기화되는 일을 막을 수 있음</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+<h2 id="question-3">Question 3</h2>
+<p>주문 한 건에 담을 수 있는 수량 제한과 예상 소요 시간 범위는 어떻게 할까요?</p>
+<p>A) 메뉴 줄당 수량 1~20, 한 주문에 최대 20줄, 예상 소요 시간 1~120분(정수) <strong>(추천)</strong></p>
+<p>B) 제한 없음 (수량은 1 이상이면 허용, 예상 시간은 1분 이상이면 허용)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+<h2 id="question-4">Question 4</h2>
+<p>관리자가 &quot;이용 완료&quot;를 눌렀을 때 아직 대기중이거나 준비중인 메뉴가 남아 있으면 어떻게 할까요?</p>
+<p>A) 허용 — 확인 팝업에 &quot;아직 나가지 않은 메뉴가 N개 있습니다&quot;를 표시하고, 확인하면 그대로 종료 <strong>(추천)</strong></p>
+<p>B) 차단 — 모든 항목이 완료여야만 이용 완료 가능</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+<h2 id="question-5">Question 5</h2>
+<p>관리자가 테이블 비밀번호를 바꾸면, 이미 발급된 태블릿 토큰(최대 16시간 유효)은 어떻게 할까요?</p>
+<p>A) 토큰은 만료될 때까지 계속 유효. 다음 자동 재로그인 때 새 비밀번호로 실패해서 설정 화면으로 이동 <strong>(추천, 구현이 단순)</strong></p>
+<p>B) 비밀번호 변경 즉시 기존 토큰을 모두 무효화. 태블릿은 다음 요청에서 바로 설정 화면으로 이동 (토큰에 비밀번호 버전을 넣어 검증)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+<h2 id="question-6">Question 6</h2>
+<p>주문 삭제로 현재 세션의 주문이 0건이 되면 테이블 세션은 어떻게 할까요?</p>
+<p>A) 세션은 유지. 다음 주문은 같은 세션에 들어감 (세션은 관리자 이용 완료로만 종료) <strong>(추천)</strong></p>
+<p>B) 세션도 함께 종료 (다음 주문 때 새 세션 시작)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+<h2 id="question-7">Question 7</h2>
+<p>데모용 seed 데이터는 어떻게 구성할까요? 비밀번호는 로컬 데모 전용 값이며 README에 적습니다.</p>
+<p>A) 매장 코드 <code>demo</code>, 관리자 <code>admin</code> / <code>admin1234</code>, 테이블 1~6번(비밀번호 모두 <code>1234</code>), 카테고리 4개(메인, 사이드, 음료, 디저트)에 메뉴 총 12개, 플레이스홀더 이미지 <strong>(추천)</strong></p>
+<p>B) 위와 같되 숫자(테이블 수, 메뉴 수)나 계정 값을 제가 지정 (Other에 적어 주세요)</p>
+<p>X) Other (please describe after [Answer]: tag below)</p>
+<p class="answer"><span class="answer-tag">Answer</span> A (채팅: &quot;추천대로&quot;)</p>
+</article>
+<nav class="pager"><a class="pager-prev" href="../../inception/application-design/unit-of-work-story-map.html"><span>← 이전</span>유닛–스토리 매핑</a><a class="pager-next" href="../backend/functional-design/domain-entities.html"><span>다음 →</span>도메인 엔티티</a></nav>
+</main>
+</div>
+<script src="../../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../../assets/app.js"></script>
+</body>
+</html>

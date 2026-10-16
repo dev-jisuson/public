@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>테이블오더 서비스 요구사항 정의서 · AI-DLC 테이블오더 세미나</title>
+<link rel="stylesheet" href="../../assets/vendor/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="../../assets/vendor/hljs/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="../../assets/vendor/hljs/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+  <a class="brand" href="../../index.html">AI-DLC 테이블오더 세미나</a>
+  <a class="topbar-link" href="../../seminar.html">진행 순서</a>
+</header>
+<div class="scrim"></div>
+<div class="layout">
+<aside class="sidebar"><div class="nav-group"><div class="nav-title">세미나</div><ul><li><a href="../../index.html">홈</a></li><li><a href="../../seminar.html">세미나 진행 순서</a></li><li><a href="../../aidlc.html">AI-DLC 소개</a></li><li><a href="../index.html">테이블오더 사례 개요</a></li></ul></div><div class="nav-group"><div class="nav-title">입력</div><ul><li><a href="table-order-requirements.html" class="active" aria-current="page">요구사항 정의서</a></li><li><a href="constraints.html">예외사항</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 요구사항</div><ul><li><a href="../inception/requirements/requirement-verification-questions.html">질문 1차 · 기술 결정 (12문항)</a></li><li><a href="../inception/requirements/requirement-clarification-questions.html">질문 2차 · 명확화 (8문항)</a></li><li><a href="../inception/requirements/requirement-review-questions.html">질문 3차 · 재검토 (7문항)</a></li><li><a href="../inception/requirements/requirements.html">요구사항 정리</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 사용자 스토리</div><ul><li><a href="../inception/plans/user-stories-assessment.html">스토리 필요성 평가</a></li><li><a href="../inception/plans/story-generation-plan.html">스토리 생성 계획 (질문 6)</a></li><li><a href="../inception/user-stories/personas.html">페르소나</a></li><li><a href="../inception/user-stories/stories.html">유저 스토리 37개</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 실행 계획</div><ul><li><a href="../inception/plans/execution-plan.html">실행 계획</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 설계</div><ul><li><a href="../inception/plans/application-design-plan.html">설계 계획 (질문 8)</a></li><li><a href="../inception/application-design/application-design.html">애플리케이션 설계 통합본</a></li><li><a href="../inception/application-design/components.html">컴포넌트</a></li><li><a href="../inception/application-design/component-methods.html">컴포넌트 메서드</a></li><li><a href="../inception/application-design/services.html">서비스</a></li><li><a href="../inception/application-design/component-dependency.html">컴포넌트 의존성</a></li></ul></div><div class="nav-group"><div class="nav-title">Inception · 유닛</div><ul><li><a href="../inception/plans/unit-of-work-plan.html">유닛 계획 (질문 3)</a></li><li><a href="../inception/application-design/unit-of-work.html">유닛 정의</a></li><li><a href="../inception/application-design/unit-of-work-dependency.html">유닛 의존성</a></li><li><a href="../inception/application-design/unit-of-work-story-map.html">유닛–스토리 매핑</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 기능 설계</div><ul><li><a href="../construction/plans/backend-functional-design-plan.html">기능 설계 계획 (질문 7)</a></li><li><a href="../construction/backend/functional-design/domain-entities.html">도메인 엔티티</a></li><li><a href="../construction/backend/functional-design/business-rules.html">비즈니스 규칙</a></li><li><a href="../construction/backend/functional-design/business-logic-model.html">비즈니스 로직 모델</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 코드 생성</div><ul><li><a href="../construction/plans/backend-code-generation-plan.html">백엔드 코드 생성 계획</a></li><li><a href="../construction/backend/code/code-summary.html">백엔드 코드 요약</a></li><li><a href="../construction/plans/frontend-code-generation-plan.html">프론트엔드 코드 생성 계획</a></li><li><a href="../construction/frontend/code/code-summary.html">프론트엔드 코드 요약</a></li></ul></div><div class="nav-group"><div class="nav-title">Construction · 빌드와 테스트</div><ul><li><a href="../construction/build-and-test/build-and-test-summary.html">빌드·테스트 요약</a></li><li><a href="../construction/build-and-test/build-instructions.html">빌드</a></li><li><a href="../construction/build-and-test/unit-test-instructions.html">단위 테스트</a></li><li><a href="../construction/build-and-test/integration-test-instructions.html">연동 테스트</a></li><li><a href="../construction/build-and-test/performance-test-instructions.html">성능 테스트</a></li><li><a href="../construction/build-and-test/e2e-test-instructions.html">E2E 테스트</a></li></ul></div><div class="nav-group"><div class="nav-title">기록</div><ul><li><a href="../aidlc-state.html">진행 상태 (aidlc-state)</a></li><li><a href="../audit.html">전체 기록 (audit)</a></li></ul></div></aside>
+<main class="content">
+<div class="crumb">입력 · <code>docs/tableorder/input/table-order-requirements.md</code></div>
+<article class="markdown"><h1 id="테이블오더-서비스-요구사항-정의서">테이블오더 서비스 요구사항 정의서</h1>
+<h2 id="1-프로젝트-개요">1. 프로젝트 개요</h2>
+<h3 id="11-서비스-비전">1.1 서비스 비전</h3>
+<p>디지털 주문 시스템을 통해 고객에게는 편리한 주문 경험을, 매장 운영자에게는 효율적인 운영 환경을 제공하는 차세대 테이블오더 플랫폼</p>
+<h3 id="12-핵심-가치-제안">1.2 핵심 가치 제안</h3>
+<p><strong>고객 관점</strong></p>
+<ul>
+<li>대기 시간 없는 즉시 주문</li>
+<li>직관적이고 사용하기 쉬운 인터페이스</li>
+</ul>
+<p><strong>매장 운영자 관점</strong></p>
+<ul>
+<li>인건비 절감 및 운영 효율성 증대</li>
+<li>실시간 주문 관리 및 모니터링</li>
+</ul>
+<p><strong>시장 차별화</strong></p>
+<ul>
+<li>다양한 업종에 적용 가능한 유연한 구조</li>
+<li>직관적인 관리자 도구</li>
+</ul>
+<hr>
+<h2 id="2-서비스-구성">2. 서비스 구성</h2>
+<h3 id="21-주요-구성-요소">2.1 주요 구성 요소</h3>
+<ul>
+<li><strong>고객용 인터페이스</strong>: 테이블에서 고객이 사용하는 주문 화면 (브라우저에서 동작하는 웹UI 방식)</li>
+<li><strong>관리자용 인터페이스</strong>: 매장 운영자가 사용하는 관리 화면</li>
+<li><strong>서버 시스템</strong>: 주문 처리 및 데이터 관리</li>
+<li><strong>데이터 저장소</strong>: 매장, 메뉴, 주문 정보 저장</li>
+</ul>
+<hr>
+<h2 id="3-핵심-기능-요구사항">3. 핵심 기능 요구사항</h2>
+<h3 id="31-고객용-기능-customer-features">3.1 고객용 기능 (Customer Features)</h3>
+<h4 id="311-테이블-태블릿-자동-로그인-및-세션-관리">3.1.1 테이블 태블릿 자동 로그인 및 세션 관리</h4>
+<p><strong>목적</strong>: 고객이 별도 로그인 절차 없이 즉시 주문할 수 있도록 자동 인증</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li><strong>초기 설정 (관리자가 1회 수행)</strong>:
+<ul>
+<li>매장 식별자 입력</li>
+<li>테이블 번호 입력</li>
+<li>테이블 비밀번호 입력</li>
+<li>최종 로그인 정보 로컬 저장</li>
+</ul>
+</li>
+<li><strong>자동 로그인</strong>:
+<ul>
+<li>1회 로그인 성공 후, 저장된 정보로 자동 로그인</li>
+</ul>
+</li>
+</ul>
+<h4 id="312-메뉴-조회-및-탐색">3.1.2 메뉴 조회 및 탐색</h4>
+<p><strong>목적</strong>: 고객이 매장의 메뉴를 쉽게 탐색하고 선택할 수 있도록 지원</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li><strong>기본 화면</strong>: 메뉴 화면이 기본 화면으로 항상 표시</li>
+<li>카테고리별 메뉴 분류 및 표시</li>
+<li>메뉴 상세 정보 표시
+<ul>
+<li>메뉴명</li>
+<li>가격</li>
+<li>메뉴 설명</li>
+<li>메뉴 이미지</li>
+</ul>
+</li>
+<li>카테고리 간 빠른 이동</li>
+</ul>
+<p><strong>UI/UX 요구사항</strong>:</p>
+<ul>
+<li>카드 형태의 메뉴 레이아웃</li>
+<li>터치 친화적인 버튼 크기 (최소 44x44px)</li>
+<li>명확한 시각적 계층 구조</li>
+</ul>
+<h4 id="313-장바구니-관리">3.1.3 장바구니 관리</h4>
+<p><strong>목적</strong>: 주문 전 선택한 메뉴를 임시 저장하고 수정할 수 있는 기능</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li>메뉴 추가/삭제</li>
+<li>수량 조절 (증가/감소)</li>
+<li>총 금액 실시간 계산</li>
+<li>장바구니 비우기</li>
+<li>로컬 저장 (페이지 새로고침 시에도 유지)</li>
+</ul>
+<p><strong>데이터 관리</strong>:</p>
+<ul>
+<li>클라이언트 측 임시 저장 (페이지 새로고침 시에도 유지)</li>
+<li>서버 전송은 주문 확정 시에만 수행</li>
+</ul>
+<h4 id="314-주문-생성">3.1.4 주문 생성</h4>
+<p><strong>목적</strong>: 장바구니의 메뉴를 실제 주문으로 전환</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li>주문 내역 최종 확인</li>
+<li>주문 확정 버튼</li>
+<li><strong>주문 성공 플로우</strong>:
+<ul>
+<li>주문 번호 표시</li>
+<li>장바구니 자동 비우기</li>
+<li>메뉴 화면으로 자동 리다이렉트</li>
+</ul>
+</li>
+<li>주문 실패 시 에러 메시지 표시 및 장바구니 유지</li>
+</ul>
+<p><strong>주문 정보 포함 항목</strong>:</p>
+<ul>
+<li>매장 식별 정보</li>
+<li>테이블 식별 정보</li>
+<li>주문 메뉴 목록 (메뉴명, 수량, 단가)</li>
+<li>총 주문 금액</li>
+<li>세션 ID (테이블 세션 추적용)</li>
+</ul>
+<h4 id="315-주문-내역-조회">3.1.5 주문 내역 조회</h4>
+<p><strong>목적</strong>: 현재 테이블의 주문 이력을 확인</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li>주문 시간 순 정렬</li>
+<li>주문별 상세 정보 표시
+<ul>
+<li>주문 번호</li>
+<li>주문 시각</li>
+<li>주문 메뉴 및 수량</li>
+<li>주문 금액</li>
+<li>주문 상태 (대기중/준비중/완료)</li>
+</ul>
+</li>
+<li>주문 상태 실시간 업데이트 (선택사항)</li>
+</ul>
+<p><strong>데이터 필터링</strong>:</p>
+<ul>
+<li><strong>현재 테이블 세션 주문만 표시</strong> (이전 식사 세션 제외)</li>
+<li>매장 이용 완료 처리된 주문은 제외</li>
+<li>페이지네이션 또는 무한 스크롤</li>
+</ul>
+<h3 id="32-관리자용-기능-admin-features">3.2 관리자용 기능 (Admin Features)</h3>
+<h4 id="321-매장-인증">3.2.1 매장 인증</h4>
+<p><strong>목적</strong>: 관리자가 자신의 매장 관리 시스템에 접근</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li>매장 식별자 입력</li>
+<li>사용자명 및 비밀번호 입력</li>
+<li><strong>세션 관리</strong>:
+<ul>
+<li>16시간 세션 유지</li>
+<li>JWT 토큰 기반 인증</li>
+<li>브라우저 새로고침 시 세션 유지</li>
+<li>16시간 후 자동 로그아웃</li>
+</ul>
+</li>
+</ul>
+<p><strong>보안 요구사항</strong>:</p>
+<ul>
+<li>비밀번호 안전한 저장 (bcrypt 해싱)</li>
+<li>로그인 시도 제한</li>
+<li>세션 기반 인증</li>
+</ul>
+<h4 id="322-실시간-주문-모니터링">3.2.2 실시간 주문 모니터링</h4>
+<p><strong>목적</strong>: 들어오는 주문을 실시간으로 확인하고 관리</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li><strong>주문 목록 실시간 업데이트</strong> (Server-Sent Events 사용)</li>
+<li><strong>그리드/대시보드 레이아웃</strong>:
+<ul>
+<li>테이블별 카드 형태 표시</li>
+<li>각 테이블 카드에 총 주문액 표시</li>
+<li>최신 주문 n개 미리보기</li>
+</ul>
+</li>
+<li>주문별 상세 정보 표시
+<ul>
+<li>테이블 번호</li>
+<li>주문 번호</li>
+<li>주문 시각</li>
+<li>주문 메뉴 및 수량 (축약)</li>
+<li>총 금액</li>
+</ul>
+</li>
+<li><strong>주문 카드 클릭 시</strong>: 전체 메뉴 목록 상세 보기</li>
+<li>주문 상태 변경 (대기중/준비중/완료)</li>
+<li>신규 주문 시각적 강조 (색상 변경, 애니메이션)</li>
+</ul>
+<p><strong>업데이트 방식</strong>:</p>
+<ul>
+<li>Server-Sent Events (SSE) 기반 실시간 통신</li>
+<li>2초 이내 주문 표시</li>
+</ul>
+<p><strong>UI 요구사항</strong>:</p>
+<ul>
+<li>그리드 형태의 테이블별 레이아웃</li>
+<li>최신 주문 강조 표시</li>
+<li>테이블별 필터링 기능</li>
+</ul>
+<h4 id="323-테이블-관리">3.2.3 테이블 관리</h4>
+<p><strong>목적</strong>: 테이블별 주문 상태 관리 및 세션 라이프사이클 관리</p>
+<p><strong>기능 요구사항</strong>:</p>
+<p><strong>1. 테이블 태블릿 초기 설정</strong>:</p>
+<ul>
+<li>테이블 번호 및 테이블 비밀번호 설정</li>
+<li>16시간 세션 생성</li>
+<li>설정 정보 저장 및 자동 로그인 활성화</li>
+</ul>
+<p><strong>2. 주문 삭제 (직권 수정)</strong>:</p>
+<ul>
+<li>특정 주문 삭제 버튼</li>
+<li>확인 팝업 표시</li>
+<li>주문 즉시 삭제</li>
+<li>테이블 총 주문액 재계산</li>
+<li>성공/실패 피드백</li>
+</ul>
+<p><strong>3. 테이블 세션 처리</strong>:</p>
+<ul>
+<li>테이블 세션 시작(세션의 첫 주문) 및 종료 관리(테이블 이용 완료)</li>
+<li>확인 팝업 표시</li>
+<li>테이블 세션 종료(이용 완료) 시, 해당 세션의 주문 내역을 과거 이력으로 이동</li>
+<li>테이블 세션 종료(이용 완료) 시, 테이블 현재 주문 목록 및 총 주문액 0으로 리셋</li>
+<li>새 고객이 이전 주문 내역 없이 시작 가능</li>
+<li>성공/실패 피드백</li>
+</ul>
+<p><strong>4. 과거 주문 내역 조회</strong>:</p>
+<ul>
+<li>&quot;과거 내역&quot; 버튼</li>
+<li>테이블별 과거 주문 목록 표시 (시간 역순)</li>
+<li>각 주문 정보: 주문 번호, 시각, 메뉴 목록, 총 금액, 매장 이용 완료 시각</li>
+<li>날짜 필터링 기능</li>
+<li>&quot;닫기&quot; 버튼으로 대시보드 복귀</li>
+</ul>
+<p><strong>데이터 관리</strong>:</p>
+<ul>
+<li>주문 이력 데이터베이스 저장 (OrderHistory 테이블)</li>
+<li>세션 ID로 주문 그룹화</li>
+<li>완료 시각 기록</li>
+</ul>
+<h4 id="324-메뉴-관리">3.2.4 메뉴 관리</h4>
+<p><strong>목적</strong>: 메뉴 정보를 동적으로 관리</p>
+<p><strong>기능 요구사항</strong>:</p>
+<ul>
+<li>메뉴 조회 (카테고리별)</li>
+<li>메뉴 등록
+<ul>
+<li>메뉴명</li>
+<li>가격</li>
+<li>설명</li>
+<li>카테고리</li>
+<li>이미지 URL</li>
+</ul>
+</li>
+<li>메뉴 수정</li>
+<li>메뉴 삭제</li>
+<li>메뉴 노출 순서 조정</li>
+</ul>
+<p><strong>데이터 검증</strong>:</p>
+<ul>
+<li>필수 필드 검증</li>
+<li>가격 범위 검증</li>
+</ul>
+<hr>
+<h2 id="4-mvp-개발-범위">4. MVP 개발 범위</h2>
+<h3 id="핵심-기능-필수">핵심 기능 (필수)</h3>
+<p><strong>목표</strong>: 기본적인 주문 프로세스 구현</p>
+<p><strong>고객용</strong>:</p>
+<ul>
+<li>테이블 태블릿 자동 로그인 및 세션 관리</li>
+<li>메뉴 조회</li>
+<li>장바구니 관리</li>
+<li>주문 생성 (5초 표시 후 자동 리다이렉트)</li>
+<li>주문 내역 조회 (현재 세션만)</li>
+</ul>
+<p><strong>관리자용</strong>:</p>
+<ul>
+<li>매장 인증 (16시간 세션)</li>
+<li>실시간 주문 모니터링 (그리드 레이아웃, SSE)</li>
+<li>테이블 관리 (초기 설정, 주문 삭제, 매장 이용 완료, 과거 내역 조회)</li>
+</ul>
+<hr>
+<h2 id="부록">부록</h2>
+<h3 id="a-용어-정의">A. 용어 정의</h3>
+<ul>
+<li><strong>MVP</strong>: Minimum Viable Product (최소 기능 제품)</li>
+<li><strong>API</strong>: Application Programming Interface (애플리케이션 프로그래밍 인터페이스)</li>
+<li><strong>UI/UX</strong>: User Interface / User Experience (사용자 인터페이스 / 사용자 경험)</li>
+<li><strong>테이블 세션</strong>: 특정 테이블에 고객이 앉아서 첫 주문 시작한 후 부터 해당 테이블 이용 완료 처리까지의 시간. 세션 종료 후 다른 고객의 첫 주문 시작 시, 새로운 세션 시작.</li>
+</ul>
+</article>
+<nav class="pager"><a class="pager-prev" href="../index.html"><span>← 이전</span>테이블오더 사례 개요</a><a class="pager-next" href="constraints.html"><span>다음 →</span>예외사항</a></nav>
+</main>
+</div>
+<script src="../../assets/vendor/hljs/highlight.min.js"></script>
+<script src="../../assets/app.js"></script>
+</body>
+</html>
